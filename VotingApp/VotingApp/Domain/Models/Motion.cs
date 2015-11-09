@@ -11,18 +11,18 @@ namespace VotingApp.Domain.Models
 
         public string Title { get; set; }
         public string Description { get; set; }
-        // public string CreatedBy { get; set; }
-        // public string SecondedBy { get; set; }
+        public int CreatedById { get; set; }
+        public int SecondedById { get; set; }
 
         public bool Seconded { get; set; }
         public bool Active { get; set; }
         public bool Passed { get; set; }
-        // public bool WasEdited { get; set; }
+        public bool WasEdited { get; set; }
 
         public DateTime Created { get; set; }
 
         public IList<Vote> Votes { get; set; }
         public IList<Comment> Comments { get; set; }
-        // public IList<string> Edits { get; set; }
+        public IList<string> Edits { get; set; }
     }
 }

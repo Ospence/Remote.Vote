@@ -10,7 +10,7 @@ namespace VotingApp.Presentation.Controllers
     public class GlobalController : ApiController
     {
         // GET: api/Global
-        public IEnumerable<string> Get()
+        public IEnumerable<ApplicationUserDTO> Get()
         {
             return new string[] { "value1", "value2" };
         }

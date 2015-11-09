@@ -230,6 +230,7 @@
     <Compile Include="Presentation\Results\ChallengeResult.cs" />
     <Compile Include="Services\CommentService.cs" />
     <Compile Include="Services\GlobalService.cs" />
+    <Compile Include="Services\Models\ApplicationUserDTO.cs" />
     <Compile Include="Services\Models\CommentDTO.cs" />
     <Compile Include="Services\Models\MotionDTO.cs" />
     <Compile Include="Services\Models\VoteDTO.cs" />

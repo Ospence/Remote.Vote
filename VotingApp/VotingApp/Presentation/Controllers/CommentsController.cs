@@ -1,4 +1,5 @@
-﻿using CoderCamps.Data.Repository;
+﻿using AutoMapper;
+using CoderCamps.Data.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using VotingApp.Services;
+using VotingApp.Services.Models;
 
 namespace VotingApp.Presentation.Controllers
 {
@@ -17,11 +19,10 @@ namespace VotingApp.Presentation.Controllers
         {
             _service = service;
         }
-
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        
+        public IEnumerable<GlobalDTO> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _service.List();
         }
 
         // GET api/<controller>/5
