@@ -215,6 +215,7 @@
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
+    <Compile Include="Presentation\Controllers\GlobalController.cs" />
     <Compile Include="Presentation\Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -228,6 +229,7 @@
     <Compile Include="Domain\Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Presentation\Results\ChallengeResult.cs" />
     <Compile Include="Services\CommentService.cs" />
+    <Compile Include="Services\GlobalService.cs" />
     <Compile Include="Services\Models\CommentDTO.cs" />
     <Compile Include="Services\Models\MotionDTO.cs" />
     <Compile Include="Services\Models\VoteDTO.cs" />
