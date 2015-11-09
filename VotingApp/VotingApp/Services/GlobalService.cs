@@ -16,64 +16,69 @@ namespace VotingApp.Services {
             _repo = repo;
         }
 
-        public AddOrUpdate(GlobalAdminDTO global) {
-            if (global.Id == null) {
-                _repo.Add<GlobalAdmin>(Mapper.Map<GlobalAdmin>(global));
+        public IList<GlobalAdminDTO> ListAdmin()
+        {
+            var dbGlobal = (from ga in _repo.Query<GlobalAdmin>()
+                            select ga).ToList();
+            return Mapper.Map<List<GlobalAdminDTO>>(dbGlobal);
+        }
+
+        public IList<DirectorDTO> ListDirector()
+        {
+
+        }
+
+        public IList<StaffDTO> ListStaff()
+        {
+
+        }
+
+        public IList<ChairmanDTO> ListChairman()
+        {
+
+        }
+
+
+        public void AddOrUpdate(GlobalAdminDTO global)
+        {
+            if (global.Id == null)
+            {
+                _repo.Add(Mapper.Map<GlobalAdmin>(global));
             }
-            else {
-                
-                var dbGlobalAdmin = Mapper.Map<List<GlobalAdminDTO>>(from ga in _repo.Query<GlobalAdmin>() where ga.Id == global.Id select ga).FirstOrDefault();
-                return Mapper.Map<GlobalAdminDTO>(dbGlobalAdmin);
+            else
+            {
+                var dbGlobal = Mapper.Map<List<GlobalAdminDTO>>(from ga in _repo.Query<GlobalAdmin>() where ga.Id == global.Id select ga).FirstOrDefault();
+                Mapper.Map(dbGlobal, global);
             }
             _repo.SaveChanges();
-            return Mapper.Map<GlobalAdminDTO>(dbGlobalAdmin);
-        }
-        public GlobalService(IRepository repo)
-        {
-            _repo = repo;
         }
 
-        public IList<GlobalAdminDTO> List()
-        {
-            return Mapper.Map<List<GlobalAdminDTO>>((from ai in _repo.Query<Global>()
-                                               select ai).ToList());
-        }
 
-        public GlobalAdminDTO Find(int id)
+
+        public GlobalAdminDTO Find(string id)
         {
             return Mapper.Map<GlobalAdminDTO>(FindInternal(id));
         }
 
-        private GlobalAdmin FindInternal(int id)
+        private GlobalAdmin FindInternal(string id)
         {
-            return (from ai in _repo.Query<GlobalAdmin>()
-                    where ai.Id == id
-                    select ai).FirstOrDefault();
+            return (from ga in _repo.Query<GlobalAdmin>()
+                    where ga.Id == id
+                    select ga).FirstOrDefault();
         }
 
-        public void Add(GlobalAdmin item)
+        public void Add(GlobalAdmin global)
         {
-            _repo.Add(Mapper.Map<GlobalAdmin>(item));
+            _repo.Add(Mapper.Map<GlobalAdmin>(global));
             _repo.SaveChanges();
         }
 
-        public void Update(GlobalAdmin item)
+        public void Update(GlobalAdmin global)
         {
 
-            var dbItem = FindInternal(item.Id);
+            var dbGlobal = FindInternal(global.Id);
 
-            Mapper.Map(item, dbItem);
-            //dbItem.Name = item.Name;
-            //dbItem.Description = item.Description;
-            //dbItem.MaxNumberOfBids = item.MaxNumberOfBids;
-            //dbItem.MinimumBid = item.MinimumBid;
-            _repo.SaveChanges();
-        }
-
-        public void Delete(int id)
-        {
-            var dbGlobalAdmin = FindInternal(id);
-            _repo.Delete(dbGlobalAdmin);
+            Mapper.Map(global, dbGlobal);
             _repo.SaveChanges();
         }
     }

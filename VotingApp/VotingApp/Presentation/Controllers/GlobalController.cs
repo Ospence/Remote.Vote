@@ -14,40 +14,27 @@ namespace VotingApp.Presentation.Controllers
 
         private GlobalService _service;
 
-        public GlobalController(GlobalService service) {
+        public GlobalController(GlobalService service)
+        {
             _service = service;
         }
 
         // GET: api/Global
-        public IEnumerable<ApplicationUserDTO> Get()
+        public IEnumerable<GlobalAdminDTO> Get()
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/Global/5
-        public string Get(int id)
-        {
-            return "value";
+            return (_service.List());
         }
 
         // POST: api/Global
         public HttpResponseMessage Post(GlobalAdminDTO global)
         {
-            if (ModelState.IsValid) {
-                global = _service.AddOrUpdate(global);
+            if (ModelState.IsValid)
+            {
+                _service.AddOrUpdate(global);
+
                 return Request.CreateResponse(HttpStatusCode.Created, global);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-        }
-
-        // PUT: api/Global/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Global/5
-        public void Delete(int id)
-        {
         }
     }
 }

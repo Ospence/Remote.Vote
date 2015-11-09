@@ -1,0 +1,78 @@
+﻿<div class="row">
+    <form id="searchForm" ng-submit="vm.search()" class="col-md-5">
+        <input class="form-control" ng-model="vm.search.bug" placeholder="Search" />
+        <br/>
+        <div class="col-md-2 btn btn-default" ng-click="vm.search(bug)">Search</div>
+    </form>
+</div>
+<br/>
+    <div class="row">
+        <form id="addForm" ng-submit="vm.add()" class="col-md-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="vm.newBug.title" placeholder="Title" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="vm.newBug.description" placeholder="Description" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newBug.assignedUser" placeholder="Assigned User" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newBug.priority" placeholder="Priority" />
+                </div>
+        </div> 
+            <div class="row">
+            <label for="priority">Status</label><br />
+            <select name="priority" ng-model="vm.newBug.priority" class="col-md-4" placeholder="Priority">
+                <option value="New">New</option>
+                <option value="InProgress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+        </div>     
+            <br/>
+            <input type="submit" value="Add Bug" class="btn btn-default" />
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <br /><br />
+            <input type="checkbox" ng-model="sortByPriority" />Sort by Priority?
+            <br/><br/>
+            <div class="row" ng-repeat="bug in vm.bugs|orderBy:'priority':sortByPriority">
+                <div ng-show="!bug.edit" ng-click="bug.edit = true">
+                    <div class="col-md-4">{{bug.title}}</div>
+                    <div class="col-md-4">{{bug.description}}</div>
+                    <div class="col-md-4">{{bug.priority}}</div>
+                    <div class="col-md-4">{{bug.assignedUser}}</div>
+                    <div class="col-md-4">{{bug.status}}</div>
+                </div>
+                <div ng-show="bug.edit">
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="bug.title" />
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="bug.description" />
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="bug.priority" />
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="bug.assignedUser" />
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="bug.status" />
+                    </div>
+                </div>
+                <div class="col-md-2 btn btn-default" ng-click="vm.update(bug)">Update</div>
+                <div class="col-md-2 btn btn-default" ng-click="vm.delete(bug)">Delete</div>
+            </div>
+        </div>
+    </div>
