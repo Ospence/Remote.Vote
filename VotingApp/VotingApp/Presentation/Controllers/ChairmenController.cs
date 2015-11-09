@@ -4,29 +4,27 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using VotingApp.Services;
-using VotingApp.Services.Models;
 
 namespace VotingApp.Presentation.Controllers
 {
-    public class GlobalController : ApiController
+    // add a controller of each user type
+    public class ChairmenController : ApiController
     {
+        private ChairmenService _service;
 
-        private GlobalService _service;
-
-        public GlobalController(GlobalService service)
+        public ChairmenController(ChairmenService service)
         {
             _service = service;
         }
 
         // GET: api/Global
-        public IEnumerable<GlobalAdminDTO> Get()
+        public IEnumerable<ChairmenDTO> Get()
         {
-            return (_service.ListAdmin());
+            return (_service.List());
         }
 
         // POST: api/Global
-        public HttpResponseMessage Post(GlobalAdminDTO global)
+        public HttpResponseMessage Post(ChairmenDTO global)
         {
             if (ModelState.IsValid)
             {

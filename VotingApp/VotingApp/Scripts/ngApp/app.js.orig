@@ -9,13 +9,20 @@
                     controllerAs: 'vm'
                 })
             */
-
+<<<<<<< HEAD
+                .when('/', {
                     templateUrl: '/ngViews/TestView.html',
                     controller: 'AddUpdateTest',
                     controllerAs: 'vm'
                 })
+                .otherwise({
+                    templateUrl: '/ngViews/notFound.html'
+                });
+=======
+
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             });
+>>>>>>> e2bffee8d0e836c8350d4dca3da1169b9add710c
         }]);
 })();

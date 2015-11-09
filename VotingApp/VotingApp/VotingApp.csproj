@@ -214,14 +214,16 @@
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
-    <Compile Include="Presentation\Controllers\ChairmanController.cs" />
+    <Compile Include="Presentation\Controllers\ChairmenController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
-    <Compile Include="Presentation\Controllers\GlobalController.cs" />
+    <Compile Include="Presentation\Controllers\DirectorsController.cs" />
+    <Compile Include="Presentation\Controllers\AdminController.cs" />
     <Compile Include="Presentation\Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Controllers\MotionsController.cs" />
+    <Compile Include="Presentation\Controllers\StaffController.cs" />
     <Compile Include="Presentation\Controllers\VotesController.cs" />
     <Compile Include="Presentation\Models\AccountBindingModels.cs" />
     <Compile Include="Presentation\Models\AccountViewModels.cs" />
@@ -292,8 +294,8 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\ngApp\AddUpdateTest.js" />
     <Content Include="Scripts\ngApp\app.js" />
-    <Content Include="Scripts\ngApp\registerService.js" />
-    <Content Include="Scripts\ngApp\RegisterController.js" />
+    <Content Include="Scripts\ngApp\userService.js" />
+    <Content Include="Scripts\ngApp\userController.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
