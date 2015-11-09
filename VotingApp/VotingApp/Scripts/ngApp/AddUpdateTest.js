@@ -1,14 +1,23 @@
 ﻿(function () {
     angular.module('VotingApp')
-    .controller('RegisterController', function (RegisterService, $location) {
+    .controller('testController', function ($location) {
         var vm = this;
 
-        var admin = $resource('api/bug/:id');
+        var Admin = $resource('api/global/:id');
 
         vm.list = function(){
-            return 
+            return Admin.query();
         }
 
+        vm.add = function (user, callback) {
+            var newUser = new Bug({
+                userName: user.userName,
+
+            });
+
+        vm.update = function (bug) {
+            bug.$save();
+        };
 
         vm.add = function () {
             RegisterService.add(vm.newApplicationUser, function (result) {
@@ -16,7 +25,6 @@
                 $('#addApplicationUser')[0].reset();
                 //$location.path('/register');
             });
-
         };
 
         vm.update = function (applicationUser) {

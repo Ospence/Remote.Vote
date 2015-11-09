@@ -7,5 +7,6 @@ namespace VotingApp.Domain.Models
 {
     public class GlobalAdmin: Staff
     {
+
     }
 }

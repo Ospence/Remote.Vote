@@ -9,6 +9,11 @@
                     controllerAs: 'vm'
                 })
             */
+                .when('/', {
+                    templateUrl: '/ngViews/TestView.html',
+                    controller: 'AddUpdateTest',
+                    controllerAs: 'vm'
+                })
                 .otherwise({
                     templateUrl: '/ngViews/notFound.html'
                 });

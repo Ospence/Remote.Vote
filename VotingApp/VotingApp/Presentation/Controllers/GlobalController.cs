@@ -22,7 +22,7 @@ namespace VotingApp.Presentation.Controllers
         // GET: api/Global
         public IEnumerable<GlobalAdminDTO> Get()
         {
-            return (_service.List());
+            return (_service.ListAdmin());
         }
 
         // POST: api/Global

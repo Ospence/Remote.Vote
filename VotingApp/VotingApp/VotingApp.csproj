@@ -229,6 +229,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Presentation\Results\ChallengeResult.cs" />
+    <Compile Include="Services\AdminController.cs" />
     <Compile Include="Services\CommentService.cs" />
     <Compile Include="Services\GlobalService.cs" />
     <Compile Include="Services\Models\ChairmanDTO.cs" />
