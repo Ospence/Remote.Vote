@@ -4,11 +4,22 @@
         .service('registerService', ['$resource', function ($resource) {
             var self = this;
 
+<<<<<<< HEAD
             var ApplicationUser = $resource('/api/applicationusers/:id');
+=======
+            var adminUser = $resource('/api/global/:id');
+            var chairmanUser = $resource('api/chairman/:id');
+            // add each user type
+>>>>>>> aaaf2d56d2ec3b661f115e985a9e691de0cf88eb
 
-            self.list = function () {
-                return ApplicationUser.query();
+            // make each function for each user type
+            self.listAdmin = function () {
+                return adminUser.query();
             };
+
+            self.listChairman = function () {
+                return chairmanUser.query();
+            }
 
             self.add = function (applicationUser, callback) {
                 var newApplicationUser = new ApplicationUser({

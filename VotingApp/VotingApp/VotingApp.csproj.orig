@@ -230,8 +230,16 @@
     <Compile Include="Presentation\Results\ChallengeResult.cs" />
     <Compile Include="Services\CommentService.cs" />
     <Compile Include="Services\GlobalService.cs" />
+<<<<<<< HEAD
+    <Compile Include="Services\Models\ApplicationUserDTO.cs" />
+=======
+    <Compile Include="Services\Models\ChairmanDTO.cs" />
+>>>>>>> 4d6d39c999436f526f012c5627a4ee16323eb144
     <Compile Include="Services\Models\CommentDTO.cs" />
+    <Compile Include="Services\Models\DirectorDTO.cs" />
+    <Compile Include="Services\Models\GlobalAdminDTO.cs" />
     <Compile Include="Services\Models\MotionDTO.cs" />
+    <Compile Include="Services\Models\StaffDTO.cs" />
     <Compile Include="Services\Models\VoteDTO.cs" />
     <Compile Include="Services\MotionService.cs" />
     <Compile Include="Services\VoteService.cs" />
@@ -282,11 +290,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\ngApp\app.js" />
-<<<<<<< HEAD
     <Content Include="Scripts\ngApp\registerService.js" />
-=======
     <Content Include="Scripts\ngApp\RegisterController.js" />
->>>>>>> 7831b494e0d089decaa851887667ee5a5cba8312
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />

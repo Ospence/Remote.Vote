@@ -214,13 +214,16 @@
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
+    <Compile Include="Presentation\Controllers\ChairmenController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
-    <Compile Include="Presentation\Controllers\GlobalController.cs" />
+    <Compile Include="Presentation\Controllers\DirectorsController.cs" />
+    <Compile Include="Presentation\Controllers\AdminController.cs" />
     <Compile Include="Presentation\Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Controllers\MotionsController.cs" />
+    <Compile Include="Presentation\Controllers\StaffController.cs" />
     <Compile Include="Presentation\Controllers\VotesController.cs" />
     <Compile Include="Presentation\Models\AccountBindingModels.cs" />
     <Compile Include="Presentation\Models\AccountViewModels.cs" />
@@ -230,8 +233,13 @@
     <Compile Include="Presentation\Results\ChallengeResult.cs" />
     <Compile Include="Services\CommentService.cs" />
     <Compile Include="Services\GlobalService.cs" />
+    <Compile Include="Services\Models\ChairmanDTO.cs" />
+    <Compile Include="Services\Models\ApplicationUserDTO.cs" />
     <Compile Include="Services\Models\CommentDTO.cs" />
+    <Compile Include="Services\Models\DirectorDTO.cs" />
+    <Compile Include="Services\Models\GlobalAdminDTO.cs" />
     <Compile Include="Services\Models\MotionDTO.cs" />
+    <Compile Include="Services\Models\StaffDTO.cs" />
     <Compile Include="Services\Models\VoteDTO.cs" />
     <Compile Include="Services\MotionService.cs" />
     <Compile Include="Services\VoteService.cs" />
@@ -252,6 +260,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ngViews\Bug.html" />
+    <Content Include="ngViews\TestView.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -281,9 +291,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ngApp\AddUpdateTest.js" />
     <Content Include="Scripts\ngApp\app.js" />
-    <Content Include="Scripts\ngApp\registerService.js" />
-    <Content Include="Scripts\ngApp\registerController.js" />
+    <Content Include="Scripts\ngApp\userService.js" />
+    <Content Include="Scripts\ngApp\userController.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />

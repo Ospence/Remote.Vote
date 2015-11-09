@@ -19,9 +19,9 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<GlobalAdminDTO> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _service.List();
         }
 
         // GET api/<controller>/5

@@ -9,8 +9,8 @@ namespace VotingApp.Services.Models
     {
         public int Id { get; set; }
 
-        public string Title { get; set; }
-        // public (string or Motion.Id) OnMotion { get; set; }
+        public int Owner { get; set; }
+        public int OnMotionId { get; set; }
 
         public bool Yes { get; set; }
     }
