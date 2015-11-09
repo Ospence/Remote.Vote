@@ -1,12 +1,12 @@
 ﻿(function () {
     angular.module('VotingApp')
-    .controller('RegisterController', function (RegisterService, $location) {
+    .controller('registerController', function (registerService, $location) {
         var vm = this;
 
-        vm.applicationusers = RegisterService.list();
+        vm.applicationusers = registerService.list();
 
         vm.add = function () {
-            RegisterService.add(vm.newApplicationUser, function (result) {
+            registerService.add(vm.newApplicationUser, function (result) {
                 vm.e.push(result);
                 $('#addApplicationUser')[0].reset();
                 //$location.path('/register');
@@ -15,7 +15,7 @@
         };
 
         vm.update = function (applicationUser) {
-            RegisterService.update(applicationUser);
+            registerService.update(applicationUser);
         };
 
        // vm.delete = function (applicationUser) {
