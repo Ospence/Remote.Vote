@@ -230,8 +230,11 @@
     <Compile Include="Presentation\Results\ChallengeResult.cs" />
     <Compile Include="Services\CommentService.cs" />
     <Compile Include="Services\GlobalService.cs" />
-    <Compile Include="Services\Models\ChairmanDTO.cs" />
+<<<<<<< HEAD
     <Compile Include="Services\Models\ApplicationUserDTO.cs" />
+=======
+    <Compile Include="Services\Models\ChairmanDTO.cs" />
+>>>>>>> 4d6d39c999436f526f012c5627a4ee16323eb144
     <Compile Include="Services\Models\CommentDTO.cs" />
     <Compile Include="Services\Models\DirectorDTO.cs" />
     <Compile Include="Services\Models\GlobalAdminDTO.cs" />

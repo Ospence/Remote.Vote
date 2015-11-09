@@ -12,22 +12,7 @@ namespace VotingApp.Services {
 
         private IRepository _repo;
 
-        public GlobalService(IRepository repo) {
-            _repo = repo;
-        }
-
-        public AddOrUpdate(GlobalAdminDTO global) {
-            if (global.Id == null) {
-                _repo.Add<GlobalAdmin>(Mapper.Map<GlobalAdmin>(global));
-            }
-            else {
-                
-                var dbGlobalAdmin = Mapper.Map<List<GlobalAdminDTO>>(from ga in _repo.Query<GlobalAdmin>() where ga.Id == global.Id select ga).FirstOrDefault();
-                return Mapper.Map<GlobalAdminDTO>(dbGlobalAdmin);
-            }
-            _repo.SaveChanges();
-            return Mapper.Map<GlobalAdminDTO>(dbGlobalAdmin);
-        }
+<<<<<<< HEAD
         public GlobalService(IRepository repo)
         {
             _repo = repo;
@@ -75,6 +60,23 @@ namespace VotingApp.Services {
             var dbGlobalAdmin = FindInternal(id);
             _repo.Delete(dbGlobalAdmin);
             _repo.SaveChanges();
+=======
+        public GlobalService(IRepository repo) {
+            _repo = repo;
+        }
+
+        public AddOrUpdate(GlobalAdminDTO global) {
+            if (global.Id == null) {
+                _repo.Add<GlobalAdmin>(Mapper.Map<GlobalAdmin>(global));
+            }
+            else {
+                
+                var dbGlobalAdmin = Mapper.Map<List<GlobalAdminDTO>>(from ga in _repo.Query<GlobalAdmin>() where ga.Id == global.Id select ga).FirstOrDefault();
+                return Mapper.Map<GlobalAdminDTO>(dbGlobalAdmin);
+            }
+            _repo.SaveChanges();
+            return Mapper.Map<GlobalAdminDTO>(dbGlobalAdmin);
+>>>>>>> 4d6d39c999436f526f012c5627a4ee16323eb144
         }
     }
 }
