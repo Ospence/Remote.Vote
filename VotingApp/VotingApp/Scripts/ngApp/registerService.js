@@ -4,7 +4,7 @@
         .service('registerService', ['$resource', function ($resource) {
             var self = this;
 
-            var ApplicationUser = $resource('/api/applicationuser/:id');
+            var ApplicationUser = $resource('/api/applicationusergit /:id');
 
             self.list = function () {
                 return ApplicationUser.query();

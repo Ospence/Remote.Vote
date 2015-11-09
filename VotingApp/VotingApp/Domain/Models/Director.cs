@@ -5,7 +5,8 @@ using System.Web;
 
 namespace VotingApp.Domain.Models
 {
-    public class Director
+    public class Director: Staff
     {
+        public bool CanVote { get; set; }
     }
 }

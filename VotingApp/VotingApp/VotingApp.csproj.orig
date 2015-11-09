@@ -282,8 +282,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\ngApp\app.js" />
+<<<<<<< HEAD
     <Content Include="Scripts\ngApp\registerService.js" />
+=======
     <Content Include="Scripts\ngApp\RegisterController.js" />
+>>>>>>> 7831b494e0d089decaa851887667ee5a5cba8312
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
