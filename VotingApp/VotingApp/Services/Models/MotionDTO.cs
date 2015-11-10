@@ -5,7 +5,7 @@ using System.Web;
 
 namespace VotingApp.Domain.Models
 {
-    public class Motion
+    public class MotionDTO
     {
         public int Id { get; set; }
 
