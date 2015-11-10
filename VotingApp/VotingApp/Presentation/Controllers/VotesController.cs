@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using VotingApp.Services;
+using VotingApp.Services.Models;
 
 namespace VotingApp.Presentation.Controllers
 {
@@ -19,7 +20,7 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<GlobalAdminDTO> Get()
+        public IEnumerable<AdminDTO> Get()
         {
             return _service.List();
         }

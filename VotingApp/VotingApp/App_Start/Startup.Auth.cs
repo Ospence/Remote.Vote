@@ -11,6 +11,7 @@ using Owin;
 using VotingApp.Providers;
 using VotingApp.Models;
 using VotingApp.Infrastructure;
+using VotingApp.Domain.Models;
 
 namespace VotingApp
 {
