@@ -24,6 +24,15 @@ namespace VotingApp.App_Start
             Mapper.CreateMap<Staff, StaffDTO>();
             Mapper.CreateMap<StaffDTO, Staff>();
 
+            Mapper.CreateMap<Comment, CommentDTO>();
+            Mapper.CreateMap<CommentDTO, Comment>();
+
+            Mapper.CreateMap<Motion, MotionDTO>();
+            Mapper.CreateMap<MotionDTO, Motion>();
+
+            Mapper.CreateMap<Vote, VoteDTO>();
+            Mapper.CreateMap<VoteDTO, Vote>();
+
         }
     }
 }
