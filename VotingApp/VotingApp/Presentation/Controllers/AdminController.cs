@@ -12,9 +12,9 @@ namespace VotingApp.Presentation.Controllers
     public class AdminController : ApiController
     {
 
-        private AdminService _service;
+        private UserService _service;
 
-        public AdminController(AdminService service)
+        public AdminController(UserService service)
         {
             _service = service;
         }
@@ -26,13 +26,13 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // POST: api/Global
-        public HttpResponseMessage Post(AdminDTO global)
+        public HttpResponseMessage Post(AdminDTO admin)
         {
             if (ModelState.IsValid)
             {
-                _service.AddOrUpdate(global);
+                _service.AddOrUpdate(admin);
 
-                return Request.CreateResponse(HttpStatusCode.Created, global);
+                return Request.CreateResponse(HttpStatusCode.Created, admin);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
