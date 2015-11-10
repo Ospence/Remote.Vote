@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 namespace VotingApp.Services.Models {
-    public class DirectorsDTO: StaffDTO {
+    public class DirectorDTO: StaffDTO {
 
         public bool CanVote { get; set; }
 
