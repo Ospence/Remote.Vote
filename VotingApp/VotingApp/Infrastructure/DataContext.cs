@@ -24,9 +24,9 @@ namespace VotingApp.Infrastructure
         public IDbSet<Motion> Motions { get; set; }
         public IDbSet<Vote> Votes { get; set; }
         public IDbSet<Comment> Comments { get; set; }
-        public IDbSet<Chairman> Chairman { get; set; }
+        public IDbSet<Chairmen> Chairman { get; set; }
         public IDbSet<Director> Director { get; set; }
         public IDbSet<Staff> Staff { get; set; }
-        public IDbSet<GlobalAdmin> GlobalAdmin { get; set; }
+        public IDbSet<Admin> GlobalAdmin { get; set; }
     }
 }

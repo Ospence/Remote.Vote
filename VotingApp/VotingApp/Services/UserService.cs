@@ -112,7 +112,7 @@ namespace VotingApp.Services {
             _repo.SaveChanges();
         }
 
-        public IList<ChairmenDTO> ListChairman()
+        public IList<ChairmenDTO> ListChairmen()
         {
             var dbChairmen = (from c in _repo.Query<Chairmen>()
                            select c).ToList();

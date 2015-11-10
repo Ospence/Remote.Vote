@@ -30,7 +30,7 @@ namespace VotingApp.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                _service.AddOrUpdate(chairmen);
+                _service.AddOrUpdateChairmen(chairmen);
 
                 return Request.CreateResponse(HttpStatusCode.Created, chairmen);
             }

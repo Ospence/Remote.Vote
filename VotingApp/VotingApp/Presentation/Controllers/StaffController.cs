@@ -4,15 +4,17 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using VotingApp.Services;
+using VotingApp.Services.Models;
 
 namespace VotingApp.Presentation.Controllers
 {
     // add a controller of each user type
     public class StaffController : ApiController
     {
-        private StaffService _service;
+        private UserService _service;
 
-        public StaffController(StaffService service)
+        public StaffController(UserService service)
         {
             _service = service;
         }
@@ -20,17 +22,17 @@ namespace VotingApp.Presentation.Controllers
         // GET: api/Global
         public IEnumerable<StaffDTO> Get()
         {
-            return (_service.List());
+            return (_service.ListStaff());
         }
 
         // POST: api/Global
-        public HttpResponseMessage Post(StaffDTO global)
+        public HttpResponseMessage Post(StaffDTO staff)
         {
             if (ModelState.IsValid)
             {
-                _service.AddOrUpdate(global);
+                _service.AddOrUpdateStaff(staff);
 
-                return Request.CreateResponse(HttpStatusCode.Created, global);
+                return Request.CreateResponse(HttpStatusCode.Created, staff);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }

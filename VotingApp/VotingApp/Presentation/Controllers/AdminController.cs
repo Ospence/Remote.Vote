@@ -30,7 +30,7 @@ namespace VotingApp.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                _service.AddOrUpdate(admin);
+                _service.AddOrUpdateAdmin(admin);
 
                 return Request.CreateResponse(HttpStatusCode.Created, admin);
             }
