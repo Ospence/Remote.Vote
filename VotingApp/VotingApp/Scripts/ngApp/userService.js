@@ -4,17 +4,18 @@
         .service('userService', ['$resource', function ($resource) {
         var self = this;
 
-        var AdminUser = $resource('/api/admin/:id');
+        var AdminUserAPI = $resource('/api/admin/:id');
 
             // add each user type
 
             // make each function for each user type
             self.listAdmin = function () {
-                return AdminUser.query();
+                return AdminUserAPI.query();
             };
 
-            self.add = function (adminUser, callback) {
-                var newAdminUser = new AdminUser({
+            self.addAdmin = function (adminUser, callback) {
+                $.post('api/Account/RegisterAdmin', adminUser).success
+                var newAdminUser = new AdminUserAPI({
                     firstName: adminUser.firstName,
                     lastName: adminUser.lastName,
                     email: adminUser.email,
@@ -23,7 +24,7 @@
                 newAdminUser.$save(callback);
             };
 
-            self.update = function (adminUser) {
+            self.updateAdmin = function (adminUser) {
                 adminUser.$save();
             };
 
@@ -33,7 +34,7 @@
                 return StaffUser.query();
             };
 
-            self.add = function (staffUser, callback) {
+            self.addStaff = function (staffUser, callback) {
                 var newStaffUser = new StaffUser({
                     firstName: staffUser.firstName,
                     lastName: staffUser.lastName,
@@ -43,13 +44,11 @@
                 newStaffUser.$save(callback);
             };
 
-            self.update = function (staffUser) {
+            self.updateStaff = function (staffUser) {
                 staffUser.$save();
             };
 
-            self.delete = function (staffUser, callback) {
-                staffUser.$remove({ id: staffUser.id }, callback);
-            };
+      
 
         var ChairmenUser = $resource('api/chairmen/:id');
 
@@ -57,7 +56,7 @@
                 return ChairmenUser.query();
             };
 
-            self.add = function (chairmenUser, callback) {
+            self.addChairmen = function (chairmenUser, callback) {
                 var newChairmenUser = new ChairmenUser({
                     firstName: chairmenUser.firstName,
                     lastName: chairmenUser.lastName,
@@ -67,13 +66,11 @@
                 newChairmenUser.$save(callback);
             };
 
-            self.update = function (chairmenUser) {
+            self.updateChairmen = function (chairmenUser) {
                 chairmenUser.$save();
             };
 
-            self.delete = function (chairmenUser, callback) {
-                chairmenUser.$remove({ id: chairmenUser.id }, callback);
-            };
+            
 
         var DirectorsUser = $resource('api/directors/:id');
 
@@ -81,7 +78,7 @@
                 return DirectorsUser.query();
             };
 
-            self.add = function (directorsUser, callback) {
+            self.addDirectors = function (directorsUser, callback) {
                 var newDirectorsUser = new DirectorsUser({
                     firstName: directorsUser.firstName,
                     lastName: directorsUser.lastName,
@@ -91,12 +88,10 @@
                 newDirectorsUser.$save(callback);
             };
 
-            self.update = function (directorsUser) {
+            self.updateDirectors = function (directorsUser) {
                 directorsUser.$save();
             };
 
-            self.delete = function (directorsUser, callback) {
-                directorsUser.$remove({ id: directorsUser.id }, callback);
-            };
+            
         }]);
 })();

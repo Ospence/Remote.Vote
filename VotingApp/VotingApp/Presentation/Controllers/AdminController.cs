@@ -26,6 +26,7 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // POST: api/Global
+        // will aslo not be necessary if identity login creates
         public HttpResponseMessage Post(AdminDTO admin)
         {
             if (ModelState.IsValid)

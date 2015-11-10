@@ -1,5 +1,5 @@
 ﻿<div class="row">
-    <form id="addAdminForm" ng-submit="vm.add()" class="col-md-5">
+    <form id="addAdminUser" ng-submit="vm.addAdmin()" class="col-md-5">
         <div class="row">
             <div class="col-md-4">
                 <input class="form-control" ng-model="vm.newAdminUser.firstName" placeholder="First Name" />
@@ -28,11 +28,11 @@
 <div class="row">
     <div class="col-md-5">
         <div class="row" ng-repeat="adminUser in vm.adminUsers">
-            <div ng-show="!user.edit" ng-click="user.edit = true">
-                <div class="col-md-4">{{adminuser.firstname}}</div>
-                <div class="col-md-4">{{adminuser.lastname}}</div>
+            <div ng-show="!adminUser.edit" ng-click="adminUser.edit = true">
+                <div class="col-md-4">{{adminuser.firstName}}</div>
+                <div class="col-md-4">{{adminuser.lastName}}</div>
                 <div class="col-md-4">{{adminuser.email}}</div>
-                <div class="col-md-4">{{adminuser.phonenumber}}</div>
+                <div class="col-md-4">{{adminuser.phoneNumber}}</div>
             </div>
             <div ng-show="adminUser.edit">
                 <div class="col-md-4">

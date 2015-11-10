@@ -23,6 +23,7 @@ namespace VotingApp.Services {
             return Mapper.Map<List<AdminDTO>>(dbAdmin);
         }
 
+        //will not be necessary if identity works
         public void AddOrUpdateAdmin(AdminDTO admin)
         {
             if (admin.Id == null)
