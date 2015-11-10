@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using VotingApp.Services;
+using VotingApp.Services.Models;
 
 namespace VotingApp.Presentation.Controllers
 {
@@ -19,7 +20,7 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<GlobalAdminDTO> Get()
+        public IEnumerable<VoteDTO> Get()
         {
             return _service.List();
         }
@@ -31,8 +32,14 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post(VoteDTO vote)
         {
+            if (ModelState.IsValid) {
+                _service.AddVote(vote);
+                return Request.CreateResponse(HttpStatusCode.Created, vote);
+            }
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+
         }
 
         // PUT api/<controller>/5

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using VotingApp.Domain.Models;
 using VotingApp.Services;
 
 namespace VotingApp.Presentation.Controllers
@@ -18,9 +19,8 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        public IEnumerable<MotionDTO> Get() {
+            return _service.ListMotion();
         }
 
         // GET api/<controller>/5
