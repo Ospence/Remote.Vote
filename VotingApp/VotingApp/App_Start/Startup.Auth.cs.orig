@@ -11,7 +11,10 @@ using Owin;
 using VotingApp.Providers;
 using VotingApp.Models;
 using VotingApp.Infrastructure;
+<<<<<<< HEAD
 using Microsoft.AspNet.Identity.Owin;
+=======
+>>>>>>> 6e58732f16690ae68e3306d57aeb95166fdbe708
 using VotingApp.Domain.Models;
 
 namespace VotingApp

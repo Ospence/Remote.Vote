@@ -4,6 +4,6 @@ using System.Linq;
 using System.Web;
 
 namespace VotingApp.Services.Models {
-    public class ChairmenDTO: DirectorsDTO {
+    public class ChairmenDTO: DirectorDTO {
     }
 }

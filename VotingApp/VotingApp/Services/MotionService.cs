@@ -23,7 +23,7 @@ namespace VotingApp.Services
         }
 
         public void AddMotion(Motion motion) {
-            _repo.Add(Mapper.Map<Admin>(motion));
+            _repo.Add(Mapper.Map<Motion>(motion));
             _repo.SaveChanges();
         }
 

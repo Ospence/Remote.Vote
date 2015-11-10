@@ -236,7 +236,7 @@
     <Compile Include="Services\Models\ChairmenDTO.cs" />
     <Compile Include="Services\Models\ApplicationUserDTO.cs" />
     <Compile Include="Services\Models\CommentDTO.cs" />
-    <Compile Include="Services\Models\DirectorsDTO.cs" />
+    <Compile Include="Services\Models\DirectorDTO.cs" />
     <Compile Include="Services\Models\AdminDTO.cs" />
     <Compile Include="Services\Models\MotionDTO.cs" />
     <Compile Include="Services\Models\StaffDTO.cs" />
