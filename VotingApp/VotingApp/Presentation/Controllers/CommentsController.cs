@@ -11,39 +11,31 @@ using VotingApp.Services.Models;
 
 namespace VotingApp.Presentation.Controllers
 {
-    //public class CommentsController : ApiController
-    //{
-    //    private CommentService _service;
+    public class CommentsController : ApiController {
+        private CommentService _service;
 
-    //    public CommentsController(CommentService service)
-    //    {
-    //        _service = service;
-    //    }
-        
-    //    public IEnumerable<GlobalDTO> Get()
-    //    {
-    //        return _service.List();
-    //    }
+        public CommentsController(CommentService service) {
+            _service = service;
+        }
 
-    //    // GET api/<controller>/5
-    //    public string Get(int id)
-    //    {
-    //        return "value";
-    //    }
+        public IEnumerable<CommentDTO> Get() {
+            return _service.ListComment();
+        }
 
-    //    // POST api/<controller>
-    //    public void Post([FromBody]string value)
-    //    {
-    //    }
+        // GET api/<controller>/5
+        public CommentDTO Get(int id) {
+            return _service.Find(id);
+        }
 
-    //    // PUT api/<controller>/5
-    //    public void Put(int id, [FromBody]string value)
-    //    {
-    //    }
+        // POST api/<controller>
+        public HttpResponseMessage Post(CommentDTO comment) {
+            if (ModelState.IsValid) {
+                _service.AddComment(comment);
+                return Request.CreateResponse(HttpStatusCode.Created, comment);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
 
-    //    // DELETE api/<controller>/5
-    //    public void Delete(int id)
-    //    {
-    //    }
-    //}
+        }
+
+    }
 }
