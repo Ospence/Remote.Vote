@@ -5,7 +5,11 @@ using System.Web;
 
 namespace VotingApp.Domain.Models
 {
-    public class Chairmen: Director
-    {
+    public class Chairmen : ApplicationUser {
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
     }
 }

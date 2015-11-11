@@ -213,9 +213,9 @@
     <Compile Include="Domain\Models\Vote.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
-    <Compile Include="Migrations\201511101917221_initial.cs" />
-    <Compile Include="Migrations\201511101917221_initial.Designer.cs">
-      <DependentUpon>201511101917221_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201511112037065_initial.cs" />
+    <Compile Include="Migrations\201511112037065_initial.Designer.cs">
+      <DependentUpon>201511112037065_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
@@ -332,8 +332,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511101917221_initial.resx">
-      <DependentUpon>201511101917221_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511112037065_initial.resx">
+      <DependentUpon>201511112037065_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

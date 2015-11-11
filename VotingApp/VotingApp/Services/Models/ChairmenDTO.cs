@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 
 namespace VotingApp.Services.Models {
-    public class ChairmenDTO: DirectorDTO {
+    public class ChairmenDTO:ApplicationUserDTO {
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

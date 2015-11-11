@@ -25,7 +25,13 @@ namespace VotingApp.Migrations
                         UserName = c.String(nullable: false, maxLength: 256),
                         FirstName = c.String(),
                         LastName = c.String(),
+                        FirstName1 = c.String(),
+                        LastName1 = c.String(),
                         CanVote = c.Boolean(),
+                        FirstName2 = c.String(),
+                        LastName2 = c.String(),
+                        FirstName3 = c.String(),
+                        LastName3 = c.String(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
@@ -45,6 +51,31 @@ namespace VotingApp.Migrations
                 .Index(t => t.UserId);
             
             CreateTable(
+                "dbo.AspNetUserLogins",
+                c => new
+                    {
+                        LoginProvider = c.String(nullable: false, maxLength: 128),
+                        ProviderKey = c.String(nullable: false, maxLength: 128),
+                        UserId = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
+            
+            CreateTable(
+                "dbo.AspNetUserRoles",
+                c => new
+                    {
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        RoleId = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => new { t.UserId, t.RoleId })
+                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId)
+                .Index(t => t.RoleId);
+            
+            CreateTable(
                 "dbo.Comments",
                 c => new
                     {
@@ -57,22 +88,10 @@ namespace VotingApp.Migrations
                         Director_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Motions", t => t.MotionId, cascadeDelete: true)
                 .ForeignKey("dbo.AspNetUsers", t => t.Director_Id)
+                .ForeignKey("dbo.Motions", t => t.MotionId, cascadeDelete: true)
                 .Index(t => t.MotionId)
                 .Index(t => t.Director_Id);
-            
-            CreateTable(
-                "dbo.AspNetUserLogins",
-                c => new
-                    {
-                        LoginProvider = c.String(nullable: false, maxLength: 128),
-                        ProviderKey = c.String(nullable: false, maxLength: 128),
-                        UserId = c.String(nullable: false, maxLength: 128),
-                    })
-                .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.Motions",
@@ -112,19 +131,6 @@ namespace VotingApp.Migrations
                 .Index(t => t.Director_Id);
             
             CreateTable(
-                "dbo.AspNetUserRoles",
-                c => new
-                    {
-                        UserId = c.String(nullable: false, maxLength: 128),
-                        RoleId = c.String(nullable: false, maxLength: 128),
-                    })
-                .PrimaryKey(t => new { t.UserId, t.RoleId })
-                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId)
-                .Index(t => t.RoleId);
-            
-            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -144,26 +150,26 @@ namespace VotingApp.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Votes", "Director_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.Motions", "Director_Id", "dbo.AspNetUsers");
-            DropForeignKey("dbo.Comments", "Director_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.Votes", "Motion_Id", "dbo.Motions");
             DropForeignKey("dbo.Comments", "MotionId", "dbo.Motions");
+            DropForeignKey("dbo.Comments", "Director_Id", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
-            DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.Votes", new[] { "Director_Id" });
             DropIndex("dbo.Votes", new[] { "Motion_Id" });
             DropIndex("dbo.Motions", new[] { "Director_Id" });
-            DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.Comments", new[] { "Director_Id" });
             DropIndex("dbo.Comments", new[] { "MotionId" });
+            DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
+            DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
+            DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.Votes");
             DropTable("dbo.Motions");
-            DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.Comments");
+            DropTable("dbo.AspNetUserRoles");
+            DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
         }

@@ -13,7 +13,7 @@ namespace VotingApp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201511101917221_initial"; }
+            get { return "201511112037065_initial"; }
         }
         
         string IMigrationMetadata.Source
