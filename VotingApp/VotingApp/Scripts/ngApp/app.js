@@ -14,6 +14,11 @@
             //    controller: 'userController',
             //    controllerAs: 'vm'
             //})
+            .when('/', {
+                templateUrl: '/ngViews/TestView2.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
             .when('/login', {
                 templateUrl: '/ngViews/loginTest.html',
                 controller: 'loginController',
@@ -24,6 +29,7 @@
                 controller: 'userController',
                 controllerAs: 'vm'
             })
+                
             .when('/register', {
                 templateUrl: '/ngViews/registerTest.html',
                 controller: 'registerController',
@@ -34,6 +40,12 @@
                 controller: 'userController',
                 controllerAs: 'vm'
             })
+
+                .when('/TextView3', {
+                    templateUrl: '/ngViews/TextView3.html',
+                    controller: 'userController',
+                    controllerAs: 'vm'
+                })
 
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
