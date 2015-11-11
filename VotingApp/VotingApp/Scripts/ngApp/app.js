@@ -17,10 +17,13 @@
             .when('/login', {
                 templateUrl: '/ngViews/loginTest.html',
                 controller: 'loginController',
-                .when('/', {
-                    templateUrl: '/ngViews/TestView2.html',
                 controllerAs: 'vm'
-            })
+               
+                .when('/TestView2', {
+                    templateUrl: '/ngViews/TestView2.html',
+                    controller: 'userController',
+                    controllerAs: 'vm'
+                })
             .when('/register', {
                 templateUrl: '/ngViews/registerTest.html',
                 controller: 'registerController',
