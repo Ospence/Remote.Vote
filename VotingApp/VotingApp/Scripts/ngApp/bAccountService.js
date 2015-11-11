@@ -12,6 +12,7 @@
                 }
             }).success(function (result) {
                 $http.defaults.headers.common.Authorization = 'Bearer' + result.access_token;
+                myToken = result.access_token;
                 callback();
                 console.log("REALLY!");
             });

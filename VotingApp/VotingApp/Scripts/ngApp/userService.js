@@ -10,12 +10,9 @@
 
             // make each function for each user type
 
-            self.list = function () {
+            self.listAdmin = function () {
                 return AdminUserAPI.query();
             };
-            //self.listAdmin = function () {
-            //    return AdminUser.query();
-            //};
 
             self.addAdmin = function (adminUser, callback) {
                 $.post('api/Account/RegisterAdmin', adminUser).success

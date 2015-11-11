@@ -6,7 +6,7 @@
         vm.login = function() {
             console.log("Logged in as" + vm.User.username)
             accountService.login(vm.User.username, vm.User.password, function () {
-                $location.path('/login');
+                $location.path('/TestView');
             });
         };
 
