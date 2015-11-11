@@ -9,9 +9,14 @@
             // add each user type
 
             // make each function for each user type
+<<<<<<< HEAD
 
             self.list = function () {
+                return AdminUser.query();
+=======
+            self.listAdmin = function () {
                 return AdminUserAPI.query();
+>>>>>>> 7c1880e8670d36330c46cfb5b85fc5c04ee9fedc
             };
             //self.listAdmin = function () {
             //    return AdminUser.query();

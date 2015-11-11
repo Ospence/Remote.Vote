@@ -16,6 +16,10 @@ namespace VotingApp.Services
             _repo = repo;
         }
 
+        public VoteDTO Find(int id) {
+            return Mapper.Map<VoteDTO>(_repo.Find<Vote>(id));
+        }
+
         public IEnumerable<VoteDTO> List() {
             return Mapper.Map<List<VoteDTO>>(from v in _repo.Query<Vote>() select v).ToList();
         }

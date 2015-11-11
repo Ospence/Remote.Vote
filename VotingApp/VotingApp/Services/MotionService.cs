@@ -22,7 +22,11 @@ namespace VotingApp.Services
             return Mapper.Map<List<MotionDTO>>(dbMotions);
         }
 
-        public void AddMotion(Motion motion) {
+        public MotionDTO Find(int id) {
+            return Mapper.Map<MotionDTO>(_repo.Find<Motion>(id));
+        }
+
+        public void AddMotion(MotionDTO motion) {
             _repo.Add(Mapper.Map<Motion>(motion));
             _repo.SaveChanges();
         }
@@ -34,13 +38,15 @@ namespace VotingApp.Services
                     select m).FirstOrDefault();
         }
 
-        public void UpdateMotion(Motion motion) {
+        public MotionDTO UpdateMotion(MotionDTO motion) {
 
             var dbMotion = FindInternalMotion(motion.Id);
 
             Mapper.Map(motion, dbMotion);
             _repo.SaveChanges();
+            return Mapper.Map<MotionDTO>(dbMotion);
         }
+        
 
         
     }

@@ -5,13 +5,18 @@
 
     vm.adminUsers = userService.listAdmin();
 
+<<<<<<< HEAD
     vm.logout = function () {
         console.log('logged out?');
         accountService.logout();
     };
 
+        vm.add = function () {
+            userService.add(vm.newAdminUser, function (result) {
+=======
         vm.addAdmin = function () {
             userService.addAdmin(vm.newAdminUser, function (result) {
+>>>>>>> 7c1880e8670d36330c46cfb5b85fc5c04ee9fedc
                 vm.adminUsers.push(result);
                 $('#addAdminUser')[0].reset();
                 //$location.path('/register');
