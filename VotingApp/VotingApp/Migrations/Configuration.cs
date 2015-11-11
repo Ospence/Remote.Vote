@@ -26,6 +26,8 @@ namespace VotingApp.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
         }
     }
 }

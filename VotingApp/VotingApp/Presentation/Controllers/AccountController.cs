@@ -17,6 +17,7 @@ using VotingApp.Models;
 using VotingApp.Providers;
 using VotingApp.Results;
 using VotingApp.Domain.Models;
+using System.Linq;
 
 namespace VotingApp.Controllers
 {
@@ -51,6 +52,76 @@ namespace VotingApp.Controllers
         }
 
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
+
+        /// <summary>
+        /// Adds a role to a user. has the URL of:
+        /// POST api/Account/AddRole
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="roleName"></param>
+        /// <returns>returns Ok() HttpActionResult</returns>
+        [Route("AddRole")]
+        [Authorize(Roles = "Admin")]
+        public IHttpActionResult AddRole(string username, string roleName)
+        {
+            var curr = UserManager.FindByName(username);
+            UserManager.AddToRole(curr.Id, roleName);
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Removes a role to a user. has the URL of:
+        /// POST api/Account/RemoveRole
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="roleName"></param>
+        /// <returns>returns Ok() HttpActionResult</returns>
+        public IHttpActionResult RemoveRole(string username, string roleName)
+        {
+            var curr = UserManager.FindByName(username);
+            UserManager.RemoveFromRole(curr.Id, roleName);
+
+            return Ok();
+        }
+
+
+        /// <summary>
+        /// Used to display a list of roles by passing the username
+        /// Get api/Account/ListUserRoles
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>Returns an IList of strings</returns>
+        public IList<string> ListUserRoles(string username)
+        {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var allRoles = roleManager.Roles;
+
+            var temp = (from r in allRoles
+                        select r.ToString()).ToList();
+            return temp;
+        }
+
+        /// <summary>
+        /// Used to display a list of users by passing a role name
+        /// Get api/Account/ListRoleOwners
+        /// </summary>
+        /// <param name="roleName"></param>
+        /// <returns>Returns an IList of strings</returns>
+        public IList<string> ListRoleOwners(string roleName)
+        {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var allRoles = roleManager.Roles;
+
+            var userManager = UserManager.Users;
+            var usersByRole = (from u in userManager
+                               where u.Roles.ToString() == roleName
+                               select u.UserName.ToString()).ToList();
+            return usersByRole;
+        }
+
+
+
 
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
