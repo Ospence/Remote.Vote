@@ -9,20 +9,44 @@
                     controllerAs: 'vm'
                 })
             */
+            //.when('/', {
+            //    templateUrl: '/ngViews/',
+            //    controller: 'userController',
+            //    controllerAs: 'vm'
+            //})
+            .when('/login', {
+                templateUrl: '/ngViews/loginTest.html',
+                controller: 'loginController',
+                controllerAs: 'vm'
+            })
+            .when('/register', {
+                templateUrl: '/ngViews/registerTest.html',
+                controller: 'registerController',
+                controllerAs: 'vm'
+            })
+            .when('/TestView', {
+                templateUrl: '/ngViews/TestView.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+
 <<<<<<< HEAD
+            //.when('/', {
+            //        templateUrl: '/ngViews/TestView.html',
+            //        controller: 'userController',
+            //        controllerAs: 'vm'
+            //    })
+
                 .when('/', {
-                    templateUrl: '/ngViews/TestView.html',
-                    controller: 'AddUpdateTest',
+                    templateUrl: '/ngViews/TestView2.html',
+                    controller: 'userController',
                     controllerAs: 'vm'
                 })
-                .otherwise({
-                    templateUrl: '/ngViews/notFound.html'
-                });
+                
 =======
-
+>>>>>>> 880466efa3225d20db29011c7a76d5d582a18d60
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             });
->>>>>>> e2bffee8d0e836c8350d4dca3da1169b9add710c
         }]);
 })();
