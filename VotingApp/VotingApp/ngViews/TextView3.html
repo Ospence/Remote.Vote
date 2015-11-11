@@ -1,0 +1,70 @@
+﻿<div class="row">
+    <form id="addChairmenUser" ng-submit="vm.addChairmenUser()" class="col-md-5">
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newChairmenUser.firstName" placeholder="First Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newChairmenUser.lastName" placeholder="Last Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newChairmenUser.email" placeholder="Email" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newChairmenUser.priority" placeholder="Phone Number" />
+            </div>
+        </div>
+        <!--<div class="row">
+            <label for="priority">Status</label><br />
+            <select name="priority" ng-model="vm.newChairmenUser.priority" class="col-md-4" placeholder="Priority">
+                <option value="New">New</option>
+                <option value="InProgress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+        </div>-->
+        <br />
+        <input type="submit" value="Add ChairmenUser" class="btn btn-default" />
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <br /><br />
+        <input type="checkbox" ng-model="sortByPriority" />Sort by Priority?
+        <br /><br />
+        <div class="row" ng-repeat="user in vm.users|orderBy:'priority':sortByPriority">
+            <div ng-show="!user.edit" ng-click="user.edit = true">
+                <div class="col-md-4">{{user.firstName}}</div>
+                <div class="col-md-4">{{user.lastName}}</div>
+                <div class="col-md-4">{{user.email}}</div>
+                <div class="col-md-4">{{user.phoneNumber}}</div>
+                <!--<div class="col-md-4">{{user.status}}</div>-->
+            </div>
+            <div ng-show="ChairmenUser.edit">
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="user.firtName" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="user.lastName" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="user.email" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="user.phoneNumber" />
+                </div>
+                <!--<div class="col-md-4">
+                    <input class="form-control" ng-model="user.status" />
+                </div>-->
+            </div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.update(chairmenUser)">Update</div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.delete(chairmenUser)">Delete</div>
+        </div>
+    </div>
+</div>
