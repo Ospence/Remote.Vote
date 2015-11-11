@@ -20,14 +20,19 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // GET api/<controller>
+<<<<<<< HEAD
         public IEnumerable<VoteDTO> Get()
+=======
+        public IEnumerable<AdminDTO> Get()
+>>>>>>> 119de533850273b3d6925fe435b385cac4876228
         {
             return _service.List();
         }
 
         // GET api/<controller>/5
-        public VoteDTO Get(int id) {
-            return _service.Find(id);
+        public string Get(int id)
+        {
+            return "value";
         }
 
         // POST api/<controller>
@@ -37,7 +42,18 @@ namespace VotingApp.Presentation.Controllers
                 _service.AddVote(vote);
                 return Request.CreateResponse(HttpStatusCode.Created, vote);
             }
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);   
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+
+        }
+
+        // PUT api/<controller>/5
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+
+        // DELETE api/<controller>/5
+        public void Delete(int id)
+        {
         }
     }
 }

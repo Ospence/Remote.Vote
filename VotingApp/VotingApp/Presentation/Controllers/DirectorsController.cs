@@ -20,13 +20,13 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // GET: api/Global
-        public IEnumerable<DirectorsDTO> Get()
+        public IEnumerable<DirectorDTO> Get()
         {
             return (_service.ListDirectors());
         }
 
         // POST: api/Global
-        public HttpResponseMessage Post(DirectorsDTO director)
+        public HttpResponseMessage Post(DirectorDTO director)
         {
             if (ModelState.IsValid)
             {

@@ -1,0 +1,56 @@
+﻿<div class="container row">
+    <form id="addStaffUser" ng-submit="vm.addStaff()" class="col-md-5">
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newStaffUser.firstName" placeholder="First Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newStaffUser.lastName" placeholder="Last Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newStaffUser.email" placeholder="Email" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newStaffUser.phoneNumber" placeholder="Phone Number" />
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Add StaffUser" class="btn btn-default" />
+    </form>   
+    
+    
+    <div class="row">
+        <div class="col-md-5">
+            <div class="row" ng-repeat="staffUser in vm.staffUsers">
+                <div ng-show="!staffUser.edit" ng-click="staffUser.edit = true">
+                    <div class="col-md-4">{{staffUser.firstName}}</div>
+                    <div class="col-md-4">{{staffUser.lastName}}</div>
+                    <div class="col-md-4">{{staffUser.email}}</div>
+                    <div class="col-md-4">{{staffUser.phoneNumber}}</div>
+                </div>
+                <div ng-show="staffUser.edit">
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="staffUser.firstName" />
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="staffUser.lastName" />
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="staffUser.email" />
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" ng-model="staffUser.phoneNumber" />
+                    </div>
+                </div>
+                <div class="col-md-2 btn btn-default" ng-click="vm.update(staffUser)">Update</div>
+                <div class="col-md-2 btn btn-default" ng-click="vm.delete(staffUser)">Delete</div>
+            </div>
+        </div>
+    </div>     
+</div>

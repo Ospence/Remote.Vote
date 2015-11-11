@@ -213,6 +213,11 @@
     <Compile Include="Domain\Models\Vote.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Migrations\201511101917221_initial.cs" />
+    <Compile Include="Migrations\201511101917221_initial.Designer.cs">
+      <DependentUpon>201511101917221_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
     <Compile Include="Presentation\Controllers\ChairmenController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
@@ -236,7 +241,7 @@
     <Compile Include="Services\Models\ChairmenDTO.cs" />
     <Compile Include="Services\Models\ApplicationUserDTO.cs" />
     <Compile Include="Services\Models\CommentDTO.cs" />
-    <Compile Include="Services\Models\DirectorsDTO.cs" />
+    <Compile Include="Services\Models\DirectorDTO.cs" />
     <Compile Include="Services\Models\AdminDTO.cs" />
     <Compile Include="Services\Models\MotionDTO.cs" />
     <Compile Include="Services\Models\StaffDTO.cs" />
@@ -261,8 +266,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ngViews\Bug.html" />
+    <Content Include="ngViews\loginTest.html" />
+    <Content Include="ngViews\registerTest.html" />
     <Content Include="ngViews\TestView.html" />
     <Content Include="ngViews\TextView3.html" />
+    <Content Include="ngViews\TestView2.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -294,6 +302,9 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\ngApp\AddUpdateTest.js" />
     <Content Include="Scripts\ngApp\app.js" />
+    <Content Include="Scripts\ngApp\loginController.js" />
+    <Content Include="Scripts\ngApp\bAccountService.js" />
+    <Content Include="Scripts\ngApp\registerController.js" />
     <Content Include="Scripts\ngApp\userService.js" />
     <Content Include="Scripts\ngApp\userController.js" />
     <Content Include="Scripts\respond.js" />
@@ -319,6 +330,11 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511101917221_initial.resx">
+      <DependentUpon>201511101917221_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

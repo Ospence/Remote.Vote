@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using VotingApp.Domain.Models;
 using VotingApp.Services;
 
 namespace VotingApp.Presentation.Controllers
@@ -18,30 +19,25 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        public IEnumerable<MotionDTO> Get() {
+            return _service.ListMotion();
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public MotionDTO Get(int id)
         {
-            return "value";
+            return _service.Find(id);
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post(MotionDTO motion)
         {
-        }
+            if (ModelState.IsValid) {
+                _service.AddMotion(motion);
+                return Request.CreateResponse(HttpStatusCode.Created, motion);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
         }
     }
 }

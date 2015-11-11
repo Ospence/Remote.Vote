@@ -23,6 +23,7 @@ namespace VotingApp.Services {
             return Mapper.Map<List<AdminDTO>>(dbAdmin);
         }
 
+        //will not be necessary if identity works
         public void AddOrUpdateAdmin(AdminDTO admin)
         {
             if (admin.Id == null)
@@ -160,14 +161,14 @@ namespace VotingApp.Services {
             _repo.SaveChanges();
         }
 
-        public IList<DirectorsDTO> ListDirectors()
+        public IList<DirectorDTO> ListDirectors()
         {
             var dbDirector = (from d in _repo.Query<Director>()
                               select d).ToList();
-            return Mapper.Map<List<DirectorsDTO>>(dbDirector);
+            return Mapper.Map<List<DirectorDTO>>(dbDirector);
         }
 
-        public void AddOrUpdateDirectors(DirectorsDTO director)
+        public void AddOrUpdateDirectors(DirectorDTO director)
         {
             if (director.Id == null)
             {
@@ -175,15 +176,15 @@ namespace VotingApp.Services {
             }
             else
             {
-                var dbDirector = Mapper.Map<List<DirectorsDTO>>(from d in _repo.Query<Director>() where d.Id == director.Id select d).FirstOrDefault();
+                var dbDirector = Mapper.Map<List<DirectorDTO>>(from d in _repo.Query<Director>() where d.Id == director.Id select d).FirstOrDefault();
                 Mapper.Map(dbDirector, director);
             }
             _repo.SaveChanges();
         }
 
-        public DirectorsDTO FindDirectors(string id)
+        public DirectorDTO FindDirectors(string id)
         {
-            return Mapper.Map<DirectorsDTO>(FindInternalDirectors(id));
+            return Mapper.Map<DirectorDTO>(FindInternalDirectors(id));
         }
 
         private Director FindInternalDirectors(string id)

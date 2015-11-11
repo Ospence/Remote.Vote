@@ -1,70 +1,69 @@
 ﻿<div class="row">
-    <form id="addForm" ng-submit="vm.add()" class="col-md-5">
+    <form id="addAdminUser" ng-submit="vm.addAdmin()" class="col-md-5">
         <div class="row">
             <div class="col-md-4">
-                <input class="form-control" ng-model="vm.newUser.title" placeholder="Title" />
+                <input class="form-control" ng-model="vm.newAdminUser.firstName" placeholder="First Name" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <input class="form-control" ng-model="vm.newUser.description" placeholder="Description" />
+                <input class="form-control" ng-model="vm.newAdminUser.lastName" placeholder="Last Name" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <input class="form-control" ng-model="vm.newUser.assignedUser" placeholder="Assigned User" />
+                <input class="form-control" ng-model="vm.newAdminUser.email" placeholder="Email" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <input class="form-control" ng-model="vm.newUser.priority" placeholder="Priority" />
+                <input class="form-control" ng-model="vm.newAdminUser.phoneNumber" placeholder="Phone Number" />
             </div>
         </div>
         <div class="row">
-            <label for="priority">Status</label><br />
-            <select name="priority" ng-model="vm.newUser.priority" class="col-md-4" placeholder="Priority">
-                <option value="New">New</option>
-                <option value="InProgress">In Progress</option>
-                <option value="Resolved">Resolved</option>
-            </select>
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newAdminUser.password" placeholder="Password" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newAdminUser.confirmPassword" placeholder="Password" />
+            </div>
         </div>
         <br />
-        <input type="submit" value="Add user" class="btn btn-default" />
+        <input type="submit" value="Add AdminUser" class="btn btn-default" />
     </form>
 </div>
 
 <div class="row">
     <div class="col-md-5">
-        <br /><br />
-        <input type="checkbox" ng-model="sortByPriority" />Sort by Priority?
-        <br /><br />
-        <div class="row" ng-repeat="user in vm.users|orderBy:'priority':sortByPriority">
-            <div ng-show="!user.edit" ng-click="user.edit = true">
-                <div class="col-md-4">{{user.title}}</div>
-                <div class="col-md-4">{{user.description}}</div>
-                <div class="col-md-4">{{user.priority}}</div>
-                <div class="col-md-4">{{user.assignedUser}}</div>
-                <div class="col-md-4">{{user.status}}</div>
+        <div class="row" ng-repeat="adminUser in vm.adminUsers">
+            <div ng-show="!adminUser.edit" ng-click="adminUser.edit = true">
+                <div class="col-md-4">{{adminuser.firstName}}</div>
+                <div class="col-md-4">{{adminuser.lastName}}</div>
+                <div class="col-md-4">{{adminuser.email}}</div>
+                <div class="col-md-4">{{adminuser.phoneNumber}}</div>
             </div>
-            <div ng-show="user.edit">
+            <div ng-show="adminUser.edit">
                 <div class="col-md-4">
-                    <input class="form-control" ng-model="user.title" />
+                    <input class="form-control" ng-model="adminUser.firstName" />
                 </div>
                 <div class="col-md-4">
-                    <input class="form-control" ng-model="user.description" />
+                    <input class="form-control" ng-model="adminUser.lastName" />
                 </div>
                 <div class="col-md-4">
-                    <input class="form-control" ng-model="user.priority" />
+                    <input class="form-control" ng-model="adminUser.email" />
                 </div>
                 <div class="col-md-4">
-                    <input class="form-control" ng-model="user.assignedUser" />
-                </div>
-                <div class="col-md-4">
-                    <input class="form-control" ng-model="user.status" />
+                    <input class="form-control" ng-model="adminUser.phoneNumber" />
                 </div>
             </div>
-            <div class="col-md-2 btn btn-default" ng-click="vm.update(user)">Update</div>
-            <div class="col-md-2 btn btn-default" ng-click="vm.delete(user)">Delete</div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.update(adminUser)">Update</div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.delete(adminUser)">Delete</div>
         </div>
     </div>
+</div>
+
+<div>
+    <input type="button" class="btn btn-default" ng-click="vm.logout()" />
 </div>
