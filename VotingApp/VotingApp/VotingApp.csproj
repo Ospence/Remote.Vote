@@ -267,6 +267,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ngViews\Bug.html" />
     <Content Include="ngViews\TestView.html" />
+    <Content Include="ngViews\TestView2.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -296,6 +297,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ngApp\AddUpdateTest.js" />
     <Content Include="Scripts\ngApp\app.js" />
     <Content Include="Scripts\ngApp\userService.js" />
     <Content Include="Scripts\ngApp\userController.js" />

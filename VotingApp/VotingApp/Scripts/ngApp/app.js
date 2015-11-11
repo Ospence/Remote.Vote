@@ -10,8 +10,14 @@
                 })
             */
 
-            .when('/', {
-                    templateUrl: '/ngViews/TestView.html',
+            //.when('/', {
+            //        templateUrl: '/ngViews/TestView.html',
+            //        controller: 'userController',
+            //        controllerAs: 'vm'
+            //    })
+
+                .when('/', {
+                    templateUrl: '/ngViews/TestView2.html',
                     controller: 'userController',
                     controllerAs: 'vm'
                 })
