@@ -20,6 +20,16 @@
                 <input class="form-control" ng-model="vm.newAdminUser.phoneNumber" placeholder="Phone Number" />
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newAdminUser.password" placeholder="Password" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newAdminUser.confirmPassword" placeholder="Password" />
+            </div>
+        </div>
         <br />
         <input type="submit" value="Add AdminUser" class="btn btn-default" />
     </form>
@@ -52,4 +62,8 @@
             <div class="col-md-2 btn btn-default" ng-click="vm.delete(adminUser)">Delete</div>
         </div>
     </div>
+</div>
+
+<div>
+    <input type="button" class="btn btn-default" ng-click="vm.logout()" />
 </div>

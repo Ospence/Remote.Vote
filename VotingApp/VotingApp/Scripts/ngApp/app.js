@@ -9,19 +9,29 @@
                     controllerAs: 'vm'
                 })
             */
-
             //.when('/', {
-            //        templateUrl: '/ngViews/TestView.html',
-            //        controller: 'userController',
-            //        controllerAs: 'vm'
-            //    })
-
+            //    templateUrl: '/ngViews/',
+            //    controller: 'userController',
+            //    controllerAs: 'vm'
+            //})
+            .when('/login', {
+                templateUrl: '/ngViews/loginTest.html',
+                controller: 'loginController',
                 .when('/', {
                     templateUrl: '/ngViews/TestView2.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-                })
-                
+                controllerAs: 'vm'
+            })
+            .when('/register', {
+                templateUrl: '/ngViews/registerTest.html',
+                controller: 'registerController',
+                controllerAs: 'vm'
+            })
+            .when('/TestView', {
+                templateUrl: '/ngViews/TestView.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             });
