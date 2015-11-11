@@ -1,9 +1,14 @@
 ﻿(function () {
     angular.module('VotingApp')
-    .controller('userController', function (userService, $location) {
+    .controller('userController', function (accountService, userService, $location) {
         var vm = this;
 
     vm.adminUsers = userService.list();
+
+    vm.logout = function () {
+        console.log('logged out?');
+        accountService.logout();
+    };
 
         vm.add = function () {
             userService.add(vm.newAdminUser, function (result) {

@@ -9,13 +9,22 @@
                     controllerAs: 'vm'
                 })
             */
-
             .when('/', {
-                    templateUrl: '/ngViews/TestView.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-                })
-                
+                templateUrl: '/ngViews/TestView.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+            .when('/login', {
+                templateUrl: '/ngViews/loginTest.html',
+                controller: 'loginController',
+                controllerAs: 'vm'
+            })
+            .when('/register', {
+                templateUrl: '/ngViews/registerTest.html',
+                controller: 'registerController',
+                controllerAs: 'vm'
+            })
+
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             });

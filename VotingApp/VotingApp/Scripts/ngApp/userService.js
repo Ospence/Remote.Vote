@@ -9,9 +9,13 @@
             // add each user type
 
             // make each function for each user type
-            self.listAdmin = function () {
+
+            self.list = function () {
                 return AdminUser.query();
             };
+            //self.listAdmin = function () {
+            //    return AdminUser.query();
+            //};
 
             self.add = function (adminUser, callback) {
                 var newAdminUser = new AdminUser({
