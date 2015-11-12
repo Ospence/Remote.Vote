@@ -14,11 +14,25 @@
             //    controller: 'userController',
             //    controllerAs: 'vm'
             //})
+            .when('/', {
+                templateUrl: '/ngViews/TestView.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
             .when('/login', {
                 templateUrl: '/ngViews/loginTest.html',
                 controller: 'loginController',
                 controllerAs: 'vm'
             })
+            .when('/TestView2', {
+                templateUrl: '/ngViews/TestView2.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+<<<<<<< HEAD
+=======
+                
+>>>>>>> 96a3bc0e320f2af6e008b634101b51c5dd3c71dd
             .when('/register', {
                 templateUrl: '/ngViews/registerTest.html',
                 controller: 'registerController',
@@ -29,24 +43,26 @@
                 controller: 'userController',
                 controllerAs: 'vm'
             })
-
 <<<<<<< HEAD
-            //.when('/', {
-            //        templateUrl: '/ngViews/TestView.html',
-            //        controller: 'userController',
-            //        controllerAs: 'vm'
-            //    })
+            .when('/Directors', {
+                templateUrl: '/ngViews/DirectorTest.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+            .otherwise({
+                templateUrl: '/ngViews/notFound.html'
+            })
+=======
 
-                .when('/', {
-                    templateUrl: '/ngViews/TestView2.html',
+                .when('/TextView3', {
+                    templateUrl: '/ngViews/TextView3.html',
                     controller: 'userController',
                     controllerAs: 'vm'
                 })
-                
-=======
->>>>>>> 880466efa3225d20db29011c7a76d5d582a18d60
+
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
-            });
+            })         
+>>>>>>> 96a3bc0e320f2af6e008b634101b51c5dd3c71dd
         }]);
 })();

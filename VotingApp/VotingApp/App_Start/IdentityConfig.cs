@@ -83,7 +83,21 @@ namespace VotingApp
             }
             return manager;
         }
+        //Added Role manager now go to Startup.Auth.cs
+        public class ApplicationRoleManager : RoleManager<IdentityRole> {
+            public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
+                : base(roleStore) { }
+
+            public static ApplicationRoleManager Create(
+                IdentityFactoryOptions<ApplicationRoleManager> options,
+                IOwinContext context) {
+                var manager = new ApplicationRoleManager(
+                    new RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
+                return manager;
+            }
+        }
     }
+
 }
 
 //    // Configure the application sign-in manager which is used in this application.

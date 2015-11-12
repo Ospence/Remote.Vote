@@ -1,7 +1,7 @@
 ﻿(function () {
 
     angular.module('VotingApp')
-        .service('userService', ['$resource', function ($resource) {
+        .service('userService', ['$resource', '$http', function ($resource, $http) {
         var self = this;
 
         var AdminUserAPI = $resource('/api/admin/:id');
@@ -15,8 +15,9 @@
             };
 
             self.addAdmin = function (adminUser, callback) {
-                $.post('api/Account/RegisterAdmin', adminUser).success
-                var newAdminUser = new AdminUserAPI({
+               $http.post('api/Account/RegisterAdmin', adminUser).success
+               var newAdminUser = new AdminUserAPI({
+                   
                     firstName: adminUser.firstName,
                     lastName: adminUser.lastName,
                     email: adminUser.email,

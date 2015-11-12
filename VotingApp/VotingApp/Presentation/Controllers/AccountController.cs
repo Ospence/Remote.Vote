@@ -410,29 +410,7 @@ namespace VotingApp.Controllers
             }
 
             return Ok();
-        }
-
-        // POST api/Account/RegisterAdmin
-        [AllowAnonymous]
-        [Route("RegisterAdmin")]
-        public async Task<IHttpActionResult> RegisterAdmin(RegisterBindingModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var user = new Admin() { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
-
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return GetErrorResult(result);
-            }
-
-            return Ok();
-        }
+        }              
 
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]

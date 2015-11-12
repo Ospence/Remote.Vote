@@ -204,27 +204,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Domain\Models\Chairmen.cs" />
     <Compile Include="Domain\Models\Comment.cs" />
-    <Compile Include="Domain\Models\Director.cs" />
-    <Compile Include="Domain\Models\Admin.cs" />
     <Compile Include="Domain\Models\Motion.cs" />
-    <Compile Include="Domain\Models\Staff.cs" />
+    <Compile Include="Domain\Models\Role.cs" />
     <Compile Include="Domain\Models\Vote.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
-    <Compile Include="Presentation\Controllers\ChairmenController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
-    <Compile Include="Presentation\Controllers\DirectorsController.cs" />
-    <Compile Include="Presentation\Controllers\AdminController.cs" />
+    <Compile Include="Presentation\Controllers\UserController.cs" />
     <Compile Include="Presentation\Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Controllers\MotionsController.cs" />
-    <Compile Include="Presentation\Controllers\StaffController.cs" />
     <Compile Include="Presentation\Controllers\VotesController.cs" />
     <Compile Include="Presentation\Models\AccountBindingModels.cs" />
     <Compile Include="Presentation\Models\AccountViewModels.cs" />
@@ -234,13 +228,9 @@
     <Compile Include="Presentation\Results\ChallengeResult.cs" />
     <Compile Include="Services\CommentService.cs" />
     <Compile Include="Services\UserService.cs" />
-    <Compile Include="Services\Models\ChairmenDTO.cs" />
     <Compile Include="Services\Models\ApplicationUserDTO.cs" />
     <Compile Include="Services\Models\CommentDTO.cs" />
-    <Compile Include="Services\Models\DirectorDTO.cs" />
-    <Compile Include="Services\Models\AdminDTO.cs" />
     <Compile Include="Services\Models\MotionDTO.cs" />
-    <Compile Include="Services\Models\StaffDTO.cs" />
     <Compile Include="Services\Models\VoteDTO.cs" />
     <Compile Include="Services\MotionService.cs" />
     <Compile Include="Services\VoteService.cs" />

@@ -4,6 +4,9 @@ namespace VotingApp.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Domain.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity;
 
     internal sealed class Configuration : DbMigrationsConfiguration<VotingApp.Infrastructure.ApplicationDbContext>
     {
@@ -14,6 +17,23 @@ namespace VotingApp.Migrations
 
         protected override void Seed(VotingApp.Infrastructure.ApplicationDbContext context)
         {
+
+            var roleStore = new RoleStore<Role>(context);
+
+            var roleManager = new RoleManager<Role>(roleStore);
+            if (!roleManager.RoleExists("Admin")) {
+                roleManager.Create(new Role { Name = "Admin" });
+            }
+            if (!roleManager.RoleExists("Staff")) {
+                roleManager.Create(new Role { Name = "Staff" });
+            }
+            if (!roleManager.RoleExists("Chairmen")) {
+                roleManager.Create(new Role { Name = "Chairmen" });
+            }
+            if (!roleManager.RoleExists("Director")) {
+                roleManager.Create(new Role { Name = "Director" });
+            }
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

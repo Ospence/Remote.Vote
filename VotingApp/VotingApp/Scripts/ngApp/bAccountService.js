@@ -29,13 +29,10 @@
         self.logout = function (){
             console.log("Logged Out");
             $http.post('api/Account/Logout', {
-                headers: {
-                    'Content-Type': undefined
-                }
             }).success(function (result) {
                 console.log("Logged Out Success");
-                $location.path('/login');
                 $http.defaults.headers.common.Authorization = undefined;
+                $location.path('/login');
                 callback();
             });
         };
