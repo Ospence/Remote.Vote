@@ -10,6 +10,7 @@ using VotingApp.Services.Models;
 
 namespace VotingApp.Presentation.Controllers
 {
+    
     public class VotesController : ApiController
     {
         private VoteService _service;
@@ -31,6 +32,7 @@ namespace VotingApp.Presentation.Controllers
         }
 
         // POST api/<controller>
+
         public HttpResponseMessage Post(VoteDTO vote)
         {
             if (ModelState.IsValid) {

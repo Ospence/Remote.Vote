@@ -38,5 +38,6 @@ namespace VotingApp.Presentation.Controllers
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
+
     }
 }

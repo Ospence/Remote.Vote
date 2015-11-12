@@ -12,7 +12,9 @@ namespace VotingApp.App_Start
     {
         public static void RegisterMaps()
         {
-           
+            Mapper.CreateMap<ApplicationUser, ApplicationUserDTO>();
+            Mapper.CreateMap<ApplicationUserDTO, ApplicationUser>();
+
             Mapper.CreateMap<Comment, CommentDTO>();
             Mapper.CreateMap<CommentDTO, Comment>();
 

@@ -33,7 +33,9 @@ namespace VotingApp.Migrations
             if (!roleManager.RoleExists("Director")) {
                 roleManager.Create(new Role { Name = "Director" });
             }
-
+            if (!roleManager.RoleExists("Active")) {
+                roleManager.Create(new Role { Name = "Active" });
+            }
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
