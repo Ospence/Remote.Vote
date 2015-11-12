@@ -14,11 +14,25 @@
             //    controller: 'userController',
             //    controllerAs: 'vm'
             //})
+            .when('/', {
+                templateUrl: '/ngViews/TestView2.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
             .when('/login', {
                 templateUrl: '/ngViews/loginTest.html',
                 controller: 'loginController',
                 controllerAs: 'vm'
             })
+<<<<<<< HEAD
+            .when('/TestView2', {
+                templateUrl: '/ngViews/TestView2.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+=======
+                
+>>>>>>> 36e14dbea248362f83b5145c479b10edae4cbd66
             .when('/register', {
                 templateUrl: '/ngViews/registerTest.html',
                 controller: 'registerController',
@@ -30,23 +44,18 @@
                 controllerAs: 'vm'
             })
 
-<<<<<<< HEAD
-            //.when('/', {
-            //        templateUrl: '/ngViews/TestView.html',
-            //        controller: 'userController',
-            //        controllerAs: 'vm'
-            //    })
-
-                .when('/', {
-                    templateUrl: '/ngViews/TestView2.html',
+                .when('/TextView3', {
+                    templateUrl: '/ngViews/TextView3.html',
                     controller: 'userController',
                     controllerAs: 'vm'
                 })
-                
-=======
->>>>>>> 880466efa3225d20db29011c7a76d5d582a18d60
+
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
-            });
+<<<<<<< HEAD
+            })         
+=======
+            })
+>>>>>>> 36e14dbea248362f83b5145c479b10edae4cbd66
         }]);
 })();

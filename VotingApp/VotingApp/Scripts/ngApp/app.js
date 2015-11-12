@@ -15,7 +15,7 @@
             //    controllerAs: 'vm'
             //})
             .when('/', {
-                templateUrl: '/ngViews/TestView2.html',
+                templateUrl: '/ngViews/TestView.html',
                 controller: 'userController',
                 controllerAs: 'vm'
             })

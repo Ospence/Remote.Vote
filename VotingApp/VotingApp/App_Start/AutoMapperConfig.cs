@@ -12,18 +12,7 @@ namespace VotingApp.App_Start
     {
         public static void RegisterMaps()
         {
-            Mapper.CreateMap<Admin, AdminDTO>();
-            Mapper.CreateMap<AdminDTO, Admin>();
-
-            Mapper.CreateMap<Chairmen, ChairmenDTO>();
-            Mapper.CreateMap<ChairmenDTO, Chairmen>();
-
-            Mapper.CreateMap<Director, DirectorDTO>();
-            Mapper.CreateMap<DirectorDTO, Director>();
-
-            Mapper.CreateMap<Staff, StaffDTO>();
-            Mapper.CreateMap<StaffDTO, Staff>();
-
+           
             Mapper.CreateMap<Comment, CommentDTO>();
             Mapper.CreateMap<CommentDTO, Comment>();
 

@@ -4,30 +4,31 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using VotingApp.Domain.Models;
 using VotingApp.Services;
 using VotingApp.Services.Models;
 
 namespace VotingApp.Presentation.Controllers
 {
-    public class AdminController : ApiController
+    public class UserController : ApiController
     {
 
         private UserService _service;
 
-        public AdminController(UserService service)
+        public UserController(UserService service)
         {
             _service = service;
         }
 
         // GET: api/Global
-        public IEnumerable<AdminDTO> Get()
+        public IEnumerable<ApplicationUserDTO> Get()
         {
-            return (_service.ListAdmin());
+            return (_service.ListUser());
         }
 
         // POST: api/Global
         // will aslo not be necessary if identity login creates
-        public HttpResponseMessage Post(AdminDTO admin)
+        public HttpResponseMessage Post(ApplicationUserDTO admin)
         {
             if (ModelState.IsValid)
             {
