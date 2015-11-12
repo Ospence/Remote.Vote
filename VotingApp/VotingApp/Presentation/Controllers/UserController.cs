@@ -23,7 +23,7 @@ namespace VotingApp.Presentation.Controllers
         // GET: api/Global
         public IEnumerable<ApplicationUserDTO> Get()
         {
-            return (_service.ListUser());
+            return (_service.List());
         }
 
         // POST: api/Global
@@ -32,7 +32,7 @@ namespace VotingApp.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                _service.AddOrUpdateAdmin(admin);
+                _service.AddOrUpdate(admin);
 
                 return Request.CreateResponse(HttpStatusCode.Created, admin);
             }

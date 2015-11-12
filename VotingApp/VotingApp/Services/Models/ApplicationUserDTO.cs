@@ -7,6 +7,6 @@ namespace VotingApp.Services.Models
 {
     public class ApplicationUserDTO
     {
-
+        
     }
 }

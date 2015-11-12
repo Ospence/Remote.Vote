@@ -16,7 +16,7 @@ namespace VotingApp.Services {
             _repo = repo;
         }
 
-        public IList<ApplicationUserDTO> ListUser() {
+        public IList<ApplicationUserDTO> List() {
             var dbUser = (from a in _repo.Query<ApplicationUser>()
                           select a).ToList();
             return Mapper.Map<List<ApplicationUserDTO>>(dbUser);
@@ -34,11 +34,11 @@ namespace VotingApp.Services {
             _repo.SaveChanges();
         }
 
-        public ApplicationUserDTO FindUser(string id) {
-            return Mapper.Map<ApplicationUserDTO>(FindInternalUser(id));
+        public ApplicationUserDTO Find(string id) {
+            return Mapper.Map<ApplicationUserDTO>(FindInternal(id));
         }
 
-        private ApplicationUser FindInternalUser(string id) {
+        private ApplicationUser FindInternal(string id) {
             return (from u in _repo.Query<ApplicationUser>()
                     where u.Id == id
                     select u).FirstOrDefault();
@@ -51,7 +51,7 @@ namespace VotingApp.Services {
 
         public void Update(ApplicationUser user) {
 
-            var dbAdmin = FindInternalUser(user.Id);
+            var dbAdmin = FindInternal(user.Id);
 
             Mapper.Map(user, dbAdmin);
             _repo.SaveChanges();
