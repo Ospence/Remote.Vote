@@ -1,0 +1,13 @@
+﻿
+<div class="login">
+    <h1>Log-in</h1>
+    <form name="LoginForm" novalidate ng-submit="vm.login()">
+        <input style="margin:10px" type="text" name="user" placeholder="Username" ng-model="vm.User.username" /><br />
+        <input style="margin:10px" type="password" name="password" placeholder="Password" ng-model="vm.User.password" /><br />
+        <input style="margin:10px" type="submit" name="login" class="login login-submit" value="login" />
+    </form>
+</div>
+
+<div>
+    <input type="button" class="btn btn-default" ng-click="vm.logout()" value="FUCKING LOGOUT" />
+</div>
