@@ -58,7 +58,7 @@
         vm.addDirectors = function () {
             userService.addDirectors(vm.newDirectorsUser, function (result) {
                 vm.directorsUsers.push(result);
-                $('#addDirectorsUser')[0].reset();
+                //$('#addDirectorsUser')[0].reset();
                 //$location.path('/register');
             });
 

@@ -1,0 +1,57 @@
+﻿<div class="row">
+    <form id="addDirectorsUser" ng-submit="vm.addDirectors()" class="col-md-5">
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newDirectorsUser.firstName" placeholder="First Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newDirectorsUser.lastName" placeholder="Last Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newDirectorsUser.email" placeholder="Email" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" ng-model="vm.newDirectorsUser.phoneNumber" placeholder="Phone Number" />
+            </div>
+        </div>
+        <input type="submit" value="Add DirectorsUser" class="btn btn-default" />
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="row" ng-repeat="DirectorsUser in vm.DirectorsUsers">
+            <div ng-show="!DirectorsUser.edit" ng-click="DirectorsUser.edit = true">
+                <div class="col-md-4">{{DirectorsUser.firstName}}</div>
+                <div class="col-md-4">{{DirectorsUser.lastName}}</div>
+                <div class="col-md-4">{{DirectorsUser.email}}</div>
+                <div class="col-md-4">{{DirectorsUser.phoneNumber}}</div>
+            </div>
+            <div ng-show="DirectorsUser.edit">
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="DirectorsUser.firstName" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="DirectorsUser.lastName" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="DirectorsUser.email" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="DirectorsUser.phoneNumber" />
+                </div>
+            </div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.update(DirectorsUser)">Update</div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <input type="button" class="btn btn-default" ng-click="vm.logout()" />
+</div>

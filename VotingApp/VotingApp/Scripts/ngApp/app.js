@@ -18,12 +18,12 @@
                 templateUrl: '/ngViews/loginTest.html',
                 controller: 'loginController',
                 controllerAs: 'vm'
-               
-                .when('/TestView2', {
-                    templateUrl: '/ngViews/TestView2.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-                })
+            })
+            .when('/TestView2', {
+                templateUrl: '/ngViews/TestView2.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
             .when('/register', {
                 templateUrl: '/ngViews/registerTest.html',
                 controller: 'registerController',
@@ -34,9 +34,13 @@
                 controller: 'userController',
                 controllerAs: 'vm'
             })
-
+            .when('/Directors', {
+                templateUrl: '/ngViews/DirectorTest.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
-            });
+            })
         }]);
 })();

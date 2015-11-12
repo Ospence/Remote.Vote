@@ -73,7 +73,7 @@
 
             
 
-        var DirectorsUser = $resource('api/directors/:id');
+        var DirectorsUser = $resource('api/Directors/:id');
 
             self.listDirectors = function () {
                 return DirectorsUser.query();
@@ -84,7 +84,7 @@
                     firstName: directorsUser.firstName,
                     lastName: directorsUser.lastName,
                     email: directorsUser.email,
-                    phoneNumber: directorsUser.phoneNumber
+                    phoneNumber: directorsUser.phoneNumber,
                 });
                 newDirectorsUser.$save(callback);
             };
