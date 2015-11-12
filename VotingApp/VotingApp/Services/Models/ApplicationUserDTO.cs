@@ -8,5 +8,7 @@ namespace VotingApp.Services.Models
     public class ApplicationUserDTO
     {
         
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

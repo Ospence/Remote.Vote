@@ -212,11 +212,15 @@
     <Compile Include="Infrastructure\Repository.cs" />
 <<<<<<< HEAD
 =======
-    <Compile Include="Migrations\201511112127459_initial.cs" />
-    <Compile Include="Migrations\201511112127459_initial.Designer.cs">
-      <DependentUpon>201511112127459_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201511120028427_third.cs" />
+    <Compile Include="Migrations\201511120028427_third.Designer.cs">
+      <DependentUpon>201511120028427_third.cs</DependentUpon>
     </Compile>
->>>>>>> 96a3bc0e320f2af6e008b634101b51c5dd3c71dd
+    <Compile Include="Migrations\201511120034358_forth.cs" />
+    <Compile Include="Migrations\201511120034358_forth.Designer.cs">
+      <DependentUpon>201511120034358_forth.cs</DependentUpon>
+    </Compile>
+>>>>>>> a153827d8b33cf217b3d366faf7670b0bf7f1ad1
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
@@ -328,11 +332,14 @@
 <<<<<<< HEAD
 =======
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511112127459_initial.resx">
-      <DependentUpon>201511112127459_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511120028427_third.resx">
+      <DependentUpon>201511120028427_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511120034358_forth.resx">
+      <DependentUpon>201511120034358_forth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
->>>>>>> 96a3bc0e320f2af6e008b634101b51c5dd3c71dd
+>>>>>>> a153827d8b33cf217b3d366faf7670b0bf7f1ad1
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
