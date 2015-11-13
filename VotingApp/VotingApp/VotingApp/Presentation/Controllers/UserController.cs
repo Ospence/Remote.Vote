@@ -26,6 +26,11 @@ namespace VotingApp.Presentation.Controllers
             return (_service.List());
         }
 
+        public ApplicationUserDTO Get(string id)
+        {
+            return (_service.Find(id));
+        }
+
         // POST: api/Global
         // will aslo not be necessary if identity login creates
         public HttpResponseMessage Post(ApplicationUserDTO admin)

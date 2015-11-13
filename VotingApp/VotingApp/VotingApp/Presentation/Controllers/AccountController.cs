@@ -18,6 +18,7 @@ using VotingApp.Providers;
 using VotingApp.Results;
 using VotingApp.Domain.Models;
 using System.Linq;
+using System.Web.Security;
 
 namespace VotingApp.Controllers
 {
@@ -81,6 +82,18 @@ namespace VotingApp.Controllers
         public IHttpActionResult RemoveRole(string username, string roleName)
         {
             var curr = UserManager.FindByName(username);
+            var users = (from u in UserManager.Users select u).ToList();
+            var roles = ListUserRoles();
+            var chairRoles = from c in roles
+                             where c == "Chairmen"
+                             select c;
+
+            //if (roleName == "Chairmen" && chairRoles.Count() < 2)
+            //{
+
+            //    return 
+            //}
+
             UserManager.RemoveFromRole(curr.Id, roleName);
 
             return Ok();
@@ -91,10 +104,9 @@ namespace VotingApp.Controllers
         /// Used to display a list of roles by passing the username
         /// Get api/Account/ListUserRoles
         /// </summary>
-        /// <param name="username"></param>
         /// <returns>Returns an IList of strings</returns>
         [Authorize(Roles = "Admin")]
-        public IList<string> ListUserRoles(string username)
+        public IList<string> ListUserRoles()
         {
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
             var allRoles = roleManager.Roles;
