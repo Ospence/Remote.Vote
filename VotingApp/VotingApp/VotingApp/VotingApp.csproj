@@ -214,6 +214,14 @@
     <Compile Include="Migrations\201511120123258_initial.Designer.cs">
       <DependentUpon>201511120123258_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511122039410_motionProperty.cs" />
+    <Compile Include="Migrations\201511122039410_motionProperty.Designer.cs">
+      <DependentUpon>201511122039410_motionProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511122240365_user_ids_in_motion.cs" />
+    <Compile Include="Migrations\201511122240365_user_ids_in_motion.Designer.cs">
+      <DependentUpon>201511122240365_user_ids_in_motion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
@@ -257,6 +265,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ngViews\Bug.html" />
     <Content Include="ngViews\loginTest.html" />
+    <Content Include="ngViews\MotionTest.html" />
     <Content Include="ngViews\registerTest.html" />
     <Content Include="ngViews\TestView.html" />
     <Content Include="ngViews\TextView3.html" />
@@ -295,6 +304,8 @@
     <Content Include="Scripts\ngApp\app.js" />
     <Content Include="Scripts\ngApp\loginController.js" />
     <Content Include="Scripts\ngApp\bAccountService.js" />
+    <Content Include="Scripts\ngApp\MotionController.js" />
+    <Content Include="Scripts\ngApp\motionService.js" />
     <Content Include="Scripts\ngApp\registerController.js" />
     <Content Include="Scripts\ngApp\userService.js" />
     <Content Include="Scripts\ngApp\userController.js" />
@@ -325,6 +336,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511120123258_initial.resx">
       <DependentUpon>201511120123258_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511122039410_motionProperty.resx">
+      <DependentUpon>201511122039410_motionProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511122240365_user_ids_in_motion.resx">
+      <DependentUpon>201511122240365_user_ids_in_motion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

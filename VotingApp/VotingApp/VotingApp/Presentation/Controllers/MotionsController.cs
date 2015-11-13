@@ -32,12 +32,17 @@ namespace VotingApp.Presentation.Controllers
         // POST api/<controller>
         public HttpResponseMessage Post(MotionDTO motion)
         {
+            var currentId = _service.FindCurrentUser(User.Identity.Name);
             if (ModelState.IsValid) {
-                _service.Add(motion);
-                return Request.CreateResponse(HttpStatusCode.Created, motion);
+                _service.AddOrUpdate(motion, currentId);
+                return Request.CreateResponse((motion.Id == 0 ? HttpStatusCode.Created : HttpStatusCode.Accepted), motion);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-
         }
+
+        //public HttpResponseMessage AllowSecond(MotionDTO motion)
+        //{
+        //    return Post(_service.AllowSecond(motion));
+        //}
     }
 }

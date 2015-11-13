@@ -11,9 +11,10 @@ namespace VotingApp.Domain.Models
 
         public string Title { get; set; }
         public string Description { get; set; }
-        public int CreatedById { get; set; }
-        public int SecondedById { get; set; }
+        public string CreatedById { get; set; }
+        public string SecondedById { get; set; }
 
+        public bool AllowSecond { get; set; }
         public bool Seconded { get; set; }
         public bool Active { get; set; }
         public bool Passed { get; set; }
