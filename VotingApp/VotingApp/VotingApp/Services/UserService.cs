@@ -24,16 +24,15 @@ namespace VotingApp.Services {
             return Mapper.Map<List<ApplicationUserDTO>>(dbUser);
         }
 
-        
-        
+
+
         public void AddOrUpdate(ApplicationUserDTO user) {
             if (user.Id == null) {
                 _repo.Add(Mapper.Map<ApplicationUser>(user));
                 _repo.SaveChanges();
                 Console.WriteLine("Seems to have saved, cap'n");
             }
-            else
-            {
+            else {
                 Console.WriteLine("Seems it didn't save, cap'n");
             }
 
@@ -66,21 +65,5 @@ namespace VotingApp.Services {
             Mapper.Map(user, dbAdmin);
             _repo.SaveChanges();
         }
-
-
-        public int IsInRole() {
-            int defaultValue = (int)UserRole.Default;
-            var names = Enum.GetNames(typeof(UserRole));
-
-            foreach (var name in names) {
-                if (User.IsInRole(name)) {
-                    defaultValue = (int)((UserRole)Enum.Parse(typeof(UserRole), name));
-                    break;
-                }
-            }
-
-            return defaultValue;
-        }
-    }
     }
 }

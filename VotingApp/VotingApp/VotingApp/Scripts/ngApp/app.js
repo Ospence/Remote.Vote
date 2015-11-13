@@ -26,7 +26,7 @@
             })
             .when('/TestView2', {
                 templateUrl: '/ngViews/TestView2.html',
-                controller: 'userController',
+                controller: 'adminController',
                 controllerAs: 'vm'
             })
                 
