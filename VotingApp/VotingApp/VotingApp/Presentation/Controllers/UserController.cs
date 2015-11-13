@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Security;
 using VotingApp.Domain.Models;
 using VotingApp.Services;
 using VotingApp.Services.Models;
@@ -26,8 +27,14 @@ namespace VotingApp.Presentation.Controllers
             return (_service.List());
         }
 
+        public ApplicationUserDTO Get(string id)
+        {
+            return (_service.Find(id));
+        }
+
         // POST: api/Global
         // will aslo not be necessary if identity login creates
+        [Authorize(Roles = "Admin")]
         public HttpResponseMessage Post(ApplicationUserDTO admin)
         {
             if (ModelState.IsValid)

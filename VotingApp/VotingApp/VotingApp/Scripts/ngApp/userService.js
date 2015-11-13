@@ -15,18 +15,19 @@
             };
 
             self.add = function (user, callback) {
-               $http.post('api/Account/Register', user).success
-               var newUser = new UserAPI({
-                   
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    userName: user.userName,
-                    phoneNumber: user.phoneNumber,
-                    email: user.userName,
-                    password: user.password,
-                    passwordConfirmed: user.passwordConfirmed
-                });
-                newUser.$save(callback);
+                $http.post('api/Account/Register', user)
+                    .then(function () {
+                        var newUser = new UserAPI({
+                            firstName: user.firstName,
+                            lastName: user.lastName,
+                            userName: user.userName,
+                            phoneNumber: user.phoneNumber,
+                            email: user.userName,
+                            password: user.password,
+                            passwordConfirmed: user.passwordConfirmed
+                        });
+                        newUser.$save(callback);
+                    });
             };
 
             self.update = function (user) {

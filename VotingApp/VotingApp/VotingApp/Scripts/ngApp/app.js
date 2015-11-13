@@ -19,6 +19,11 @@
                 controller: 'userController',
                 controllerAs: 'vm'
             })
+            .when('/motion', {
+                templateUrl: '/ngViews/MotionTest.html',
+                controller: 'motionController',
+                controllerAs: 'vm'
+            })
             .when('/login', {
                 templateUrl: '/ngViews/loginTest.html',
                 controller: 'loginController',
@@ -26,7 +31,7 @@
             })
             .when('/TestView2', {
                 templateUrl: '/ngViews/TestView2.html',
-                controller: 'userController',
+                controller: 'adminController',
                 controllerAs: 'vm'
             })
                 
