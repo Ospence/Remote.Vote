@@ -15,3 +15,65 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#login {
+    
+    background-image: url('../Images/Lincoln-monument.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1080px;
+    width: 100%;
+    /*opacity: 0.5;*/
+    background-attachment: scroll;
+    
+}
+
+#login2 {
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /*background: rgb(66,184, 221);*/
+    color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            font-style:italic;
+    
+}
+
+
+
+
+
+    
+#register {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /*background: rgb(66,184, 221);*/
+    color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            font-style:italic;
+}  
+
+
+.transbox
+{
+  margin: 30px;
+  background-color: white;
+  border: 1px solid black;
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+
+}
+
+.transbox p {
+     margin: 30px;
+  background-color: white;
+  border: 1px solid black;
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+
+
+}

@@ -210,9 +210,9 @@
     <Compile Include="Domain\Models\Vote.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
-    <Compile Include="Migrations\201511120123258_initial.cs" />
-    <Compile Include="Migrations\201511120123258_initial.Designer.cs">
-      <DependentUpon>201511120123258_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201511132116233_one.cs" />
+    <Compile Include="Migrations\201511132116233_one.Designer.cs">
+      <DependentUpon>201511132116233_one.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
@@ -255,7 +255,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\declaration-of-indepence %281%29.jpg" />
+    <Content Include="Images\Lincoln-monument.jpg" />
     <Content Include="ngViews\Bug.html" />
+    <Content Include="ngViews\FrontPage.html" />
+    <Content Include="ngViews\LoginPage.html" />
     <Content Include="ngViews\loginTest.html" />
     <Content Include="ngViews\registerTest.html" />
     <Content Include="ngViews\TestView.html" />
@@ -322,8 +326,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511120123258_initial.resx">
-      <DependentUpon>201511120123258_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511132116233_one.resx">
+      <DependentUpon>201511132116233_one.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

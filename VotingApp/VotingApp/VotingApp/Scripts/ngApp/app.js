@@ -47,6 +47,21 @@
                     controllerAs: 'vm'
                 })
 
+                .when('/FrontPage', {
+                    templateUrl: '/ngViews/FrontPage.html',
+                    controller: 'userController',
+                    controllerAs: 'vm'
+                })
+
+                .when('/LoginPage', {
+                    templateUrl: '/ngViews/LoginPage.html',
+                    controller: 'userController',
+                    controllerAs: 'vm'
+
+                })
+
+               
+
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             })         
