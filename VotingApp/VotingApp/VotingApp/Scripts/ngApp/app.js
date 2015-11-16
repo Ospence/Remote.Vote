@@ -58,8 +58,8 @@
                     controllerAs: 'vm'
                 })
 
-                .when('/LoginPage', {
-                    templateUrl: '/ngViews/LoginPage.html',
+                .when('/Chairman', {
+                    templateUrl: '/ngViews/Chairman.html',
                     controller: 'userController',
                     controllerAs: 'vm'
 

@@ -210,17 +210,9 @@
     <Compile Include="Domain\Models\Vote.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
-    <Compile Include="Migrations\201511132116233_one.cs" />
-    <Compile Include="Migrations\201511132116233_one.Designer.cs">
-      <DependentUpon>201511132116233_one.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511122039410_motionProperty.cs" />
-    <Compile Include="Migrations\201511122039410_motionProperty.Designer.cs">
-      <DependentUpon>201511122039410_motionProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511122240365_user_ids_in_motion.cs" />
-    <Compile Include="Migrations\201511122240365_user_ids_in_motion.Designer.cs">
-      <DependentUpon>201511122240365_user_ids_in_motion.cs</DependentUpon>
+    <Compile Include="Migrations\201511152224197_initial.cs" />
+    <Compile Include="Migrations\201511152224197_initial.Designer.cs">
+      <DependentUpon>201511152224197_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
@@ -266,6 +258,7 @@
     <Content Include="Images\declaration-of-indepence %281%29.jpg" />
     <Content Include="Images\Lincoln-monument.jpg" />
     <Content Include="ngViews\Bug.html" />
+    <Content Include="ngViews\Chairman.html" />
     <Content Include="ngViews\FrontPage.html" />
     <Content Include="ngViews\LoginPage.html" />
     <Content Include="ngViews\loginTest.html" />
@@ -338,14 +331,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511132116233_one.resx">
-      <DependentUpon>201511132116233_one.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511122039410_motionProperty.resx">
-      <DependentUpon>201511122039410_motionProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511122240365_user_ids_in_motion.resx">
-      <DependentUpon>201511122240365_user_ids_in_motion.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511152224197_initial.resx">
+      <DependentUpon>201511152224197_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

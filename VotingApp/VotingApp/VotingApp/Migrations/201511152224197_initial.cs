@@ -3,7 +3,7 @@ namespace VotingApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class one : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -29,8 +29,9 @@ namespace VotingApp.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Title = c.String(),
                         Description = c.String(),
-                        CreatedById = c.Int(nullable: false),
-                        SecondedById = c.Int(nullable: false),
+                        CreatedById = c.String(),
+                        SecondedById = c.String(),
+                        AllowSecond = c.Boolean(nullable: false),
                         Seconded = c.Boolean(nullable: false),
                         Active = c.Boolean(nullable: false),
                         Passed = c.Boolean(nullable: false),

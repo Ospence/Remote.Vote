@@ -7,13 +7,13 @@ namespace VotingApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class user_ids_in_motion : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(user_ids_in_motion));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511122240365_user_ids_in_motion"; }
+            get { return "201511152224197_initial"; }
         }
         
         string IMigrationMetadata.Source

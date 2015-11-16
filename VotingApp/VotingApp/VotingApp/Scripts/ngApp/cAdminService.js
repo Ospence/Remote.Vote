@@ -1,4 +1,4 @@
-﻿(function (){ 
+﻿;(function (){ 
     //angular.module('VotingApp')
     //    .constant('USER_ROLES', {
     //        admin: 'admin',
@@ -23,7 +23,7 @@
               user.$save();
           };
           self.editRoles = function (roles) {
-              var role.id = "staff";
+              var role = "staff";
               
               
           }
