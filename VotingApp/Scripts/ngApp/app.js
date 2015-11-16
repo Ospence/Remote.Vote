@@ -14,11 +14,18 @@
             //    controller: 'userController',
             //    controllerAs: 'vm'
             //})
+            
             .when('/', {
                 templateUrl: '/ngViews/TestView.html',
                 controller: 'userController',
                 controllerAs: 'vm'
             })
+            .when('/adminpage', {
+                templateUrl: '/ngViews/AdminView.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+            
             .when('/motion', {
                 templateUrl: '/ngViews/MotionTest.html',
                 controller: 'motionController',
@@ -34,7 +41,7 @@
                 controller: 'adminController',
                 controllerAs: 'vm'
             })
-                
+
             .when('/register', {
                 templateUrl: '/ngViews/registerTest.html',
                 controller: 'registerController',
@@ -58,6 +65,8 @@
                     controllerAs: 'vm'
                 })
 
+
+
                 .when('/Chairman', {
                     templateUrl: '/ngViews/Chairman.html',
                     controller: 'userController',
@@ -65,10 +74,10 @@
 
                 })
 
-               
+
 
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
-            })         
+            })
         }]);
 })();
