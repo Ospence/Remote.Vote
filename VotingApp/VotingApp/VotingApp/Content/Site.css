@@ -69,16 +69,18 @@ textarea {
   font-style: italic;
 }
 
-.about-us {
+/*.about-us {
   background-color: #f7f7f7;
-}
+}*/
 
-.about-us h2 {
+.about-us h3 {
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-size: 18px;
   font-weight: 600;
   color: red;
   font-style: italic;
+  background-color: #f7f7f7;
+  
 }
 
 .about-us a {
@@ -108,53 +110,3 @@ textarea {
 
 
 
-/*/*/*/*#login2 {
-    
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    /*background: rgb(66,184, 221);*/
-    color: white;*/
-            /*border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            font-style:italic;*/
-    
-}
-
-
-
-
-
-
-    
-/*#register {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    /*background: rgb(66,184, 221);*/
-    color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            font-style:italic;
-}*/  
-
-
-/*.transbox
-{
-  margin: 30px;
-  background-color: white;
-  border: 1px solid black;
-  opacity:0.6;
-  filter:alpha(opacity=60); /* For IE8 and earlier */
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: italic;*/
-
-}
-
-/*.transbox p {
-     margin: 30px;
-  background-color: white;
-  border: 1px solid black;
-  opacity:0.6;
-  filter:alpha(opacity=60); /* For IE8 and earlier */
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: italic;*/
-
-
-}*/*/*/
