@@ -53,6 +53,21 @@ namespace VotingApp.Migrations
                 userManager.Create(user, "Qwerty1!");
             }
             userManager.AddToRole(user.Id, "Admin");
+
+            var user2 = userManager.FindByName("Pest@Pest.com");
+            if (user2 == null)
+            {
+                user2 = new ApplicationUser
+                {
+                    FirstName = "Joe",
+                    LastName = "Shmo",
+                    PhoneNumber = "222-222-2222",
+                    UserName = "Pest@Pest.com",
+                    Email = "Pest@Pest.com"
+                };
+                userManager.Create(user2, "Qwerty2!");
+            }
+            userManager.AddToRole(user2.Id, "Admin");
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

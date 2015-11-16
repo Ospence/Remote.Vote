@@ -257,6 +257,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Images\declaration-of-indepence %281%29.jpg" />
     <Content Include="Images\Lincoln-monument.jpg" />
+    <Content Include="ngViews\AdminView.html" />
     <Content Include="ngViews\Bug.html" />
     <Content Include="ngViews\Chairman.html" />
     <Content Include="ngViews\FrontPage.html" />
