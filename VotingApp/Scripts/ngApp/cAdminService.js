@@ -1,32 +1,28 @@
 ﻿;(function (){ 
-    //angular.module('VotingApp')
-    //    .constant('USER_ROLES', {
-    //        admin: 'admin',
-    //        staff: 'staff',
-    //        director: 'director',
-    //        chairman: 'chairman'
-
-    //    });
-
+   
     angular.module('VotingApp')
-      .service('userService', ['$resource', '$http', function ($resource, $http) {
-          var self = this;           
-          var AdminAPI = $resource('/api/user/:id');
-
+      .service('cAdminService', ['$resource', '$http', function ($resource, $http) {
+          var self = this;  
+          
+          var AdminAPI = $resource('/api/Account/:id');
 
           self.list = function () {
               return AdminAPI.query();
           };
 
-          self.update = function (user) {
-
-              user.$save();
+          self.add = function (role, callback) {
+              var newRole = new Role({
+                  Role: role.role                  
+              });
+              newRole.$save(callback);
           };
-          self.editRoles = function (roles) {
-              var role = "staff";
-              
-              
-          }
+
+          self.update = function (role) {
+              role.$save();
+          };
+          self.delete = function (role, callback) {
+              role.$remove({ id: role.id }, callback);              
+          };
 
       }]);
 })();

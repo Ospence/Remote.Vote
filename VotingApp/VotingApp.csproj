@@ -210,9 +210,9 @@
     <Compile Include="Domain\Models\Vote.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
-    <Compile Include="Migrations\201511152224197_initial.cs" />
-    <Compile Include="Migrations\201511152224197_initial.Designer.cs">
-      <DependentUpon>201511152224197_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201511162039215_two.cs" />
+    <Compile Include="Migrations\201511162039215_two.Designer.cs">
+      <DependentUpon>201511162039215_two.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
@@ -266,7 +266,7 @@
     <Content Include="ngViews\registerTest.html" />
     <Content Include="ngViews\TestView.html" />
     <Content Include="ngViews\TextView3.html" />
-    <Content Include="ngViews\TestView2.html" />
+    <Content Include="ngViews\Role.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -296,7 +296,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\ngApp\cadminController.js" />
+    <Content Include="Scripts\ngApp\cAdminController.js" />
     <Content Include="Scripts\ngApp\cAdminService.js" />
     <Content Include="Scripts\ngApp\app.js" />
     <Content Include="Scripts\ngApp\loginController.js" />
@@ -331,8 +331,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511152224197_initial.resx">
-      <DependentUpon>201511152224197_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511162039215_two.resx">
+      <DependentUpon>201511162039215_two.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

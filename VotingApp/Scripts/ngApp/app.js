@@ -13,7 +13,7 @@
             //    templateUrl: '/ngViews/',
             //    controller: 'userController',
             //    controllerAs: 'vm'
-            //})
+            // })
             .when('/', {
                 templateUrl: '/ngViews/TestView.html',
                 controller: 'userController',
@@ -29,9 +29,9 @@
                 controller: 'loginController',
                 controllerAs: 'vm'
             })
-            .when('/TestView2', {
-                templateUrl: '/ngViews/TestView2.html',
-                controller: 'adminController',
+            .when('/Role', {
+                templateUrl: '/ngViews/Role.html',
+                controller: 'cAdminController',
                 controllerAs: 'vm'
             })
                 
