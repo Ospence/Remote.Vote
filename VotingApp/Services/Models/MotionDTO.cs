@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using VotingApp.Services.Models;
 
 namespace VotingApp.Domain.Models
 {
@@ -20,10 +21,12 @@ namespace VotingApp.Domain.Models
         public bool Passed { get; set; }
         public bool WasEdited { get; set; }
 
-        public DateTime Created { get; set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime DateSeconded { get; set; }
+        public DateTime DateResult { get; set; }
 
-        public IList<Vote> Votes { get; set; }
-        public IList<Comment> Comments { get; set; }
+        public IList<VoteDTO> Votes { get; set; }
+        public IList<CommentDTO> Comments { get; set; }
         public IList<string> Edits { get; set; }
     }
 }

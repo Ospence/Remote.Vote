@@ -84,11 +84,11 @@ namespace VotingApp.Controllers
             var curr = UserManager.FindByName(username);
             var users = (from u in UserManager.Users select u).ToList();
             var roles = ListUserRoles();
-            var chairRoles = from c in roles
-                             where c == "Chairmen"
+            var chairRole = from c in roles
+                             where c == "Chairman"
                              select c;
 
-            //if (roleName == "Chairmen" && chairRoles.Count() < 2)
+            //if (roleName == "Chairman" && chairRoles.Count() < 2)
             //{
 
             //    return 

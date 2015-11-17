@@ -29,6 +29,7 @@ namespace VotingApp.Presentation.Controllers
 
         // POST api/<controller>
         public HttpResponseMessage Post(CommentDTO comment) {
+            var currentUserId = _service.FindCurrentUser(User.Identity.Name);
             if (ModelState.IsValid) {
                 _service.Add(comment);
                 return Request.CreateResponse(HttpStatusCode.Created, comment);

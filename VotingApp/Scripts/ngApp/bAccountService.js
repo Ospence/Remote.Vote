@@ -10,7 +10,7 @@
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
-            }).success(function (result) {
+            }).then(function (result) {
                 console.log("REALLY!");
                 $http.defaults.headers.common.Authorization = 'Bearer' + result.access_token;
                 callback();
@@ -19,7 +19,7 @@
 
         self.register = function (newUser, callback) {
             $http.post('api/Account/Register', newUser)
-            .success(function (result) {
+            .then(function (result) {
                 callback();
                 console.log("user registered as " + newUser.email);
             });
@@ -32,7 +32,6 @@
                 console.log("Logged Out Success");
                 $http.defaults.headers.common.Authorization = undefined;
                 callback();
-                
             });
         };
     });

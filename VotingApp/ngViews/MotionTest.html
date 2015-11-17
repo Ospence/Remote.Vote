@@ -14,3 +14,25 @@
         <input type="submit" value="Add Motion" class="btn btn-default" />
     </form>
 </div>
+<div>
+    <input type="button" value="Yes" class="btn btn-default" ng-click="vm.addVote(true)" />
+    <input type="button" value="No" class="btn btn-default" ng-click="vm.addVote(false)" />
+    <input type="button" value="Allow Second" class="btn btn-default" ng-click="vm.allowSecond(vm.currentMotion)" />
+    <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion(vm.currentMotion)" />
+
+
+</div>
+
+<div>
+    <div>{{vm.currentMotion}}</div>
+    <div ng-repeat="motion in vm.motions track by (motion.id + vm.motions.length)">
+        <div ng-model="vm.currentMotion" ng-click="vm.currentMotion = motion.id">
+            <div>{{vm.currentMotion}}</div>
+            <div>{{motion.title}}</div>
+            <div>{{motion.description}}</div>
+                <div ng-show="motion.allowSecond"><div class="glyphicon-check"></div> second allowed</div>
+                <div ng-show="motion.seconded"><div class="glyphicon-check"></div> seconded</div>
+            <br /><br />
+        </div>
+    </div>
+</div>

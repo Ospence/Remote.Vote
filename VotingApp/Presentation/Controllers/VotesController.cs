@@ -35,8 +35,9 @@ namespace VotingApp.Presentation.Controllers
 
         public HttpResponseMessage Post(VoteDTO vote)
         {
+            var currentUserId = _service.FindCurrentUser(User.Identity.Name);
             if (ModelState.IsValid) {
-                _service.AddVote(vote);
+                _service.Add(vote, currentUserId);
                 return Request.CreateResponse(HttpStatusCode.Created, vote);
             }
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);   

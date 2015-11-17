@@ -16,7 +16,8 @@ namespace VotingApp.Services.Models
         public IList<string> Edits { get; set; }
 
         public bool WasEdited { get; set; }
+        public DateTime DateEdited { get; set; }
 
-        public DateTime PostDate { get; set; }
+        public DateTime DatePosted { get; set; }
     }
 }
