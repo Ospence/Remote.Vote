@@ -424,6 +424,7 @@ namespace VotingApp.Controllers
             {
                 return GetErrorResult(result);
             }
+            UserManager.AddToRole(user.Id, "Staff");
 
             return Ok();
         }              
