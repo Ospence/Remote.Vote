@@ -59,7 +59,7 @@
                 controllerAs: 'vm'
             })
 
-            .when('/FrontPage', {
+            .when('/frontpage', {
                 templateUrl: '/ngViews/FrontPage.html',
                 controller: 'userController',
                 controllerAs: 'vm'
