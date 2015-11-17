@@ -1,6 +1,6 @@
 ﻿#HomePage {
     margin: 0px;
-    font-family: 'Century Gothic';
+    font-family: 'Times New Roman';
     margin-bottom: 50px;
 }
 
@@ -29,7 +29,7 @@
     font-size: 50px;
     font-weight: 500;
     padding-top: 17%;
-    font-family: 'Century Gothic';
+    font-family: 'Times New Roman';
 }
 
 #NavBarRow {
@@ -39,11 +39,13 @@
     width: 105%;
     height: 35px;
     padding-top: 8px;
-    font-family: 'Century Gothic';
+    font-family: 'Times New Roman';
     text-align: center;
     font-weight: 500;
     color: white;
+    z-index: 10;
 }
+
 a {
     text-decoration: none;
     color: white;
@@ -70,6 +72,7 @@ a {
     top: 500px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-family: 'Times New Roman';
 }
 
 #HoverImages {
@@ -98,14 +101,14 @@ a {
     top: 775px;
     padding-top: 20px;
     text-align: center;
-    font-family: 'Century Gothic';
+    font-family: 'Times New Roman';
     color: white;
 }
 
 #AboutSectionTitle {
     font-size: 25px;
     font-weight: 500;
-    font-family: 'Century Gothic';
+    font-family: 'Times New Roman';
 }
 
 #AboutSectionBody {
@@ -116,7 +119,7 @@ a {
     height: 300px;
     padding-top: 20px;
     text-align: center;
-    font-family: 'Century Gothic';
+    font-family: 'Times New Roman';
     color: white;
 }
 
@@ -137,7 +140,7 @@ a {
     height: auto;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: 'Century Gothic';
+    font-family: 'Times New Roman';
     text-align: center;
     font-weight: 500;
     color: white;
