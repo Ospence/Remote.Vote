@@ -53,28 +53,17 @@
                 controllerAs: 'vm'
             })
 
-                .when('/TextView3', {
-                    templateUrl: '/ngViews/TextView3.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-                })
+            .when('/TextView3', {
+                templateUrl: '/ngViews/TextView3.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
 
-                .when('/FrontPage', {
-                    templateUrl: '/ngViews/FrontPage.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-                })
-
-
-
-                .when('/Chairman', {
-                    templateUrl: '/ngViews/Chairman.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-
-                })
-
-
+            .when('/FrontPage', {
+                templateUrl: '/ngViews/FrontPage.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
 
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
