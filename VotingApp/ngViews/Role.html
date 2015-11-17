@@ -1,0 +1,50 @@
+﻿<div class="container">
+
+    <!--<input ng-model="vm.role" ng-model-options="{debounce:50}" ng-change="vm.fetchRole()" />-->
+
+    <div>
+        <form id="addRoles" ng-submit="vm.add()" class="col-md-5">
+            <div class="col-md-4">
+                <select>
+                    <option ng-repeat="role in vm.role">
+                        {{role.name}}
+                    </option>
+                </select>
+                </div>
+            <div class="col-md-4">
+                <select>
+                    <option ng-repeat="user in vm.Users">
+                        {{user.firstName}} {{user.lastName}}
+                    </option>
+                </select>
+            </div>
+
+                <input type="submit" class="btn btn-danger" ng-submit="vm.newRole()" />
+</form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="row" ng-repeat="role in vm.roles">
+            <div ng-show="!role.edit" ng-click="role.edit = true">
+                <div class="col-md-4">{{role.name}}</div>
+                {{user.firstName}} {{user.lastName}}
+                <div class="col-md-4"></div>
+            </div>
+            <div ng-show="role.edit">
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="role.name" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" ng-model="role.name" />
+                </div>
+            </div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.update(role)">Update</div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.delete(role)">Delete</div>
+            
+
+        </div>
+    </div>
+</div>

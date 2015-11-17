@@ -1,0 +1,120 @@
+﻿<body>  
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="navbar-wrapper">                   
+                        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                            <div class="navbar-header">
+
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                </button> <a class="navbar-brand" href="#">Home</a>
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">                                    
+                                            <li>
+                                                <a href="#">Current Motions</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Past Motions</a>
+                                            </li>
+                                        </ul>                                                                
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        <a href="#/AdminPage">Admin</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings</a>
+                                    </li>
+                                    <li style="padding-right:20px">
+                                        <a href="#/FrontPage">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>                     
+                </div><!-- /navbar wrapper -->
+
+                
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" />
+                            </div>
+                            <button type="submit" class="btn btn-default">
+                                Search
+                            </button>
+                        </form>
+                        <table class="table table-striped table-bordered table-hover table-condensed">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Role
+                                    </th>
+                                    <th></th>
+                                    <th>
+                                        Active
+                                    </th>
+                                    <th></th>
+                                    <th>
+                                        Delete
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="user in vm.Users">
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        {{user.firstName}} {{user.lastName}}
+                                    </td>
+                                    <td>
+
+                                        <div>
+                                            <select multiple id="dropdown" name="role">
+                                                <!--ng-model="vm.newUser.role"-->
+                                                <option value="Chairmen">Chairmen</option>
+                                                <option value="Director">Director</option>
+                                                <option value="Staff">Staff</option>
+                                                <option value="NoRole">No Role</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        User Role
+                                    </td>
+                                    <td>
+                                        <select id="dropdown" name="active">
+                                            <!--ng-model="vm.newUser.active"-->
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        User Status
+                                    </td>
+                                    <td>
+                                        <select id="dropdown" name="delete">
+                                            <option value="Delete">Delete</option>
+                                            <option value="DonotDelete">Do Not Delete</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="button-spacing" class="btn btn-default" ng-click="vm.update(user)">Submit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+

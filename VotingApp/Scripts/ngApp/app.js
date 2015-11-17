@@ -13,12 +13,19 @@
             //    templateUrl: '/ngViews/',
             //    controller: 'userController',
             //    controllerAs: 'vm'
-            //})
+            // })
+            
             .when('/', {
                 templateUrl: '/ngViews/TestView.html',
                 controller: 'userController',
                 controllerAs: 'vm'
             })
+            .when('/adminpage', {
+                templateUrl: '/ngViews/AdminView.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+            
             .when('/motion', {
                 templateUrl: '/ngViews/MotionTest.html',
                 controller: 'motionController',
@@ -29,12 +36,12 @@
                 controller: 'loginController',
                 controllerAs: 'vm'
             })
-            .when('/TestView2', {
-                templateUrl: '/ngViews/TestView2.html',
-                controller: 'adminController',
+            .when('/Role', {
+                templateUrl: '/ngViews/Role.html',
+                controller: 'cAdminController',
                 controllerAs: 'vm'
             })
-                
+
             .when('/register', {
                 templateUrl: '/ngViews/registerTest.html',
                 controller: 'registerController',
@@ -46,29 +53,20 @@
                 controllerAs: 'vm'
             })
 
-                .when('/TextView3', {
-                    templateUrl: '/ngViews/TextView3.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-                })
+            .when('/TextView3', {
+                templateUrl: '/ngViews/TextView3.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
 
-                .when('/FrontPage', {
-                    templateUrl: '/ngViews/FrontPage.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-                })
-
-                .when('/Chairman', {
-                    templateUrl: '/ngViews/Chairman.html',
-                    controller: 'userController',
-                    controllerAs: 'vm'
-
-                })
-
-               
+            .when('/FrontPage', {
+                templateUrl: '/ngViews/FrontPage.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
 
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
-            })         
+            })
         }]);
 })();

@@ -1,17 +1,25 @@
 ﻿(function () {
     angular.module('VotingApp')
-    .controller('adminController', function (accountService, adminService, $location) {
+    .controller('cAdminController', function (cAdminService, userService, $location) {
         var vm = this;
 
         vm.Users = userService.list();
-        
-        vm.update = function (user) {
-            adminService.update(user);
 
-        vm.editRoles = function (roles) {
-            adminService.edit(roles);
-            }
+        vm.role = cAdminService.list();
+
+        vm.update = function (role) {
+            cAdminService.update(role);
+        }
+
+        vm.add = function () {
+            cAdminService.add(vm.newRole, function (result) {
+                vm.role.push(result);
+                $('#addRole')[0].reset();
+            });
 
         };
+
+
+
     });
 })();

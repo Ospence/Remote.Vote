@@ -1,4 +1,4 @@
-﻿(function () 
+﻿motion(function () 
 {
     angular.module("VotingApp")
         .controller("motionController", function ($location, motionService) {
