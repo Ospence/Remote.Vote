@@ -3,30 +3,69 @@
         .service('motionService', function ($resource, $http) {
             var self = this;
 
-            var MotionAPI = $resource('/api/motions/:id');
+            self.list = function (callback) {
+                $http.get('/api/Motions')
+                .then(function(data){
+                    callback(data);
+                });
+            };
 
-            self.list = function () {
-                return MotionAPI.query();
+            self.getMotion = function (id, callback) {
+                $http.get('/api/Motions/' + id)
+                .then(function (data) {
+                    callback(data);
+                });
             };
 
             self.add = function (motion, callback) {
                 $http.post('api/Motions', motion)
-                .then(function() {
-                    var newMotion = new MotionAPI({
+                .then(function (result) {
+                    result = {
                         title: motion.title,
                         description: motion.description,
-                        created: motion.created
-                    });
-                    // POST was creating two DB entries until this was commented out
-                    //newMotion.$save(callback);
+                    };
+                    callback(result);
+                });
+            };
+
+            self.addVote = function (vote, callback) {
+                $http.post('api/Votes', vote)
+                .then(function (data) {
+                    data = {
+                        yes: vote.yes,
+                        onMotionId: vote.onMotionId
+                    };
+                    callback();
                 });
             };
 
             self.update = function (motion) {
-                motion.wasEdited = true;
                 motion.$save();
             };
 
+            self.edit = function (motion) {
+                motion.wasEdited = true;
+                motion.$save();
+            }
 
+            self.allowSecond = function (motion) {
+                motion.allowSecond = true;
+                motion.$save();
+            };
+
+            self.secondMotion = function (motion, callback) {
+                $http.post('/api/Motions/PostSecond', motion)
+                .then(function (data) {
+                    callback();
+                });
+            };
+
+            self.killMotion = function (motion, reason, callback) {
+                $http.post('/api/Motions/KillMotion', motion, reason)
+                .then(function (data) {
+                    data.comments.add(reason);
+                    callback();
+                });
+            };
         });
 })();

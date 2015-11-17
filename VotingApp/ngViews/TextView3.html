@@ -1,35 +1,35 @@
 ﻿<div class="row">
-    <form id="addChairmenUser" ng-submit="vm.addChairmenUser()" class="col-md-5">
+    <form id="addChairmanUser" ng-submit="vm.addChairmanUser()" class="col-md-5">
         <div class="row">
             <div class="col-md-4">
-                <input class="form-control" ng-model="vm.newChairmenUser.firstName" placeholder="First Name" />
+                <input class="form-control" ng-model="vm.newChairmanUser.firstName" placeholder="First Name" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <input class="form-control" ng-model="vm.newChairmenUser.lastName" placeholder="Last Name" />
+                <input class="form-control" ng-model="vm.newChairmanUser.lastName" placeholder="Last Name" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <input class="form-control" ng-model="vm.newChairmenUser.email" placeholder="Email" />
+                <input class="form-control" ng-model="vm.newChairmanUser.email" placeholder="Email" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <input class="form-control" ng-model="vm.newChairmenUser.priority" placeholder="Phone Number" />
+                <input class="form-control" ng-model="vm.newChairmanUser.priority" placeholder="Phone Number" />
             </div>
         </div>
         <!--<div class="row">
             <label for="priority">Status</label><br />
-            <select name="priority" ng-model="vm.newChairmenUser.priority" class="col-md-4" placeholder="Priority">
+            <select name="priority" ng-model="vm.newChairmanUser.priority" class="col-md-4" placeholder="Priority">
                 <option value="New">New</option>
                 <option value="InProgress">In Progress</option>
                 <option value="Resolved">Resolved</option>
             </select>
         </div>-->
         <br />
-        <input type="submit" value="Add ChairmenUser" class="btn btn-default" />
+        <input type="submit" value="Add ChairmanUser" class="btn btn-default" />
     </form>
 </div>
 
@@ -46,7 +46,7 @@
                 <div class="col-md-4">{{user.phoneNumber}}</div>
                 <!--<div class="col-md-4">{{user.status}}</div>-->
             </div>
-            <div ng-show="ChairmenUser.edit">
+            <div ng-show="ChairmanUser.edit">
                 <div class="col-md-4">
                     <input class="form-control" ng-model="user.firtName" />
                 </div>
@@ -63,8 +63,8 @@
                     <input class="form-control" ng-model="user.status" />
                 </div>-->
             </div>
-            <div class="col-md-2 btn btn-default" ng-click="vm.update(chairmenUser)">Update</div>
-            <div class="col-md-2 btn btn-default" ng-click="vm.delete(chairmenUser)">Delete</div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.update(ChairmanUser)">Update</div>
+            <div class="col-md-2 btn btn-default" ng-click="vm.delete(ChairmanUser)">Delete</div>
         </div>
     </div>
 </div>

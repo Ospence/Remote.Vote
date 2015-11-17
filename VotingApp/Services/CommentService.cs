@@ -33,6 +33,12 @@ namespace VotingApp.Services
             _repo.SaveChanges();
         }
 
+        public string FindCurrentUser(string username)
+        {
+            return (from u in _repo.Query<ApplicationUser>()
+                    where u.UserName == username
+                    select u.Id).FirstOrDefault();
+        }
 
         private Comment FindInternal(int id) {
             return (from c in _repo.Query<Comment>()
