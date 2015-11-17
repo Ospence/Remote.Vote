@@ -265,6 +265,7 @@
     <Content Include="Images\Lincoln-monument.jpg" />
     <Content Include="Images\ocean.jpg" />
     <Content Include="Images\using-a-tablet.jpg" />
+    <Content Include="ngViews\AdminView.html" />
     <Content Include="ngViews\Bug.html" />
     <Content Include="ngViews\Chairman.html" />
     <Content Include="ngViews\codes.html" />

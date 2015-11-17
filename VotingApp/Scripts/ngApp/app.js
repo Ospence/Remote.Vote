@@ -65,6 +65,12 @@
                 controllerAs: 'vm'
             })
 
+            .when('/chairman', {
+                templateUrl: '/ngViews/Chairman.html',
+                controller: 'motionController',
+                controllerAs: 'vm'
+            })
+
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             })

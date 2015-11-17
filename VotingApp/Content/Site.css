@@ -8,16 +8,16 @@ body {
 
 
 
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
+ /*CUSTOMIZE THE NAVBAR
+-------------------------------------------------- 
 
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
+ Special class on .container surrounding .navbar, used for positioning it into place.*/ 
 .navbar-wrapper {
   position: center;
   top: 0;
   left: 0;
   right: 0;
-  /*z-index: 10;*/
+  z-index: 10;
 }
 
 #HeaderImage 
@@ -36,19 +36,19 @@ body {
 
 
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
+ /*CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- 
 
-/* Carousel base class */
+ Carousel base class*/ 
 .carousel {
   margin-bottom: 60px;
 }
-/* Since positioning the image, we need to help out the caption */
+ /*Since positioning the image, we need to help out the caption*/ 
 .carousel-caption {
   z-index: 1;
 }
 
-/* Declare heights because of positioning of img element */
+ /*Declare heights because of positioning of img element*/ 
 .carousel .item {
   height: 400px;
   background-color:#555;
@@ -63,16 +63,16 @@ body {
 
 
 
-/* MARKETING CONTENT
--------------------------------------------------- */
+ /*MARKETING CONTENT
+-------------------------------------------------- 
 
-/* Pad the edges of the mobile views a bit */
+ Pad the edges of the mobile views a bit*/ 
 .marketing {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-/* Center align the text within the three columns below the carousel */
+ /*Center align the text within the three columns below the carousel*/ 
 .marketing .col-lg-4 {
   text-align: center;
   margin-bottom: 20px;
@@ -86,21 +86,21 @@ body {
 }
 
 
-/* Featurettes
-------------------------- */
+ /*Featurettes
+-------------------------*/ 
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 80px 0;  Space out the Bootstrap <hr> more 
 }
 .featurette {
-  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+  padding-top: 120px;  Vertically center images part 1: add padding above and below text. 
+  overflow: hidden;  Vertically center images part 2: clear their floats. 
 }
 .featurette-image {
-  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+  margin-top: -120px;  Vertically center images part 3: negative margin up the image the same amount of the padding to center it. 
 }
 
-/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+ /*Give some space on the sides of the floated elements so text doesn't run right into it.*/ 
 .featurette-image.pull-left {
   margin-right: 40px;
 }
@@ -108,7 +108,7 @@ body {
   margin-left: 40px;
 }
 
-/* Thin out the marketing headings */
+ /*Thin out the marketing headings*/ 
 .featurette-heading {
   font-size: 50px;
   font-weight: 300;
@@ -116,83 +116,26 @@ body {
   letter-spacing: -1px;
 }
 
-
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (min-width: 768px) {
-
-  /* Remve the edge padding needed for mobile */
-  .marketing {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Navbar positioning foo */
-  .navbar-wrapper {
-    margin-top: 20px;
-    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
-  }
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
-
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
-
-}
-
 #img1{
     height: 200px;
     width: 200px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*body {
+body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #E8DCC3;
 }
 
-/* Set padding to keep content from hitting the edges */
-/*.body-content {
+ /*Set padding to keep content from hitting the edges*/ 
+.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}*/
+}
 
-/* Set width on the form input elements since they're 100% wide by default */
-/*input,
-select,
+ /*Set width on the form input elements since they're 100% wide by default 
+input,
+select,*/
 textarea {
     max-width: 280px;
 }
@@ -222,11 +165,11 @@ textarea {
 
 
 .nav li {
-    display: inline;*/
+    display: inline;
 
 }
 
-/*.jumbotron .container {
+.jumbotron .container {
   position: relative;
   top:100px;
 }
@@ -245,13 +188,13 @@ textarea {
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-weight: normal;
   font-style: italic;
-}*/
+}
 
-/*.about-us {
+.about-us {
   background-color: #f7f7f7;
-}*/
+}
 
-/*.about-us h3 {
+.about-us h3 {
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   font-size: 18px;
   font-weight: 600;
@@ -269,16 +212,16 @@ textarea {
   font-style: italic;
   background-color: #f7f7f7;
   
-}*/
+}
 
 
-/*.features {
+.features {
     background-color:  #efefef;
    
     
-}*/
+}
 
-/*.features h3 {
+.features h3 {
     color: red;
     font-size: 15px;
 }
@@ -292,17 +235,18 @@ textarea {
     font-size: 18px;
     
     
-}*/
+}
 
-/*.address h4 {
+.address h4 {
     background-color: #f7f7f7;
     font-family: 'Georgia', 'Times New Roman', Times, serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: red;
-  font-style: italic;
+    font-size: 18px;
+    font-weight: 600;
+    color: red;
+    font-style: italic;
+}
 
-#dropdown{
+#dropdown {
     width: auto;
 }
 
@@ -311,24 +255,6 @@ textarea {
     width: auto;
 }
 
-table {
-  counter-reset: rowNumber;
-  text-align: center;
-  border-style: solid;
-  border-color: red;
-}
-
-th {
-    text-align: center;
-}
-tbody tr {
-  counter-increment: rowNumber;
-}
-table tr td:first-child::before {
-  content: counter(rowNumber);
-  min-width: 1em;
-  margin-right: 0.5em;
-}
 #login {
     
     background-image: url('../Images/Lincoln-monument.jpg');
@@ -336,7 +262,7 @@ table tr td:first-child::before {
     background-size: cover;
     height: 1080px;
     width: 100%;
-    /*opacity: 0.5;*/
+    opacity: 0.5;
     background-attachment: scroll;
     
 }
@@ -344,7 +270,7 @@ table tr td:first-child::before {
 #login2 {
     
     font-family: Georgia, 'Times New Roman', Times, serif;
-    /*background: rgb(66,184, 221);*/
+    background: rgb(66,184, 221);
     color: white;
             border-radius: 4px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -354,7 +280,7 @@ table tr td:first-child::before {
     
 #register {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    /*background: rgb(66,184, 221);*/
+    background: rgb(66,184, 221);
     color: white;
             border-radius: 4px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -368,7 +294,7 @@ table tr td:first-child::before {
   background-color: white;
   border: 1px solid black;
   opacity:0.6;
-  filter:alpha(opacity=60); /* For IE8 and earlier */
+  filter:alpha(opacity=60);  For IE8 and earlier 
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
 
@@ -379,21 +305,21 @@ table tr td:first-child::before {
   background-color: white;
   border: 1px solid black;
   opacity:0.6;
-  filter:alpha(opacity=60); /* For IE8 and earlier */
+  filter:alpha(opacity=60);  For IE8 and earlier 
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
 }
 
-/*
-A Bootstrap 3.1 affix sidebar template
+
+/*A Bootstrap 3.1 affix sidebar template
 from http://bootply.com
 
 This CSS code should follow the 'bootstrap.css'
 in your HTML file.
 
 license: MIT
-author: bootply.com
-*/
+author: bootply.com*/
+
 
 body {
  padding-top:50px;
@@ -447,12 +373,21 @@ body {
   border-right-width:5px;
 }
     
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
-  font-size: 10px;
-  font-weight: 200;
-  font-style: italic;
+table {
+    counter-reset: rowNumber;
+}
+
+tbody tr {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
   
-}*/*/
+
 
 
 
