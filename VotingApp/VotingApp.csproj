@@ -210,6 +210,10 @@
     <Compile Include="Domain\Models\Vote.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Migrations\201511171749162_initial.cs" />
+    <Compile Include="Migrations\201511171749162_initial.Designer.cs">
+      <DependentUpon>201511171749162_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
@@ -257,6 +261,7 @@
     <Content Include="Images\declaration-of-indepence %281%29.jpg" />
     <Content Include="Images\Generic-Woman-Using-Tablet-on-Beach-730x328.jpg" />
     <Content Include="Images\HomePageHeader.png" />
+    <Content Include="Images\HR.png" />
     <Content Include="Images\laptop-beach.jpg" />
     <Content Include="Images\laptop.jpg" />
     <Content Include="Images\Lincoln-monument.jpg" />
@@ -336,6 +341,11 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511171749162_initial.resx">
+      <DependentUpon>201511171749162_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
