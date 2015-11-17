@@ -6,6 +6,22 @@ body {
 
 }
 
+#HomePageHeaderImage
+{
+    z-index: -1;
+    opacity: .75;
+    background-image: url('../Images/HomePageHeader.png');
+    background-size: cover;
+    position: fixed;
+    top: 0;
+}
+
+
+
+
+
+
+
 
 
 /* CUSTOMIZE THE NAVBAR
