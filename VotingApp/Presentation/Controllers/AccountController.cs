@@ -86,7 +86,7 @@ namespace VotingApp.Controllers
             var users = (from u in UserManager.Users select u).ToList();
             var roles = ListUserRoles();
             var chairRole = from c in roles
-                             where c == "Chairman"
+                             where c.Name == "Chairman"
                              select c;
 
             //if (roleName == "Chairman" && chairRoles.Count() < 2)
