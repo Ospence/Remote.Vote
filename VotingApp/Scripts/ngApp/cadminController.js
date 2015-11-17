@@ -5,21 +5,26 @@
 
         vm.Users = userService.list();
 
-        vm.role = cAdminService.list();
+        cAdminService.list(function (result) {
+            vm.roles = result;
+    });
 
         vm.update = function (role) {
             cAdminService.update(role);
-        }
+        };
 
         vm.add = function () {
-            cAdminService.add(vm.newRole, function (result) {
-                vm.role.push(result);
+            cAdminService.add(vm.user.Id, vm.newRole, function (result) {
+                
+                vm.roles.push(result);
                 $('#addRole')[0].reset();
             });
 
         };
 
-
+        vm.list = function (role) {
+            cAdminService.list(role);
+        };
 
     });
 })();

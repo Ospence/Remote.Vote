@@ -78,6 +78,7 @@ namespace VotingApp.Controllers
         /// <param name="username"></param>
         /// <param name="roleName"></param>
         /// <returns>returns Ok() HttpActionResult</returns>
+        [Route("RemoveRole")]
         [Authorize(Roles = "Admin")]
         public IHttpActionResult RemoveRole(string username, string roleName)
         {
@@ -85,7 +86,7 @@ namespace VotingApp.Controllers
             var users = (from u in UserManager.Users select u).ToList();
             var roles = ListUserRoles();
             var chairRoles = from c in roles
-                             where c == "Chairmen"
+                             where c.Name == "Chairmen"
                              select c;
 
             //if (roleName == "Chairmen" && chairRoles.Count() < 2)
@@ -98,21 +99,33 @@ namespace VotingApp.Controllers
 
             return Ok();
         }
+        [Route("RoleUpdate")]
+        [Authorize(Roles = "Admin")]
+        public IHttpActionResult UpdateRole(string username, string roleName) {
+            var curr = UserManager.FindByName(username);
+            var users = (from u in UserManager.Users select u).ToList();
+            
 
+            UserManager.Update(curr);
+
+            return Ok();
+        }
 
         /// <summary>
         /// Used to display a list of roles by passing the username
         /// Get api/Account/ListUserRoles
         /// </summary>
         /// <returns>Returns an IList of strings</returns>
-        [Authorize(Roles = "Admin")]
-        public IList<string> ListUserRoles()
+        [Route("ListRoles")]
+        [AllowAnonymous]
+        [HttpGet]
+        public IList<IdentityRole> ListUserRoles()
         {
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
-            var allRoles = roleManager.Roles;
+            var q = roleManager.Roles;
 
-            var temp = (from r in allRoles
-                        select r.ToString()).ToList();
+            var temp = (from r in q
+                        select r).ToList();
             return temp;
         }
 
@@ -122,7 +135,7 @@ namespace VotingApp.Controllers
         /// </summary>
         /// <param name="roleName"></param>
         /// <returns>Returns an IList of strings</returns>
-
+        [Route("ListOfRolesOwner")]
         [Authorize(Roles = "Admin")]
         public IList<string> ListRoleOwners(string roleName)
         {

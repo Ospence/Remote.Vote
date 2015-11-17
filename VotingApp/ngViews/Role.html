@@ -4,28 +4,30 @@
 
     <div>
         <form id="addRoles" ng-submit="vm.add()" class="col-md-5">
-            <div class="col-md-4">
+            <div class="col-md-4" ng-model="vm.newRole">
                 <select>
-                    <option ng-repeat="role in vm.role">
+                    
+                    <option ng-repeat="role in vm.roles" ng-click="vm.newRole = role">
                         {{role.name}}
                     </option>
+                    
                 </select>
                 </div>
             <div class="col-md-4">
-                <select>
-                    <option ng-repeat="user in vm.Users">
+                <select ng-model="vm.user">
+                    <option ng-repeat="user in vm.Users" ng-click="vm.user.Id = user.Id">
                         {{user.firstName}} {{user.lastName}}
                     </option>
                 </select>
             </div>
 
-                <input type="submit" class="btn btn-danger" ng-submit="vm.newRole()" />
+                <input type="submit" class="btn btn-danger" />
 </form>
     </div>
 </div>
 
 
-<div class="row">
+<!--<div class="row">
     <div class="col-md-5">
         <div class="row" ng-repeat="role in vm.roles">
             <div ng-show="!role.edit" ng-click="role.edit = true">
@@ -47,4 +49,4 @@
 
         </div>
     </div>
-</div>
+</div>-->

@@ -28,7 +28,7 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="#/AdminPage">Admin</a>
+                                <a href="#/adminpage">Admin</a>
                             </li>
                             <li>
                                 <a href="#">Settings</a>
@@ -71,21 +71,20 @@
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody ng-repeat="user in vm.Users">
-                                <tr>
+                            <tbody ng-repeat="user in vm.Users"id="addRoles" ng-submit="vm.add()"                     >
+
+                                <tr ng-model="vm.user">
                                     <td></td>
-                                    <td>
+                                    <td ng-click="vm.user.Id = user.Id">
                                         {{user.firstName}} {{user.lastName}}
                                     </td>
                                     <td>
 
-                                        <div>
+                                        <div ng-model="vm.newRole">
                                             <select multiple id="dropdown" name="role">
-                                                <!--ng-model="vm.newUser.role"-->
-                                                <option value="Chairmen">Chairmen</option>
-                                                <option value="Director">Director</option>
-                                                <option value="Staff">Staff</option>
-                                                <option value="NoRole">No Role</option>
+                                                <option ng-repeat="role in vm.roles" ng-click="vm.newRole = role">
+                                                    {{role.name}}
+                                                </option>
                                             </select>
                                         </div>
                                     </td>
@@ -103,10 +102,7 @@
                                         User Status
                                     </td>
                                     <td>
-                                        <select id="dropdown" name="delete">
-                                            <option value="Delete">Delete</option>
-                                            <option value="DonotDelete">Do Not Delete</option>
-                                        </select>
+                                        <input type="submit" class="btn btn-danger"/>
                                     </td>
                                 </tr>
                             </tbody>

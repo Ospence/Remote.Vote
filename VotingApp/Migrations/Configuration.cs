@@ -26,8 +26,8 @@ namespace VotingApp.Migrations
             if (!roleManager.RoleExists("Staff")) {
                 roleManager.Create(new Role { Name = "Staff" });
             }
-            if (!roleManager.RoleExists("Chairmen")) {
-                roleManager.Create(new Role { Name = "Chairmen" });
+            if (!roleManager.RoleExists("Chairman")) {
+                roleManager.Create(new Role { Name = "Chairman" });
             }
             if (!roleManager.RoleExists("Director")) {
                 roleManager.Create(new Role { Name = "Director" });

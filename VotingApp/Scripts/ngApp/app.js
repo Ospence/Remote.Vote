@@ -22,7 +22,7 @@
             })
             .when('/adminpage', {
                 templateUrl: '/ngViews/AdminView.html',
-                controller: 'userController',
+                controller: 'cAdminController',
                 controllerAs: 'vm'
             })
             
