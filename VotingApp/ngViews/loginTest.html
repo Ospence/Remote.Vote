@@ -1,13 +1,21 @@
-﻿
-<div class="login" style="padding-top: 30px;">
-    <h1>Log-in</h1>
-    <form name="LoginForm" novalidate ng-submit="vm.login()">
-        <input style="margin:10px" type="text" name="user" placeholder="Username" ng-model="vm.User.username" /><br />
-        <input style="margin:10px" type="password" name="password" placeholder="Password" ng-model="vm.User.password" /><br />
-        <input style="margin:10px" type="submit" name="login" class="login login-submit" value="login" />
-    </form>
+﻿<div class="col-md-12" id="loginbackground">
+    <div class="container-fluid" >
+        <div class="row" id="loginformatting">
+            <div class="col-md-5" style="background-color: #981b1f">
+                <div class="login" style="padding: 30px">
+                    <form name="LoginForm" novalidate ng-submit="vm.login()">
+                        <h1 style="margin-left:10px">Log In</h1>
+                        <input style="margin:10px auto; color:black" type="text" name="user" placeholder="Username" ng-model="vm.User.username" /><br />
+                        <input style="margin:10px auto; color:black" type="password" name="password" placeholder="Password" ng-model="vm.User.password" /><br />
+                        <input style="margin:10px auto; color:black" type="submit" name="login" class="login login-submit" value="login" />
+                    </form>
+                </div>
+                <!--<div>
+                    <input type="button" class="btn btn-default" ng-click="vm.logout()" value="FUCKING LOGOUT" />
+                </div>-->
+            </div>           
+        </div>
+    </div>
 </div>
 
-<div>
-    <input type="button" class="btn btn-default" ng-click="vm.logout()" value="FUCKING LOGOUT" />
-</div>
+
