@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     Layout = null;
 }
 
@@ -13,15 +13,15 @@
 </head>
 <body>
     <div class="row" id="NavBarRow">
-        <span class="col-lg-3">
+        <span class="col-lg-2">
             <a href="/#/FrontPage">VOTING APP</a>
         </span>
-        <span class="col-lg-4">
-        </span>
+        @*<span class="col-lg-4">
+        </span>*@
         <span class="col-lg-2">
             <a href="/#/getstarted">GET STARTED</a>
         </span>
-        <span class="col-lg-1">
+        <span class="col-lg-2">
             <a href="/#/login">LOG IN</a>
         </span>
         <span class="col-lg-2">
@@ -29,9 +29,48 @@
         </span>
     </div>
     <div class="row" id="FooterBar">
-        <span class="col-lg-1">
+        <span class="col-lg-2">
+            <a href="/#/FrontPage">CONTACT US</a>
         </span>
-        <span class="col-lg-2" style="text-align: left; padding-top: 30px;">
+        @*<span class="col-lg-2">
+        </span>*@
+        <span class="col-lg-2">
+            <a href="/#/getstarted">GET STARTED</a>
+        </span>
+        <span class="col-lg-2">
+            <a href="/#/login">MEET THE TEAM</a>
+        </span>
+        <span class="col-lg-2">
+            <a href="https://www.codercamps.com/">CODERCAMP.COM</a>
+        </span>
+        <span class="col-lg-2">
+            <a href="/#/sitemap">SITE MAP</a>
+        </span>
+
+
+    </div>
+    <ng-view></ng-view>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    Loads all javascripts in the ~/Scripts/ngApp folder and subfolders
+    @Scripts.Render("~/bundles/angularCustom")
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+@*<span class="col-lg-1">
+        </span>
+        <span class="col-lg-2" style="@*text-align: left;*padding-top: 30px;">
             <div style="border-bottom-color: #4C4C4C; border-bottom-width: 1px; border-bottom-style: solid; width: 90px; margin-bottom: 10px;"><a href="/#/FrontPage">VOTING APP</a></div>
             <div style="border-bottom-color: #4C4C4C; border-bottom-width: 1px; border-bottom-style: solid; width: 90px; margin-bottom: 10px;"><a href="/#/login">CREATE A MOTION</a></div>
             <div style="border-bottom-color: #4C4C4C; border-bottom-width: 1px; border-bottom-style: solid; width: 90px; margin-bottom: 10px;"><a href="/#/login">LOG IN</a></div>
@@ -43,14 +82,14 @@
             </span>
             <span class="row">
                 <span class="col-sm-3" id="AboutTeamMember">
-                    <span style="color: grey">JOHN SCHWARTZ</span>
+                    <span style="color: grey;">JOHN SCHWARTZ</span>
                     <br />
                     John Schwartz and i am an coder. I went to coder camps and i specialize in front end development.
                 </span>
                 <span class="col-sm-3" id="AboutTeamMember">
                     <span style="color: grey">JULI ORMS</span>
                     <br />
-                    My name is Juli and i am an coder. I went to coder camps and i specialize in front end development.
+                    I'M CURRENTLY LEARNING TO CODE AT CODER CAMPS. WE FOCUS ON .NET, C#, JAVASCRIPT, JSON, AND ANGULAR.
                 </span>
                 <span class="col-sm-3" id="AboutTeamMember">
                     <span style="color: grey">JAY CHEUNG</span>
@@ -66,14 +105,13 @@
         </span>
         <span class="col-lg-1">
         </span>
-    </div>
+    </div>*@
 
-    </div>
-    <ng-view></ng-view>
+@*<ng-view></ng-view>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/angular")
-    @*Loads all javascripts in the ~/Scripts/ngApp folder and subfolders*@
-    @Scripts.Render("~/bundles/angularCustom")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/angular")
+    Loads all javascripts in the ~/Scripts/ngApp folder and subfolders
+@Scripts.Render("~/bundles/angularCustom")
 </body>
-</html>
+</html>*@
