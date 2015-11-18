@@ -1,7 +1,7 @@
 ﻿<div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="row">
+            <!--<div class="row">
                 <div class="navbar-wrapper">
                     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
                         <div class="navbar-header">
@@ -29,14 +29,14 @@
                         </div>
                     </nav>
                 </div>
-            </div>
+            </div>-->
             <div class="row">
                 <div class="col-md-4" style="border-right:medium black solid; min-height:1000px">
                     <div class="row">
                         <form id="addMotion" ng-submit="vm.add()" class="col-md-5">
-                            <div class="row">
+                            <div class="row">                                
                                 <div class="col-md-4">
-                                    <input class="form-control" ng-model="vm.newMotion.Title" placeholder="Motion Title" />
+                                    <input class="form-control" ng-model="vm.newMotion.title" placeholder="Motion Title" />
                                 </div>
                             </div>
                             <div class="row">
@@ -51,25 +51,20 @@
 <div>
     <input type="button" value="Yes" class="btn btn-default" ng-click="vm.addVote(true)" />
     <input type="button" value="No" class="btn btn-default" ng-click="vm.addVote(false)" />
-    <input type="button" value="Allow Second" class="btn btn-default" ng-click="vm.allowSecond(vm.currentMotion)" />
-    <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion(vm.currentMotion)" />
-
-
+    <input type="button" value="Allow Second" class="btn btn-default" ng-click="vm.allowSecond()" />
+    <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion()" />
+    <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion()" />
 </div>
 
-<div>
-    <div>{{vm.currentMotion}}</div>
+<!--<div>
     <div ng-repeat="motion in vm.motions track by (motion.id + vm.motions.length)">
         <div ng-model="vm.currentMotion" ng-click="vm.currentMotion = motion.id">
             <div>{{vm.currentMotion}}</div>
             <div>{{motion.title}}</div>
             <div>{{motion.description}}</div>
-                <div ng-show="motion.allowSecond"><div class="glyphicon-check"></div> second allowed</div>
-                <div ng-show="motion.seconded"><div class="glyphicon-check"></div> seconded</div>
-            <br /><br />
         </div>
     </div>
-</div>
+</div>-->
                 </div>
                 <div class="col-md-8">
                     <h1 align="center">Current Motions</h1>
@@ -84,19 +79,40 @@
                                     Vote
                                 </th>
                                 <th>
-                                    Current Votes
-                                </th>                                
+                                    Proposed On
+                                </th>
+                                        
+                                <th>
+                                    Allow Second
+                                </th>    
+                                <th>
+                                    Second Motion
+                                </th>    
+                                <th>
+                                    Vote Tally
+                                </th>                        
                             </tr>                            
                         </thead>
-                        <tbody ng-repeat="motion in vm.motions">
-                            <tr>
+                        <tbody ng-repeat="motion in vm.motions as motion track by (motion.id + motion.title + motions.length + motion.dateCreated + motion.allowSecond)">
+                            <tr ng-click="vm.func(motion)">
                                 <td>
+                                    {{vm.currentMotion}}
                                 </td>
                                 <td>
-                                    <a href="">{{motion.title}}</a>
+                                    {{motion.title}}
                                 </td>
                                 <td>
-                                    <form
+                                    {{motion.description}}
+                                </td>
+                                <td>
+                                    {{motion.dateCreated}}
+                                </td>
+                                <td>
+                                    <span class="glyph glyphicon-check"></span>
+                                    {{motion.allowSecond}}
+                                </td>
+                                <td>
+                                    {{motion.seconded}}
                                 </td>
                                 <td>
 
@@ -104,7 +120,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
