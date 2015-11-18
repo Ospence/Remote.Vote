@@ -68,7 +68,6 @@ namespace VotingApp.Migrations
                 userManager.Create(user2, "Qwerty2!");
             }
             userManager.AddToRole(user2.Id, "Admin");
-
             
             //  This method will be called after migrating to the latest version.
 
