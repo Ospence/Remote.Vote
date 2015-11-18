@@ -7,6 +7,7 @@ namespace VotingApp.Migrations
     using Domain.Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity;
+    using Services;
 
     internal sealed class Configuration : DbMigrationsConfiguration<VotingApp.Infrastructure.ApplicationDbContext>
     {
@@ -69,20 +70,27 @@ namespace VotingApp.Migrations
             }
             userManager.AddToRole(user2.Id, "Admin");
 
-            var motion1 = userManager.FindByName("Pest@Pest.com");
-            if (user2 == null)
-            {
-                user2 = new ApplicationUser
+            context.Motions.AddOrUpdate(
+                new Motion
                 {
-                    FirstName = "Joe",
-                    LastName = "Shmo",
-                    PhoneNumber = "222-222-2222",
-                    UserName = "Pest@Pest.com",
-                    Email = "Pest@Pest.com"
-                };
-                userManager.Create(user2, "Qwerty2!");
-            }
-            userManager.AddToRole(user2.Id, "Admin");
+                    Title = "Test Motion",
+                    Description = "Seeded motion to test listing",
+                    CreatedById = user.Id,
+                    SecondedById = null,
+
+                    Active = true,
+                    Seconded = false,
+                    Passed = false,
+                    WasEdited = false,
+                    AllowSecond = false,
+
+                    DateCreated = DateTime.Now
+                }
+            );
+
+            
+
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

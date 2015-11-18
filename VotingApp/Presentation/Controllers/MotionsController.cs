@@ -42,12 +42,23 @@ namespace VotingApp.Presentation.Controllers
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
 
+        [Route("Edit")]
+        public HttpResponseMessage Edit(MotionDTO motion)
+        {
+            if (ModelState.IsValid)
+            {
+                _service.Edit(motion);
+                return Request.CreateResponse((motion.Id == 0 ? HttpStatusCode.Created : HttpStatusCode.Accepted), motion);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        }
+
         [Route("AllowSecond")]
         public HttpResponseMessage AllowSecond(MotionDTO motion)
         {
             if (ModelState.IsValid)
             {
-                _service.AllowSecond(motion);
+                motion = _service.AllowSecond(motion);
                 return Request.CreateResponse(HttpStatusCode.Accepted, motion);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
@@ -59,7 +70,7 @@ namespace VotingApp.Presentation.Controllers
             if (ModelState.IsValid)
             {
                 var currentId = _service.FindCurrentUser(User.Identity.Name);
-                _service.SecondMotion(motion, currentId);
+                motion = _service.SecondMotion(motion, currentId);
                 return Request.CreateResponse(HttpStatusCode.Accepted, motion);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
