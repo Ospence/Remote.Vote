@@ -22,31 +22,42 @@
           };
 
           
-          self.add = function (userid, role, callback) {
-              var user = self.Find(userid)
-              $http.post('/api/Account/AddRole')
-              .then(function (role) {
-                  add.role(role);
-              });
-              newRole.$save(callback);
-          };
+          //self.add = function (userid, role, callback) {
+          //   // var user = self.Find(userid)
+          //    $http.post('/api/Account/AddRole')
+          //    .then(function (role) {
+          //        add.role(role);
+          //    });
+          //    newRole.$save(callback);
+          //};
 
 
-          self.update = function (Id, role, callback) {
-              var user = self.Find(Id)
-              $http.post('/api/Account/RoleUpdate')
-               .then(function (result) {
-                   role.$save();
+          self.update = function (userid, role, callback) {
+              //var user = self.Find(userid)
+              var roleUpdateRequest = { UserId: userid, Roles: role };
+              //$http.post('/api/Account/RoleUpdate', userid, role)
+
+
+              $http.post('/api/Account/RoleUpdate', roleUpdateRequest)
+               .then(function (result) {                 
+
+                   callback();
                });
-              callback(result);
+              
           };
 
-          self.delete = function (Id, role, callback) {
-              var user = self.Find(Id)
-              $http.post('/api/Account/RemoveRole',user, role)
-                  .then(function (result) {
+          self.delete = function (userid, role, callback) {
+              // var user = self.Find(Id)
+              var roleRemoveRequest = { UserId: userid, Roles: role };
 
-                      user.$remove({ id: role.id }, callback);
+              $http.post('/api/Account/RemoveRole', {
+                  data: roleRemoveRequest,
+                  responseType: 'json'
+              })
+                  .then(function (result) {
+                      callback();
+
+                     // userid.delete({ id: role.id }, callback);
                   });
           };
 
@@ -54,8 +65,13 @@
               $http.get('/api/Account/ListOfRolesOwner')
           }
 
-          self.listActive = function (role, callback) {
+          self.listActive = function (callback) {
               $http.get('/api/Account/ListOfRolesOwner')
-          }
+              .success(
+                  function (result) {
+                      callback(result);
+                  });
+          };
+          
       }]);
 })();
