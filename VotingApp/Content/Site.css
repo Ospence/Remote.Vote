@@ -1,7 +1,7 @@
 ﻿#HomePage {
-    margin: 0px;
+    margin: 1em;
     font-family: 'Times New Roman';
-    margin-bottom: 50px;
+    /*margin-bottom: 10px;*/
 }
 
 #HeaderImage {
@@ -127,7 +127,7 @@ a {
     text-align: center;
     font-family: 'Times New Roman';
     color: #981b1f;
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 10px;
 }
 
@@ -145,22 +145,34 @@ a {
     top: 1200px;
     background-color: #981b1f;
     width: 100%;
-    height: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    height: 35px;
+    padding-top: 8px;
+    /*padding-bottom: 5px;*/
     font-family: 'Times New Roman';
     text-align: center;
     font-weight: 500;
     color: white;
+    /*min-width: unset;*/
 }
 
-#AboutTeamMember {
+/*position: fixed;
+    top: 0;
+    background-color: #981b1f;
+    width: 105%;
+    height: 35px;
+    padding-top: 8px;
+    font-family: 'Times New Roman';
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    z-index: 10;*/
+/*#AboutTeamMember {
     color: white;
     padding: 15px;
     font-size: 12px;
     font-weight: 500;
     font-family: 'Times New Roman';
-}
+    font-weight: 500;
 
 /*LOGIN CSS*/
 #loginformatting{
@@ -198,5 +210,5 @@ table tr td:first-child::before {
     content: counter(rowNumber);
     min-width: 1em;
     margin-right: 0.5em;
-}
+}*/
   
