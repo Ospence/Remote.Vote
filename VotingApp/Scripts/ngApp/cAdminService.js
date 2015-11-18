@@ -21,12 +21,12 @@
                   });
           };
 
-
-          self.add = function (Id, role, callback) {
-              var user = self.Find(Id)
+          
+          self.add = function (userid, role, callback) {
+              var user = self.Find(userid)
               $http.post('/api/Account/AddRole')
-              .then(function () {
-
+              .then(function (role) {
+                  add.role(role);
               });
               newRole.$save(callback);
           };
@@ -38,6 +38,7 @@
                .then(function (result) {
                    role.$save();
                });
+              callback(result);
           };
 
           self.delete = function (Id, role, callback) {
@@ -53,5 +54,8 @@
               $http.get('/api/Account/ListOfRolesOwner')
           }
 
+          self.listActive = function (role, callback) {
+              $http.get('/api/Account/ListOfRolesOwner')
+          }
       }]);
 })();
