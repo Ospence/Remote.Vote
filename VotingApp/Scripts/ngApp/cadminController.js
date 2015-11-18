@@ -25,6 +25,10 @@
         vm.list = function (role) {
             cAdminService.list(role);
         };
+        vm.listActive = function (role) {
+            cAdminService.list(role);
+            $scope.selected = $scope.items[0];
+        };
 
     });
 })();

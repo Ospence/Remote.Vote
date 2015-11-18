@@ -59,9 +59,15 @@
                 controllerAs: 'vm'
             })
 
-            .when('/FrontPage', {
+            .when('/frontpage', {
                 templateUrl: '/ngViews/FrontPage.html',
                 controller: 'userController',
+                controllerAs: 'vm'
+            })
+
+            .when('/chairman', {
+                templateUrl: '/ngViews/Chairman.html',
+                controller: 'motionController',
                 controllerAs: 'vm'
             })
 

@@ -68,10 +68,10 @@ a {
 #RolloverImageSection {
     width: 100%;
     height: auto;
-    position: absolute;
+    position:absolute;
     top: 500px;
-    padding-top: 20px;
-    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-family: 'Times New Roman';
 }
 
@@ -160,3 +160,25 @@ a {
     font-weight: 500;
     font-family: 'Times New Roman';
 }
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+
+table {
+    counter-reset: rowNumber;
+}
+
+tbody tr {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+  
