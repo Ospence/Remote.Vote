@@ -1,13 +1,58 @@
-﻿
-<div class="login">
-    <h1>Log-in</h1>
-    <form name="LoginForm" novalidate ng-submit="vm.login()">
-        <input style="margin:10px" type="text" name="user" placeholder="Username" ng-model="vm.User.username" /><br />
-        <input style="margin:10px" type="password" name="password" placeholder="Password" ng-model="vm.User.password" /><br />
-        <input style="margin:10px" type="submit" name="login" class="login login-submit" value="login" />
-    </form>
+﻿<div class="col-md-12; container-fluid" id="loginbackground">
+    <div class="row" id="loginformatting">
+        <div class="col-md-5" style="background-color: #981b1f">
+            <div class="login" style="padding: 30px">
+                <form name="LoginForm" novalidate ng-submit="vm.login()">
+                    <h1 style="margin-left:10px">Log In</h1>
+                    <input style="margin:10px; color:black" type="text" name="user" placeholder="Username" ng-model="vm.User.username" /><br />
+                    <input style="margin:10px; color:black" type="password" name="password" placeholder="Password" ng-model="vm.User.password" /><br />
+                    <input style="margin:10px; color:black" type="submit" name="login" class="login login-submit" value="login" />
+                </form>
+            </div>
+            <!--<div>
+                <input type="button" class="btn btn-default" ng-click="vm.logout()" value="FUCKING LOGOUT" />
+            </div>-->
+        </div>
+    </div>
+    <div class="row" id="FooterBar" style="top:467px">
+        <span class="col-lg-1">
+        </span>
+        <span class="col-lg-2" style="text-align: left; padding-top: 30px;">
+            <div style="border-bottom-color: #4C4C4C; border-bottom-width: 1px; border-bottom-style: solid; width: 90px; margin-bottom: 10px;"><a href="/#/FrontPage">VOTING APP</a></div>
+            <div style="border-bottom-color: #4C4C4C; border-bottom-width: 1px; border-bottom-style: solid; width: 90px; margin-bottom: 10px;"><a href="/#/login">CREATE A MOTION</a></div>
+            <div style="border-bottom-color: #4C4C4C; border-bottom-width: 1px; border-bottom-style: solid; width: 90px; margin-bottom: 10px;"><a href="/#/login">LOG IN</a></div>
+            <div style="border-bottom-color: #4C4C4C; border-bottom-width: 1px; border-bottom-style: solid; width: 90px; margin-bottom: 10px;"><a href="/#/register">REGISTER</a></div>
+        </span>
+        <span class="col-lg-8">
+            <span class="row">
+                <span class="col-sm-8">Meet The Team</span>
+            </span>
+            <span class="row">
+                <span class="col-sm-3" id="AboutTeamMember">
+                    <span style="color: grey">Juli Orms</span>
+                    <br />
+                    My name is Juli and i am an coder. I went to coder camps and i specialize in front end development.
+                </span>
+                <span class="col-sm-3" id="AboutTeamMember">
+                    <span style="color: grey">Juli Orms</span>
+                    <br />
+                    My name is Juli and i am an coder. I went to coder camps and i specialize in front end development.
+                </span>
+                <span class="col-sm-3" id="AboutTeamMember">
+                    <span style="color: grey">Juli Orms</span>
+                    <br />
+                    My name is Juli and i am an coder. I went to coder camps and i specialize in front end development.
+                </span>
+                <span class="col-sm-3" id="AboutTeamMember">
+                    <span style="color: grey">Juli Orms</span>
+                    <br />
+                    My name is Juli and i am an coder. I went to coder camps and i specialize in front end development.
+                </span>
+            </span>
+        </span>
+        <span class="col-lg-1">
+        </span>
+    </div>
+
 </div>
 
-<div>
-    <input type="button" class="btn btn-default" ng-click="vm.logout()" value="FUCKING LOGOUT" />
-</div>

@@ -69,7 +69,7 @@ namespace VotingApp.Migrations
                 userManager.Create(user2, "Qwerty2!");
             }
             userManager.AddToRole(user2.Id, "Admin");
-
+            
             context.Motions.AddOrUpdate(
                 new Motion
                 {
