@@ -77,35 +77,50 @@ namespace VotingApp.Services
             return Mapper.Map<MotionDTO>(dbMotion);
         }
 
+        public MotionDTO Edit(MotionDTO motion)
+        {
+            motion.WasEdited = true;
+
+            var dbMotion = FindInternal(motion.Id);
+
+            Mapper.Map(motion, dbMotion);
+            _repo.SaveChanges();
+            return Mapper.Map(dbMotion, motion);
+        }
+
         //[Authorize(Roles = "Director")]
         //[Authorize(Roles = "Active")]
-        public void SecondMotion(MotionDTO motion, string Id)
+        public MotionDTO SecondMotion(MotionDTO motion, string Id)
         {
-            motion.Seconded = true;
-            motion.DateSeconded = DateTime.Now;
-            motion.SecondedById = Id;
-            _repo.Add(Mapper.Map<Motion>(motion));
+            var dbMotion = FindInternal(motion.Id);
+            dbMotion.Seconded = true;
+            dbMotion.DateSeconded = DateTime.Now;
+            dbMotion.SecondedById = Id;
             _repo.SaveChanges();
+            Mapper.Map(dbMotion, motion);
+            return motion;
         }
 
         //[Authorize(Roles = "Chairman")]
         //[Authorize(Roles = "Active")]
-        public void AllowSecond(MotionDTO motion)
+        public MotionDTO AllowSecond(MotionDTO motion)
         {
-            motion.AllowSecond = true;
-            _repo.Add(Mapper.Map<Motion>(motion));
+            var dbMotion = FindInternal(motion.Id);
+            dbMotion.AllowSecond = true;
             _repo.SaveChanges();
+            Mapper.Map(dbMotion, motion);
+            return motion;
         }
 
         //[Authorize(Roles = "Chairman")]
         //[Authorize(Roles = "Active")]
         public void KillMotion(MotionDTO motion, CommentDTO reason)
         {
-            motion.Comments.Add(reason);
-            motion.AllowSecond = true;
-            motion.DateResult = DateTime.Now;
-            motion.Active = false;
-            _repo.Add(Mapper.Map<Motion>(motion));
+            var dbMotion = FindInternal(motion.Id);
+            dbMotion.Comments.Add(Mapper.Map<Comment>(reason));
+            dbMotion.AllowSecond = true;
+            dbMotion.DateResult = DateTime.Now;
+            dbMotion.Active = false;
             _repo.SaveChanges();
         }
 
