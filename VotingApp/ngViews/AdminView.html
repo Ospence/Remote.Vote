@@ -82,35 +82,34 @@
                                                 <option ng-repeat="role in vm.roles" ng-click="vm.newRole = role">
                                                     {{role.name}}
                                                 </option>
+                                                Currently selected: {{ {selected_role:role} }}
                                             </select>
                                         </div>
                                     </td>
                                     <td>
                                         User Role
+                                        
                                     </td>
                                     <td>
-                                        <select id="dropdown" name="active">
+                                        <form id="dropdown" name="active" >
                                             <!--ng-model="vm.newUser.active"-->
-                                            <option value="Active">Active</option>
-                                            <option value="Inactive">Inactive</option>
-                                        </select>
+                                            <input type="radio" name="roletype" value="Active" />Active<br/>
+                                            <input type="radio" name="roletype" value="Inactive" checked="checked">Inactive<br/>
+                                        </form>
                                     </td>
                                     <td>
                                         User Status
                                     </td>
                                     <td>
-                                        <input type="submit" class="btn btn-danger"/>
+                                        <input type="submit" id="button-spacing" class="btn btn-success" ng-click="vm.update(user)" placeholder="Update"/>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div id="button-spacing" class="btn btn-default" ng-click="vm.update(user)">Submit</div>
+                        <div class="btn btn-danger" >Submit</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
-
-
