@@ -6,7 +6,7 @@
 <html ng-app="VotingApp">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width-device" />
     <title>VotingApp</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -19,38 +19,20 @@
         <span class="col-lg-2" align="left">
             <a href="/#/getstarted">GET STARTED</a>
         </span>
-        @*<span class="col-lg-4">
-        </span>*@
+        <span class="col-lg-4">
+        </span>
         <span class="col-lg-2">
             <a href="/#/login">LOG IN</a>
         </span>
         <span class="col-lg-2" align="left">
             <a href="/#/register">REGISTER</a>
         </span>
-    </div>    
-            <a href="/#/FrontPage">CONTACT US</a>
-        @*<span class="col-lg-2">
-        </span>*@
-        <span class="col-lg-2">
-            <a href="/#/getstarted">GET STARTED</a>
-        </span>
-        <span class="col-lg-2">
-            <a href="/#/login">MEET THE TEAM</a>
-        </span>
-        <span class="col-lg-2">
-            <a href="https://www.codercamps.com/">CODERCAMP.COM</a>
-        </span>
-        <span class="col-lg-2">
-            <a href="/#/sitemap">SITE MAP</a>
-        </span>
-
-
     </div>
     <ng-view></ng-view>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angular")
-    Loads all javascripts in the ~/Scripts/ngApp folder and subfolders
+    @*Loads all javascripts in the ~/Scripts/ngApp folder and subfolders*@
     @Scripts.Render("~/bundles/angularCustom")
 </body>
 </html>

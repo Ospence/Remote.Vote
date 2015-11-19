@@ -71,6 +71,13 @@
                 controllerAs: 'vm'
             })
 
+            .when('/ActiveInactiveTest', {
+                templateUrl: '/ngViews/ActiveInactiveTest.html',
+                controller: 'userContoller',
+                controllerAs: 'vm'
+            })
+
+
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             })
