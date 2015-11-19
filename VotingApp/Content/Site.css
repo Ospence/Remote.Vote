@@ -102,7 +102,7 @@ a {
     width: 100%;
     height: 70px;
     position: absolute;
-    top: 115%;
+    top: 120%;
     padding-top: 20px;
     text-align: center;
     font-family: 'Times New Roman';
@@ -120,7 +120,7 @@ a {
 #AboutSectionBody  {
     background-color: #F2F2ED;
     position: absolute;
-    top: 124%;
+    top: 135%;
     width: 100%;
     height: auto;
     padding-top: 20px;
@@ -141,8 +141,6 @@ a {
 
 #FooterBar 
 {
-    position: absolute;
-    top: 1200px;
     background-color: #981b1f;
     width: 100%;
     height: 35px;
@@ -151,7 +149,7 @@ a {
     text-align: center;
     font-weight: 500;
     color: white;   
-    margin:0;  
+    margin: 0;  
 }
 
 /*LOGIN CSS*/
@@ -165,7 +163,7 @@ a {
 #loginbackground{
     background-image: url('../Images/HomePageHeader.png');
     background-repeat: no-repeat;
-    
+    background-size: cover;
 }
 
 table tr td:first-child::before {
@@ -192,8 +190,7 @@ table tr td:first-child::before {
 
 /* Toggle Styles */
 
-#wrapper {
-    padding-top:35px;
+#wrapper {    
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -205,7 +202,8 @@ table tr td:first-child::before {
     padding-left: 250px;
 }
 
-#sidebar-wrapper {
+#sidebar-wrapper {    
+    top:35px;
     z-index: 1000;
     position: fixed;
     left: 250px;
@@ -220,11 +218,11 @@ table tr td:first-child::before {
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled #sidebar-wrapper {
+#wrapper.toggled #sidebar-wrapper {    
     width: 250px;
 }
 
-#page-content-wrapper {
+#page-content-wrapper {    
     width: 100%;
     position: absolute;
     padding: 15px;
@@ -237,7 +235,7 @@ table tr td:first-child::before {
 
 /* Sidebar Styles */
 
-.sidebar-nav {
+.sidebar-nav {    
     position: absolute;
     top: 0;
     width: 250px;
@@ -268,21 +266,6 @@ table tr td:first-child::before {
     text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
-
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
@@ -309,4 +292,9 @@ table tr td:first-child::before {
         position: relative;
         margin-right: 0;
     }
+}
+
+/*BUTTON CSS*/
+#buttonformatting{
+    margin:10px;
 }
