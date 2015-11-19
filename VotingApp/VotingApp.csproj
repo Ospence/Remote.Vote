@@ -270,10 +270,12 @@
     <Content Include="Images\laptop.jpg" />
     <Content Include="Images\ocean.jpg" />
     <Content Include="Images\using-a-tablet.jpg" />
+    <Content Include="ngViews\ActiveInactiveTest.html" />
     <Content Include="ngViews\AdminView.html" />
     <Content Include="ngViews\Bug.html" />
     <Content Include="ngViews\Chairman.html" />
     <Content Include="ngViews\codes.html" />
+    <Content Include="ngViews\Comment.html" />
     <Content Include="ngViews\FrontPage.html" />
     <Content Include="ngViews\loginTest.html" />
     <Content Include="ngViews\MotionTest.html" />
@@ -313,6 +315,8 @@
     <Content Include="Scripts\ngApp\cadminController.js" />
     <Content Include="Scripts\ngApp\cAdminService.js" />
     <Content Include="Scripts\ngApp\app.js" />
+    <Content Include="Scripts\ngApp\commentController.js" />
+    <Content Include="Scripts\ngApp\commentService.js" />
     <Content Include="Scripts\ngApp\loginController.js" />
     <Content Include="Scripts\ngApp\bAccountService.js" />
     <Content Include="Scripts\ngApp\MotionController.js" />

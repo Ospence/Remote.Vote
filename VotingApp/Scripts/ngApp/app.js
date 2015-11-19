@@ -14,7 +14,7 @@
             //    controller: 'userController',
             //    controllerAs: 'vm'
             // })
-            
+
             .when('/', {
                 templateUrl: '/ngViews/TestView.html',
                 controller: 'userController',
@@ -25,7 +25,7 @@
                 controller: 'cAdminController',
                 controllerAs: 'vm'
             })
-            
+
             .when('/motion', {
                 templateUrl: '/ngViews/MotionTest.html',
                 controller: 'motionController',
@@ -36,7 +36,7 @@
                 controller: 'loginController',
                 controllerAs: 'vm'
             })
-            .when('/Role', {
+            .when('/role', {
                 templateUrl: '/ngViews/Role.html',
                 controller: 'cAdminController',
                 controllerAs: 'vm'
@@ -70,6 +70,18 @@
                 controller: 'motionController',
                 controllerAs: 'vm'
             })
+            .when('/comment', {
+                templateUrl: '/ngViews/Comment.html',
+                controller: 'commentController',
+                controllerAs: 'vm'
+            })
+
+            .when('/ActiveInactiveTest', {
+                templateUrl: '/ngViews/ActiveInactiveTest.html',
+                controller: 'userContoller',
+                controllerAs: 'vm'
+            })
+
 
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'

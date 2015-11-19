@@ -21,7 +21,7 @@
             }
 
             cAdminService.update(role.id, roleArray, function (result) {
-                console.log(result.data);
+                console.log(result);
             });
         };
 
@@ -41,7 +41,7 @@
             }
 
             cAdminService.delete(role.id, roleArray, function (result) {
-                console.log(result.data);
+                console.log(result);
 
             });
         };
