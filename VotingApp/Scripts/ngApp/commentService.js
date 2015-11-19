@@ -12,8 +12,8 @@
 
             self.add = function (comment, callback) {
                 var newComment = new Comment({
-                    title: comment.title,
-                    discussion: comment.discussion
+                    content: comment.content,
+                   
                 });
                 newMovie.$save(callback);
             };
