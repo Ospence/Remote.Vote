@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201511171749162_initial.Designer.cs">
       <DependentUpon>201511171749162_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511171905081_made_dates_nullable.cs" />
+    <Compile Include="Migrations\201511171905081_made_dates_nullable.Designer.cs">
+      <DependentUpon>201511171905081_made_dates_nullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Presentation\Controllers\AccountController.cs" />
     <Compile Include="Presentation\Controllers\CommentsController.cs" />
@@ -271,6 +275,7 @@
     <Content Include="ngViews\Bug.html" />
     <Content Include="ngViews\Chairman.html" />
     <Content Include="ngViews\codes.html" />
+    <Content Include="ngViews\Comment.html" />
     <Content Include="ngViews\FrontPage.html" />
     <Content Include="ngViews\loginTest.html" />
     <Content Include="ngViews\MotionTest.html" />
@@ -310,6 +315,8 @@
     <Content Include="Scripts\ngApp\cadminController.js" />
     <Content Include="Scripts\ngApp\cAdminService.js" />
     <Content Include="Scripts\ngApp\app.js" />
+    <Content Include="Scripts\ngApp\commentController.js" />
+    <Content Include="Scripts\ngApp\commentService.js" />
     <Content Include="Scripts\ngApp\loginController.js" />
     <Content Include="Scripts\ngApp\bAccountService.js" />
     <Content Include="Scripts\ngApp\MotionController.js" />
@@ -344,6 +351,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511171749162_initial.resx">
       <DependentUpon>201511171749162_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511171905081_made_dates_nullable.resx">
+      <DependentUpon>201511171905081_made_dates_nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

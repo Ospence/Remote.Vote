@@ -20,9 +20,9 @@ namespace VotingApp.Domain.Models
         public bool Passed { get; set; }
         public bool WasEdited { get; set; }
 
-        public DateTime DateCreated { get; set; }
-        public DateTime DateSeconded { get; set; }
-        public DateTime DateResult { get; set; }
+        public DateTime? DateCreated { get; set; }
+        public DateTime? DateSeconded { get; set; }
+        public DateTime? DateResult { get; set; }
 
         public IList<Vote> Votes { get; set; }
         public IList<Comment> Comments { get; set; }
