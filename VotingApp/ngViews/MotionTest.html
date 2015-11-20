@@ -47,14 +47,15 @@
                         <input type="button" value="No" class="btn btn-default" ng-click="vm.addVote(false)" />
                         <input type="button" value="Allow Second" class="btn btn-default" ng-click="vm.allowSecond()" />
                         <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion()" />
-                        <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion()" />
+    <input type="button" value="Edit" class="btn btn-default" ng-click="vm.edit()" />
                     </div>-->
                     <div clss="row">
                         <a style="margin:10px;background-color: #981b1f" href="#menu-toggle" class="btn btn-danger" id="menu-toggle">SideBar</a>
                     </div>                
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
+    </div>
+</div>-->
     </div>
     <!-- /#wrapper -->
 
@@ -107,10 +108,11 @@
                         {{motion.dateCreated}}
                     </td>
                     <td>
-                        <span class="glyph glyphicon-check"></span>
+                                    <span ng-show="motion.allowSecond" class="glyph glyphicon-check"></span>
                         {{motion.allowSecond}}
                     </td>
                     <td>
+                                    <span ng-show="motion.seconded" class="glyph glyphicon-check"></span>
                         {{motion.seconded}}
                     </td>
                     <td></td>

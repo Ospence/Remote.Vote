@@ -1,114 +1,225 @@
-﻿<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
+﻿<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Start Bootstrap
+                </a>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
             <div class="row">
-                <div class="navbar-wrapper">
-                    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-                        <div class="navbar-header">
-
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                            </button> <a class="navbar-brand" href="#">Home</a>
-                        </div>
-
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">                                
-                            </ul>
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a href="#">Profile</a>
-                                </li>
-                                <li>
-                                    <a href="#">Settings</a>
-                                </li>
-                                <li style="padding-right:20px">
-                                    <a href="#/FrontPage">Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4" style="border-right:medium black solid; min-height:1000px">
-                    <div class="row">
-                        <form id="addMotion" ng-submit="vm.add()" class="col-md-5">
+                <div class="col-lg-12">
+                    <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
+                    <div class="container-fluid" style="padding-top: 30px;">
+                        <div class="row">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <input class="form-control" ng-model="vm.newMotion.Title" placeholder="Motion Title" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <input class="form-control" ng-model="vm.newMotion.description" placeholder="description" />
-                                </div>
-                            </div>
-                            <br />
-                            <input type="submit" value="Add Motion" class="btn btn-default" />
-                        </form>
-                    </div>
-                    <div>
-                        <input type="button" value="Yes" class="btn btn-default" ng-click="vm.addVote(true)" />
-                        <input type="button" value="No" class="btn btn-default" ng-click="vm.addVote(false)" />
-                        <input type="button" value="Allow Second" class="btn btn-default" ng-click="vm.allowSecond(vm.currentMotion)" />
-                        <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion(vm.currentMotion)" />
+                                <div class="col-md-12">
+                                    <form class="navbar-form navbar-left" role="search">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                        <button type="submit" class="btn btn-default">
+                                            Search
+                                        </button>
+                                    </form>
+                                    <table class="table table-striped table-bordered table-hover table-condensed container-fluid">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>
+                                                    Motions
+                                                </th>
+                                                <th>
+                                                    Vote
+                                                </th>
+                                                <th>
+                                                    Proposed On
+                                                </th>
+
+                                                <th>
+                                                    Allow Second
+                                                </th>
+                                                <th>
+                                                    Second Motion
+                                                </th>
+                                                <th>
+                                                    Vote Tally
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody ng-repeat="motion in vm.motions as motion track by (motion.id + motion.title + motions.length + motion.dateCreated + motion.allowSecond)" id="chairList">
+                                            <tr ng-model="motion" ng-click="vm.func(motion)">
+                                                <td></td>
+                                                <td>
+                                                    {{vm.currentMotion}}
+                                                </td>
+                                                <td>
+                                                    {{motion.title}}
+                                                </td>
+                                                <td>
+                                                    {{motion.description}}
+                                                </td>
+                                                <td>
+                                                    {{motion.dateCreated}}
+                                                </td>
+                                                <td>
+                                                    <span ng-show="motion.allowSecond" class="glyph glyphicon-check"></span>
+                                                    {{motion.allowSecond}}
+                                                </td>
+                                                <td>
+                                                    <span ng-show="motion.seconded" class="glyph glyphicon-check"></span>
+                                                    {{motion.seconded}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <!--motion card-->
+                                    <!--<div class="container-fluid">-->
+                                    <div class="row" ng-repeat="motion in vm.motions as motion track by (motion.id + motion.title + motions.length + motion.dateCreated + motion.allowSecond)">
+                                        <div class="col-md-12">
+                                            <div style="padding-top: 15px;">
+                                                <div class="row">
+                                                    <div class="MotionCard">
+                                                        <div class="col-md-9">
+                                                            <div class="row">
+                                                                <div class="col-md-4" style="padding-right:0px">
+                                                                    <div id="discussionGlyph" class="col-md-3">
+                                                                        <span class="glyphicon glyphicon-comment"></span>
+                                                                        <p id="discussionAlert">3</p>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div id="cardStatus">
+                                                                            <p class="cardText">
+                                                                                <span ng-show="motion.active">Active</span><span ng-show="!motion.active">Inactive</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8" style="padding-left:0px">
+                                                                    <p id="cardTitle" class="cardText">Title</p>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row ">
+                                                                <div class="col-md-12">
+                                                                    <div id="description">
+                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis amet irure dolor in laboris nisi ut aliquip ex ea commodo non proident, sunt in culpa qui officia deserunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe <span style="margin-left:4px;font-weight:bold; border: medium outset #2f4f4f">. . . .</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--right side-->
+                                                        <div class="col-md-3">
+                                                            <div class="row">
+                                                                <div id="nameBox">
+                                                                    <!--NAME-->
+                                                                    Proposed by <strong>title</strong>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row ">
+                                                                <div class=" cardDetails">
+                                                                    <!--DATE-->
+                                                                    On <strong>_Date_</strong>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row ">
+                                                                <div class=" cardDetails">
+                                                                    <!--AllowSec/SecStatus-->
+                                                                    Awaiting (Approval / Second)
+                                                                </div>
+                                                            </div>
+                                                            <div class="row ">
+                                                                <div class=" cardDetails">
+                                                                    <!--Second Button-->
+                                                                    Second (grayed until approved)
+                                                                </div>
+                                                            </div>
+                                                            <div class="row ">
+                                                                <div class=" cardDetails">
+                                                                    <!---->
+                                                                    Votes
+                                                                </div>
+                                                            </div>
 
 
-                    </div>
+                                                            <div class="row">
+                                                                <div id="voteBox">
 
-                    <div>
-                        <div>{{vm.currentMotion}}</div>
-                        <div ng-repeat="motion in vm.motions track by (motion.id + vm.motions.length)">
-                            <div ng-model="vm.currentMotion" ng-click="vm.currentMotion = motion.id">
-                                <div>{{vm.currentMotion}}</div>
-                                <div>{{motion.title}}</div>
-                                <div>{{motion.description}}</div>
-                                <div ng-show="motion.allowSecond">
-                                    <div class="glyphicon-check">
-                                    </div> second allowed
+                                                                    <!--<div class="col-md-6">-->
+                                                                    <span class="yea">
+                                                                        Yea: _#_
+                                                                    </span>
+                                                                    <!--</div>
+                                                                    <div class="col-md-6">-->
+                                                                    <span class="nay">
+                                                                        Nay: _#_
+                                                                    </span>
+                                                                    <!--</div>-->
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div ng-show="motion.seconded"><div class="glyphicon-check"></div> seconded</div>
-                                <br /><br />
+                                <!--</div>-->
+
+
+                                <div class="col-md-12">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-8">
-                    <h1 align="center">Discussion</h1>
-                    <table class="table table-striped table-bordered table-hover table-condensed">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>
-                                    Motions
-                                </th>
-                                <th>
-                                    Vote
-                                </th>
-                                <th>
-                                    Current Votes
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody ng-repeat="motion in vm.motions">
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <a href="">{{tentative motions}}</a>
-                                </td>
-                                <td>                                   
-                                </td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
                 </div>
             </div>
         </div>
     </div>
+    <!-- /#page-content-wrapper -->
 </div>
-
-
+<!-- /#wrapper -->
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 

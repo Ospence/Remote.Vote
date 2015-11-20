@@ -6,7 +6,16 @@
             self.list = function (callback) {
                 $http.get('/api/Motions')
                 .then(function (data) {
-                    callback(data);
+                    //callback(data); 
+                    var motions = [{
+                        id: 1, title: "motion 1", dateResult: "11/18/2015", passed: true, user1: "John Smith", vote1: "gay",
+
+                    }, {
+                        id: 2, title: "motion 2", dateResult: "11/19/2015", passed: false
+
+                    }
+                    ];
+                    callback(motions);
                 });
             };
 

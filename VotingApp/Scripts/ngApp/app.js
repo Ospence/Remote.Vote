@@ -78,7 +78,12 @@
 
             .when('/ActiveInactiveTest', {
                 templateUrl: '/ngViews/ActiveInactiveTest.html',
-                controller: 'userContoller',
+                controller: 'historyController',
+                controllerAs: 'vm'
+            })
+            .when('/uservotes1', {
+                templateUrl: '/ngViews/Motion1.html',
+                controller: 'historyController',
                 controllerAs: 'vm'
             })
             .when('/chat', {
@@ -87,6 +92,11 @@
                 controllerAs: 'vm'
             })
 
+             .when('/userMotionHistory', {
+                 templateUrl: '/ngViews/userMotionHistory.html',
+                 controller: 'historyController',
+                 controllerAs: 'vm'
+             })
 
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
