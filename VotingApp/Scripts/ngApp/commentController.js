@@ -3,11 +3,14 @@
         .controller('commentController', function (commentService, userService, $location) {
             var vm = this;
 
-            vm.comment = commentService.list();
+            vm.comments = commentService.list();
+            vm.comment;
 
             vm.add = function () {
-                commentService.add(vm.Comment, function (result) {
-                    vm.comment.push(result);
+                commentService.add(vm.comment, function (result) {
+                    console.log(result)
+                    console.log(result.data);
+                    vm.comments.push(result);
                     $('#addComment')[0].reset();
                 });
             };
@@ -16,9 +19,15 @@
                 commentService.update(comment);
             }
 
-            vm.edit = function (comment){
+            vm.edit = function (comment) {
                 commentService.update(comment);
 
-}
-    });
+
+                var comment = [];
+                vm.addComment = function () {
+                    
+                }
+
+            }
+        });
 })();

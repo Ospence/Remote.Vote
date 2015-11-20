@@ -6,8 +6,9 @@
                 <form id="addUser" name="RegistrationForm" novalidate ng-submit="vm.register()">
                     <input style="margin-top:10px;margin-bottom:10px; color:black" type="email" name="Email" placeholder="Email" ng-model="vm.newUser.email" /><br />
                     <input style="margin-top:10px;margin-bottom:10px; color:black" type="password" name="Password" placeholder="Password" ng-model="vm.newUser.password" /><br />
-                    <input style="margin-top:10px;margin-bottom:10px; color:black" type="password" name="ConfirmPassword" placeholder="Verify Password" ng-model="vm.newUser.confirmPassword" /><br />
-                    <input style="margin-top:10px;margin-bottom:10px; color:black" type="submit" name="registration" class="registration registration-submit" value="registration" />
+                    <input style="margin-top:10px;margin-bottom:10px; color:black" type="password" name="ConfirmPassword" placeholder="Confirm Password" ng-model="vm.newUser.confirmPassword" /><br />
+                    <input style="margin-top:10px;margin-bottom:10px; color:black" placeholder="Group ID#"/><br />
+                    <input style="margin-top:10px;margin-bottom:10px; color:black" type="submit" name="registration" class="registration registration-submit" value="Register" />
                 </form>
             </div>
         </div>
