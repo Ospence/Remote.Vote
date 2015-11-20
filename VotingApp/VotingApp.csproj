@@ -270,6 +270,7 @@
     <Content Include="Images\laptop.jpg" />
     <Content Include="Images\ocean.jpg" />
     <Content Include="Images\using-a-tablet.jpg" />
+    <Content Include="ngViews\ActiveInactiveTest.html" />
     <Content Include="ngViews\AdminView.html" />
     <Content Include="ngViews\Bug.html" />
     <Content Include="ngViews\Chairman.html" />
