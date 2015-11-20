@@ -303,40 +303,7 @@ table tr td:first-child::before {
 
 /*CREATE MOTION CSS*/
 
-#resizedTextTitle{
-    margin-top:20px;
-    
+#areatext {
+   resize: vertical;   
 }
 
-#resizedTextArea{
-    margin-top:20px;
-    
-}
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
-
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
-
-    
-    #dropdown {
-        margin-top: 70px;
-        margin-left: 50px;
-        color: white;
-        background: #981b1F;
-        border: 1px solid #981b1F;
-        font-family: 'Times New Roman';
-      
-    }
-
-
-    }
