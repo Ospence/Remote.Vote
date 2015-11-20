@@ -39,7 +39,7 @@
                     <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
                     <p>Make sure to keep all page content within the.</p>
                     <form ng-model="vm.comments" ng-submit="vm.add()">
-                        <div id="addComment" >
+                        <div id="addComment">
                             <div ng-repeat="comment in vm.comments">{{comment.content}}</div>
                         </div>
                         <div ng-show="!comment.edit" ng-click="comment.edit = true"></div>
@@ -48,9 +48,10 @@
                         <input type="submit" value="submit" class="btn btn-info" />
                     </form>
 
-                        <br /><br />
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Hide</a>
-                    
+                    <br /><br />
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Hide</a>
+
+                </div>
             </div>
         </div>
     </div>

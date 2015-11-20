@@ -81,6 +81,11 @@
                 controller: 'userContoller',
                 controllerAs: 'vm'
             })
+            .when('/chat', {
+                templateUrl: '/ngViews/Chat.html',
+                controller: 'chatContoller',
+                controllerAs: 'vm'
+            })
 
 
             .otherwise({
