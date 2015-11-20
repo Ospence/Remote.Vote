@@ -1,7 +1,6 @@
-﻿(function () 
-{
+﻿(function () {
     angular.module("VotingApp")
-        .controller("motionController", function ($scope, $location, motionService) {
+        .controller("historyController", function ($scope, $location, motionService, userService) {
             // ---IMPORTANT---
             // I over complicated the get and update process quite a bit, but opted to leave it because it's working.
             // We need to go in and simplify things before actually publishing a final result.
@@ -10,23 +9,43 @@
 
             var vm = this;
 
+            vm.showMotions = true;
             vm.motions = [];
+            vm.historyOptions = [
+                { id: 1, name: 'Motion History' }, { id: 2, name: 'User History' }
+            ];
+            vm.selectedHistory = vm.historyOptions[0].id;
+
+            vm.historySelected = function () {
+                if (vm.selectedHistory == 1)
+                    vm.showMotions = true;
+                else
+                    vm.showMotions = false;
+            }
 
             vm.func = function (motion) {
                 vm.currentMotion = motion.id;
             };
 
-            vm.getList = function () {
+            vm.getMotionList = function () {
                 motionService.list(function (data) {
                     vm.motions = data;
                 });
             };
 
-            vm.getList();
+            vm.getMotionList();
+
+            vm.getUserList = function () {
+                userService.list(function (data) {
+                    vm.users = data;
+                });
+            };
+
+            vm.getUserList();
 
             vm.getMotion = function () {
                 motionService.getMotion(vm.currentMotion, function (data) {
-                    vm.selectedMotion = data;   
+                    vm.selectedMotion = data;
                 });
             };
 
@@ -59,7 +78,7 @@
                     motionService.getMotion(vm.currentMotion, function (motion) {
                         motion.votes.push(vote);
                         motionService.update(motion, vm.motions);
-                        });
+                    });
                 });
                 vm.getList();
             };
@@ -72,7 +91,7 @@
                     });
                 });
             };
-            
+
             vm.secondMotion = function () {
                 motionService.getMotion(vm.currentMotion, function (motion) {
                     motionService.secondMotion(motion, function (result) {

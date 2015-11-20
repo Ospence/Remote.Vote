@@ -10,9 +10,14 @@
 
             // make each function for each user type
 
-            self.list = function () {
-                return UserAPI.query();
+            self.list = function (callback) {
+                //return UserAPI.query();
+                var users = [{
+                    id: 1, firstName: "first1", lastName: "last1", beginninngDate: "March 1, 2014", retiredDate: "June 15, 2015",  motionsRaised: "TX SB 118", motionsSeconded: "TX HB 1302",
+                }];
+                callback(users);
             };
+
 
             self.add = function (user, callback) {
                 $http.post('api/Account/Register', user)

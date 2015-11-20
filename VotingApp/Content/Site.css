@@ -216,6 +216,7 @@ table tr td:first-child::before {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    color: #999999;
 }
 
 #wrapper.toggled #sidebar-wrapper {    
@@ -283,10 +284,10 @@ table tr td:first-child::before {
         width: 0;
     }
 
-    #page-content-wrapper {
+    /*#page-content-wrapper {
         padding: 20px;
         position: relative;
-    }
+    }*/
 
     #wrapper.toggled #page-content-wrapper {
         position: relative;
@@ -319,10 +320,10 @@ table tr td:first-child::before {
         margin-left: 50px;
         color: white;
         background: #981b1F;
-        border: 1px solid #981b1F;
+      
         font-family: 'Times New Roman';
       
     }
 
 
-    }
+    

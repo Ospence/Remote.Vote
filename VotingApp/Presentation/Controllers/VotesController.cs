@@ -40,7 +40,19 @@ namespace VotingApp.Presentation.Controllers
                 _service.Add(vote, currentUserId);
                 return Request.CreateResponse(HttpStatusCode.Created, vote);
             }
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);   
+                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);   
         }
+
+        public HttpResponseMessage ListUserVotes(VoteDTO vote) {
+            var currentUserId = _service.FindCurrentUser(User.Identity.Name);
+            if (ModelState.IsValid) {
+                _service.Add(vote, currentUserId);
+                return Request.CreateResponse(HttpStatusCode.Created, vote);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest,ModelState);
+
+        }
+
+
     }
-}
+}              
