@@ -1,6 +1,6 @@
 ﻿#HomePage {
     margin: 1em;
-    font-family: 'Times New Roman';
+    font-family: Arial, Helvetica, sans-serif;
     /*margin-bottom: 10px;*/
 }
 
@@ -30,7 +30,7 @@
     font-weight: 500;
     margin-left: 17%;
     margin-top: 150px;
-    font-family: 'Times New Roman';
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
     overflow-x: hidden;
 }
 
@@ -41,7 +41,7 @@
     width: 100%;
     height: 35px;
     padding-top: 8px;
-    font-family: 'Times New Roman';
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
     text-align: center;
     font-weight: 500;
     color: white;
@@ -74,7 +74,7 @@ a {
     top: 80%;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: 'Times New Roman';
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
 }
 
 #HoverImages {
@@ -105,7 +105,7 @@ a {
     top: 120%;
     padding-top: 20px;
     text-align: center;
-    font-family: 'Times New Roman';
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
     color: black;
     
 }
@@ -113,7 +113,7 @@ a {
 #AboutSectionTitle {
     font-size: 25px;
     font-weight: 500;
-    font-family: 'Times New Roman';
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
     color: black;
 }
 
@@ -125,7 +125,7 @@ a {
     height: auto;
     padding-top: 20px;
     text-align: center;
-    font-family: 'Times New Roman';
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
     color: #981b1f;
     font-size: 13px;
     padding-bottom:20px;
@@ -145,7 +145,7 @@ a {
     width: 100%;
     height: 35px;
     padding-top: 15px;    
-    font-family: 'Times New Roman';
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
     text-align: center;
     font-weight: 500;
     color: white;   
@@ -155,7 +155,7 @@ a {
 /*LOGIN CSS*/
 #loginformatting{
     margin: 100px;  
-    font-family: 'Times New Roman';
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
     font-weight: 500;
     color: white;    
 }
@@ -312,3 +312,31 @@ table tr td:first-child::before {
     margin-top:20px;
     
 }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+
+    
+    #dropdown {
+        margin-top: 70px;
+        margin-left: 50px;
+        color: white;
+        background: #981b1F;
+        border: 1px solid #981b1F;
+        font-family: 'Times New Roman';
+      
+    }
+
+
+    }
