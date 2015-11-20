@@ -428,32 +428,16 @@ table tr td:first-child::before {
 /*BUTTON CSS*/
 #buttonformatting{
     margin:10px;
+    background-color: #981b1f;
 }
 
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
+#commentpageheader {
+    margin-top: 50px;
 
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
-    }
+/*CREATE MOTION CSS*/
 
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
+}
+#areatext {
+   resize: vertical;   
+}
 
-    
-    #dropdown {
-        margin-top: 70px;
-        margin-left: 50px;
-        color: white;
-        background: #981b1F;
-        border: 1px solid #981b1F;
-        font-family: 'Times New Roman';
-      
-    }
-
-
-    }

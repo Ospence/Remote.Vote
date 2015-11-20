@@ -1,91 +1,122 @@
-﻿<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-4" style="border-right:medium black solid; min-height:1000px">
+﻿<div id="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar-nav" id="sidebar-wrapper">
+        <h1 style="padding-left:15px;color: #999999;">Pearland City of Commerce</h1>
+        <h2 style="padding-left:15px;color: #999999;">ID # 48972</h2>
+        <ul class="sidebar-nav" style="padding-top:150%">
+            <li>
+                <a href="#/motion">Create a Motion</a>
+            </li>
+            <li>
+                <a href="#">Inbox</a>
+            </li>
+            <li>
+                <a href="#">Settings</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid" style="padding-top: 35px;">
+            <div class="col-md-12">
+                <!--<form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-default">
+                        Search
+                    </button>
+                </form>--> 
+                    <h1 align="center">Create a Motion</h1>               
                     <div class="row">
-                        <form id="addMotion" ng-submit="vm.add()" class="col-md-5">
-                            <div class="row">                                
-                                <div class="col-md-4">
-                                    <input class="form-control" ng-model="vm.newMotion.title" placeholder="Motion Title" />
-                                </div>
+                        <form id="addMotion" ng-submit="vm.add()">
+                            <div class="row">                               
+                                <input class="form-control" ng-model="vm.newMotion.title" style="margin-bottom:20px" />                                
                             </div>
                             <div class="row">
-                                <div class="col-md-8">
-                                    <input class="form-control" ng-model="vm.newMotion.description" placeholder="description" />
-                                </div>
+                                <textarea id="areatext"class="form-control" ng-model="vm.newMotion.description" >                                                                        
+                                </textarea>                                                               
                             </div>
                             <br />
-                            <input type="submit" value="Add Motion" class="btn btn-default" />
+                            <input type="submit" value="Add Motion" style="margin:10px;background-color: #981b1f" class="btn btn-danger" />
                         </form>
                     </div>
-<div>
-    <input type="button" value="Yes" class="btn btn-default" ng-click="vm.addVote(true)" />
-    <input type="button" value="No" class="btn btn-default" ng-click="vm.addVote(false)" />
-    <input type="button" value="Allow Second" class="btn btn-default" ng-click="vm.allowSecond()" />
-    <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion()" />
+                    <!--<div>
+                        <input type="button" value="Yes" class="btn btn-default" ng-click="vm.addVote(true)" />
+                        <input type="button" value="No" class="btn btn-default" ng-click="vm.addVote(false)" />
+                        <input type="button" value="Allow Second" class="btn btn-default" ng-click="vm.allowSecond()" />
+                        <input type="button" value="Second" class="btn btn-default" ng-click="vm.secondMotion()" />
     <input type="button" value="Edit" class="btn btn-default" ng-click="vm.edit()" />
-</div>
-                </div>
-                <div class="col-md-8">
-                    <h1 align="center">Current Motions</h1>
-                    <table class="table table-striped table-bordered table-hover table-condensed">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>
-                                    Motions
-                                </th>
-                                <th>
-                                    Vote
-                                </th>
-                                <th>
-                                    Proposed On
-                                </th>
-                                        
-                                <th>
-                                    Allow Second
-                                </th>    
-                                <th>
-                                    Second Motion
-                                </th>    
-                                <th>
-                                    Vote Tally
-                                </th>                        
-                            </tr>                            
-                        </thead>
-                        <tbody ng-repeat="motion in vm.motions as motion track by (motion.id + motion.title + motions.length + motion.dateCreated + motion.allowSecond)">
-                            <tr ng-click="vm.func(motion)">
-                                <td>
-                                    {{vm.currentMotion}}
-                                </td>
-                                <td>
-                                    {{motion.title}}
-                                </td>
-                                <td>
-                                    {{motion.description}}
-                                </td>
-                                <td>
-                                    {{motion.dateCreated}}
-                                </td>
-                                <td>
-                                    <span ng-show="motion.allowSecond" class="glyph glyphicon-check"></span>
-                                    {{motion.allowSecond}}
-                                </td>
-                                <td>
-                                    <span ng-show="motion.seconded" class="glyph glyphicon-check"></span>
-                                    {{motion.seconded}}
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    </div>-->
+                    <div clss="row">
+                        <a style="margin:10px;background-color: #981b1f" href="#menu-toggle" class="btn btn-danger" id="menu-toggle">SideBar</a>
+                    </div>                
             </div>
         </div>
     </div>
-</div>
+</div>-->
+    </div>
+    <!-- /#wrapper -->
 
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
 
+    <!--<div class="col-md-12">
+        <h1 align="center">Current Motions</h1>
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        Motions
+                    </th>
+                    <th>
+                        Vote
+                    </th>
+                    <th>
+                        Proposed On
+                    </th>
+
+                    <th>
+                        Allow Second
+                    </th>
+                    <th>
+                        Second Motion
+                    </th>
+                    <th>
+                        Vote Tally
+                    </th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="motion in vm.motions as motion track by (motion.id + motion.title + motions.length + motion.dateCreated + motion.allowSecond)">
+                <tr ng-click="vm.func(motion)">
+                    <td>
+                        {{vm.currentMotion}}
+                    </td>
+                    <td>
+                        {{motion.title}}
+                    </td>
+                    <td>
+                        {{motion.description}}
+                    </td>
+                    <td>
+                        {{motion.dateCreated}}
+                    </td>
+                    <td>
+                                    <span ng-show="motion.allowSecond" class="glyph glyphicon-check"></span>
+                        {{motion.allowSecond}}
+                    </td>
+                    <td>
+                                    <span ng-show="motion.seconded" class="glyph glyphicon-check"></span>
+                        {{motion.seconded}}
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>-->
