@@ -298,3 +298,8 @@ table tr td:first-child::before {
 #buttonformatting{
     margin:10px;
 }
+
+#commentpageheader {
+    margin-top: 50px;
+
+}
