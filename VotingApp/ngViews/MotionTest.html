@@ -69,10 +69,11 @@
                                     {{motion.dateCreated}}
                                 </td>
                                 <td>
-                                    <span class="glyph glyphicon-check"></span>
+                                    <span ng-show="motion.allowSecond" class="glyph glyphicon-check"></span>
                                     {{motion.allowSecond}}
                                 </td>
                                 <td>
+                                    <span ng-show="motion.seconded" class="glyph glyphicon-check"></span>
                                     {{motion.seconded}}
                                 </td>
                                 <td>
