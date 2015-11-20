@@ -297,4 +297,18 @@ table tr td:first-child::before {
 /*BUTTON CSS*/
 #buttonformatting{
     margin:10px;
+    background-color: #981b1f;
+}
+
+
+/*CREATE MOTION CSS*/
+
+#resizedTextTitle{
+    margin-top:20px;
+    
+}
+
+#resizedTextArea{
+    margin-top:20px;
+    
 }
