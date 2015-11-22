@@ -15,7 +15,7 @@
                 var users = [{
                     id: 1, firstName: "first1", lastName: "last1", beginninngDate: "March 1, 2014", retiredDate: "June 15, 2015",  motionsRaised: "TX SB 118", motionsSeconded: "TX HB 1302",
                 }];
-                callback(users);
+                return users;
             };
 
 

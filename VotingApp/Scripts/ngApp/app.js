@@ -26,7 +26,7 @@
                 controllerAs: 'vm'
             })
 
-            .when('/motion', {
+            .when('/createmotion', {
                 templateUrl: '/ngViews/MotionTest.html',
                 controller: 'motionController',
                 controllerAs: 'vm'
@@ -65,7 +65,7 @@
                 controllerAs: 'vm'
             })
 
-            .when('/chairman', {
+            .when('/motionsview', {
                 templateUrl: '/ngViews/Chairman.html',
                 controller: 'motionController',
                 controllerAs: 'vm'
@@ -76,7 +76,7 @@
                 controllerAs: 'vm'
             })
 
-            .when('/ActiveInactiveTest', {
+            .when('/motionhistory', {
                 templateUrl: '/ngViews/ActiveInactiveTest.html',
                 controller: 'historyController',
                 controllerAs: 'vm'
