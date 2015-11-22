@@ -19,6 +19,8 @@ using VotingApp.Results;
 using VotingApp.Domain.Models;
 using System.Linq;
 using System.Web.Security;
+using System.Net;
+using AutoMapper;
 
 namespace VotingApp.Controllers {
 
@@ -93,19 +95,22 @@ namespace VotingApp.Controllers {
         //[Authorize(Roles = "Admin")]
         [HttpPost]
         //public IHttpActionResult UpdateRole(string userId, string roleName) {
-        public IHttpActionResult UpdateRole(Req req) {
-            var curr = UserManager.FindById(req.UserId);
-            foreach (var roleid in req.Roles) {
-                // curr.Roles.Clear(); In the future clear out the roles to maintain one to one relationship.
-                var IdUserRole = new IdentityUserRole() { RoleId = roleid, UserId = req.UserId };
+        public HttpResponseMessage UpdateRole(Req req) {
+            if (ModelState.IsValid) {
+                var curr = UserManager.FindById(req.UserId);
+                foreach (var roleid in req.Roles) {
+                    // curr.Roles.Clear(); In the future clear out the roles to maintain one to one relationship.
+                    var IdUserRole = new IdentityUserRole() { RoleId = roleid, UserId = req.UserId };
 
-                if (curr.Roles.Contains(IdUserRole)) {
-                    curr.Roles.Add(IdUserRole);
-                    UserManager.Update(curr);
+                    if (curr.Roles.Contains(IdUserRole)) {
+                        curr.Roles.Add(IdUserRole);
+                        UserManager.Update(curr);
+                    }
+                    return Request.CreateResponse(HttpStatusCode.Accepted, curr.Roles);
                 }
             }
 
-            return Ok();
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
 
         /// <summary>
@@ -144,11 +149,22 @@ namespace VotingApp.Controllers {
             var usersByRole = (from u in userManager
                                where u.Roles == req.Roles
                                select u.UserName.ToString()).ToList();
+            
             return usersByRole;
         }
 
-
-
+        [Route("GetRoleByOwner")]
+        // [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public List<string> GetRoleByOwner(string id) {
+            var curr = UserManager.FindById(id);
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var allRoles = roleManager.Roles;
+            var roleByUser = (from r in allRoles
+                              where r.Users == curr
+                              select r.Name.ToString()).ToList();
+            return roleByUser;
+        }
 
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]

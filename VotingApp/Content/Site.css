@@ -355,9 +355,10 @@ table tr td:first-child::before {
 }
 
 #page-content-wrapper {    
-    width: 100%;
+    width: 75%;
     position: absolute;
     padding: 15px;
+    margin-left: 50px;
 }
 
 #wrapper.toggled #page-content-wrapper {

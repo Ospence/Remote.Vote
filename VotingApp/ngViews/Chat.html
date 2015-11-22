@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <i class="fa fa-spin fa-refresh fa-5x" id="loader"></i>
-                    <div class="container" ng-app="VotingApp" ng-controller="Main">
+                    <!--<div class="container" ng-app="VotingApp" ng-controller="Main">-->
                         <h2>Motion Discussion</h2>
                         <!--<h4>via <a href="">RandomUser.me</a> API + <a href="http://www.bootply.com/nXiqUjdLGq">Bootply</a></h4>-->
                         <hr>
@@ -51,7 +51,7 @@
                                         <div class="panel panel-default">
                                             <div class="panel-body">
                                                 {{u.user.text||"Blah text goes here blah bla! Hello blah period."}}<br>
-                                                <span class="label label-info">{{ u.date||randomDate() | date:'h:mma' }}</span>
+                                                <span class="label label-info">{{ u.date| date:'h:mma' }}</span>
                                             </div>
                                         </div>
                                     </div><!--/col-->

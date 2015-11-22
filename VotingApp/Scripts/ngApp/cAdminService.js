@@ -15,13 +15,17 @@
           };
 
           self.list = function (callback) {
-              $http.get('/api/Account/ListRoles').success(
-                  function (result) {
-                      callback(result);
+              $http.get('/api/Account/ListRoles').success(callback);
+          };
+
+          self.listCurrentRoles = function (userId, callback) {
+              $http.get('/api/Account/GetRoleByOwner', userId)
+              .then(function (result) {
+                      callback(result.data);
                   });
           };
 
-          
+
           //self.add = function (userid, role, callback) {
           //   // var user = self.Find(userid)
           //    $http.post('/api/Account/AddRole')
@@ -41,7 +45,7 @@
               $http.post('/api/Account/RoleUpdate', roleUpdateRequest)
                .then(function (result) {                 
 
-                   callback();
+                   callback(result.data);
                });
               
           };
@@ -72,6 +76,8 @@
                       callback(result);
                   });
           };
+
+          
           
       }]);
 })();

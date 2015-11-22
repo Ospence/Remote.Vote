@@ -42,12 +42,16 @@
                                             <th>
                                                 Role
                                             </th>
-                                            <th>Status</th>
                                             <!-- <th>Status</th>-->
+                                            <th>
+                                                Is User Current
+                                            </th>
                                             <th>
                                                 Update
                                             </th>
-                                            <th>Delete</th>
+                                            <th>
+                                                Roles
+                                            </th>
 
                                         </tr>
                                     </thead>
@@ -60,37 +64,38 @@
                                             </td>
                                             <td>
 
-                                                <div ng-model="vm.newRole">
-                                                    <select id="dropdown" name="role">
+                                                <div >
+                                                    <select id="dropdown" name="role" ng-model="vm.RoleSelect[$index]" ng-change="vm.RoleChange($index)">
                                                         <option selected></option>
-                                                        <option ng-repeat="role in vm.roles" ng-click="vm.newRole = role">
+                                                        <option ng-repeat="role in vm.roles" value="{{role.id}}">
                                                             {{role.name}}
                                                         </option>
 
                                                     </select>
                                                 </div>
                                             </td>
-                                            <td ng-repeat="list in vm.listActive">
-                                                User Role
-                                                {{list.roles}}
-                                            </td>
+                                            
                                             <td>
                                                 <form id="dropdown" name="active">
-                                                    <input type="radio" name="roletype" value="Active" />Active<br />
-                                                    <input type="radio" name="roletype" value="Inactive" checked="checked">Inactive<br />
+                                                    <input type="radio" name="roletype" value="Active" ng-model="vm.RadioSelect[$index]" ng-change="Active" />Active<br />
+                                                    <input type="radio" name="roletype" value="Inactive"  checked="checked">Inactive<br />
                                                 </form>
                                             </td>
                                             <td>
-                                                <input type="submit" id="button-spacing dialog" class="btn btn-success" ng-click="vm.update(user)"
+                                                <input type="submit" id="button-spacing dialog" class="btn btn-success" ng-click="vm.update(user, $index)"
                                                        placeholder="Update" />
                                             </td>
                                             <td>
-                                                <input type="submit" id="button-spacing" class="btn btn-danger" ng-click="vm.delete(user)" placeholder="Delete" />
+                                                <ul >
+                                                    <li ng-repeat="role in vm.listCurrentRoles">
+                                                        <span ng-model="role">{{role}}</span>
+                                                    </li>
+                                                </ul>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div id="buttonformatting" class="btn btn-danger">Submit</div>
+                               <!-- <div id="buttonformatting" class="btn btn-danger">Submit</div>-->
                                 <div clss="row">
                                     <a style="margin:10px;background-color: #981b1f" href="#menu-toggle" class="btn btn-danger" id="menu-toggle">SideBar</a>
                                 </div>
