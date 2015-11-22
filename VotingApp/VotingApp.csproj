@@ -245,6 +245,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ngViews\userMotionsSeconded.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -285,7 +286,9 @@
     <Content Include="ngViews\TestView.html" />
     <Content Include="ngViews\TextView3.html" />
     <Content Include="ngViews\TestView2.html" />
+    <Content Include="ngViews\UserHistory.html" />
     <Content Include="ngViews\userMotionHistory.html" />
+    <Content Include="ngViews\votesPlaced.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
