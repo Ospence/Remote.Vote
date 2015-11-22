@@ -97,7 +97,21 @@
                  controller: 'historyController',
                  controllerAs: 'vm'
              })
-
+                .when('/UserHistory', {
+                    templateUrl: '/ngViews/UserHistory.html',
+                    controller: 'historyController',
+                    controllerAs: 'vm'
+                })
+                .when('/userMotionsSeconded', {
+                    templateUrl: 'ngViews/userMotionsSeconded.html',
+                    controller: 'historyController',
+                    controllerAs: 'vm'
+                })
+                .when('/votesPlaced', {
+                    templateUrl: '/ngViews/votesPlaced.html',
+                    controller: 'historyController',
+                    controllerAs: 'vm'
+                })
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             })

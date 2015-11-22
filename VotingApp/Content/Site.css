@@ -415,10 +415,10 @@ table tr td:first-child::before {
         width: 0;
     }
 
-    /*#page-content-wrapper {
+    #page-content-wrapper {
         padding: 20px;
         position: relative;
-    }*/
+    }
 
     #wrapper.toggled #page-content-wrapper {
         position: relative;
