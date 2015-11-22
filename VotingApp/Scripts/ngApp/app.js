@@ -26,7 +26,7 @@
                 controllerAs: 'vm'
             })
 
-            .when('/motion', {
+            .when('/createmotion', {
                 templateUrl: '/ngViews/MotionTest.html',
                 controller: 'motionController',
                 controllerAs: 'vm'
@@ -65,7 +65,7 @@
                 controllerAs: 'vm'
             })
 
-            .when('/chairman', {
+            .when('/motionsview', {
                 templateUrl: '/ngViews/Chairman.html',
                 controller: 'motionController',
                 controllerAs: 'vm'
@@ -76,12 +76,12 @@
                 controllerAs: 'vm'
             })
 
-            .when('/ActiveInactiveTest', {
+            .when('/motionhistory', {
                 templateUrl: '/ngViews/ActiveInactiveTest.html',
                 controller: 'historyController',
                 controllerAs: 'vm'
             })
-            .when('/uservotes1', {
+            .when('/motion120', {
                 templateUrl: '/ngViews/Motion1.html',
                 controller: 'historyController',
                 controllerAs: 'vm'
@@ -92,12 +92,29 @@
                 controllerAs: 'vm'
             })
 
-             .when('/userMotionHistory', {
-                 templateUrl: '/ngViews/userMotionHistory.html',
-                 controller: 'historyController',
-                 controllerAs: 'vm'
-             })
 
+            .when('/userhistory', {
+                templateUrl: '/ngViews/UserHistory.html',
+                controller: 'historyController',
+                controllerAs: 'vm'
+            })
+
+            .when('/id1motionsraised', {
+                templateUrl: '/ngViews/userMotionHistory.html',
+                controller: 'historyController',
+                controllerAs: 'vm'
+            })
+
+            .when('/id1motionsseconded', {
+                templateUrl: 'ngViews/userMotionsSeconded.html',
+                controller: 'historyController',
+                controllerAs: 'vm'
+            })
+            .when('/id1motionsvoted', {
+                templateUrl: '/ngViews/votesPlaced.html',
+                controller: 'historyController',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 templateUrl: '/ngViews/notFound.html'
             })
