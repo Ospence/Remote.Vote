@@ -1,36 +1,30 @@
 ﻿<div id="wrapper">
     <!-- Sidebar -->
-    <div id="sidebar-wrapper" style="font-family:'Times New Roman'">
-        <h1>Pearland City of Commerce</h1>
-
-        <ul class="sidebar-nav" style="padding-top: 115%">
-            <!--<h1>Pearland City of Commerce</h1>-->
-            <!--<li class="sidebar-brand">-->
-            <!--<a href="#">
-                    Start Bootstrap
-                </a>
+    <div class="sidebar-nav" id="sidebar-wrapper">
+        <h1 style="padding-left:15px;color: #999999;">Pearland City of Commerce</h1>
+        <h2 style="padding-left:15px;color: #999999;">ID # 48972</h2>
+        <ul class="sidebar-nav" style="padding-top:125%">
+            <li>
+                <a href="#/createmotion">Create Motion</a>
             </li>
             <li>
-                <a href="#">Dashboard</a>
+                <a href="#/motionsview">Motions</a>
             </li>
             <li>
-                <a href="#">Shortcuts</a>
+                <a href="#/motionhistory">Motion History</a>
             </li>
             <li>
-                <a href="#">Overview</a>
+                <a href="#/userhistory">Past/Current Users</a>
             </li>
             <li>
-                <a href="#">Events</a>
-            </li>-->
-            <li>
-                <a href="#">Motion History</a>
-            </li>
-            <!--<li>
-                <a href="#">Services</a>
+                <a href="#/adminpage">Manage Users</a>
             </li>
             <li>
-                <a href="#">Contact</a>
-            </li>-->
+                <a href="#">Inbox</a>
+            </li>
+            <li>
+                <a href="#">Settings</a>
+            </li>
         </ul>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -44,11 +38,8 @@
                         <div class="row">
                             <div class="col-md-12" ng-show="vm.showMotions">
 
-                                <table class="table table-striped table-bordered table-hover table-condensed container-fluid" style="font-family: 'Times New Roman'">
-
-                                    <div>
-                                        <h1 style="font-family: 'Times New Roman'">Sarah Smith Motions Raised</h1>
-                                    </div>
+                                <table class="table table-striped table-bordered table-hover table-condensed container-fluid" style="font-family: 'Times New Roman'">                                    
+                                        <h1 style="font-family: 'Times New Roman';margin-bottom:20px" align="center">Motions Raised by Sarah Smith</h1>                                   
                                     <thead>
                                         <tr>
                                             <!--<th>Planning and Zoning</th>-->
@@ -154,7 +145,7 @@
 
 
 
-        <a href="#menu-toggle" class="btn btn-danger" style="background-color: #981b1F; font-family:'Times New Roman'," id="menu-toggle">Sidebar</a>
+        <a href="#menu-toggle" class="btn btn-danger" style="background-color: #981b1F; font-family:'Times New Roman';margin-left:35px" id="menu-toggle">Sidebar</a>
     </div>
 </div>
 <!-- /#page-content-wrapper -->

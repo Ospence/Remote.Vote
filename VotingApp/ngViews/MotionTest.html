@@ -11,10 +11,10 @@
                 <a href="#/motionsview">Motions</a>
             </li>
             <li>
-                <a href="#/">Motion History</a>
+                <a href="#/motionhistory">Motion History</a>
             </li>
             <li>
-                <a href="#/">Past/Current Users</a>
+                <a href="#/userhistory">Past/Current Users</a>
             </li>
             <li>
                 <a href="#/adminpage">Manage Users</a>
@@ -47,10 +47,11 @@
                             <input class="form-control" ng-model="vm.newMotion.title" style="margin-bottom:20px" />
                         </div>
                         <div class="row">
-                            <textarea id="areatext" class="form-control" ng-model="vm.newMotion.description"></textarea>
+                            <textarea id="areatext" class="form-control" ng-model="vm.newMotion.description">
+                            </textarea>
                         </div>
                         <br />
-                        <input type="submit" value="Add Motion" style="margin:10px;background-color: #981b1f" class="btn btn-danger" />
+                        <a href="#/motionsview"><input type="submit" value="Add Motion" style="margin:10px;background-color: #981b1f" class="btn btn-danger" /></a>
                     </form>
                 </div>
                 <!--<div>

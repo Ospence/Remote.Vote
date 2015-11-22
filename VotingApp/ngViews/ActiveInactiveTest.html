@@ -1,37 +1,32 @@
 ﻿
 <div id="wrapper">
     <!-- Sidebar -->
-    <div id="sidebar-wrapper" style="font-family:'Times New Roman'">
-        <div class="sidebar-nav" id="sidebar-wrapper">
-            <h1 style="padding-left:15px;color: #999999;">Pearland City of Commerce</h1>
-            <h2 style="padding-left:15px;color: #999999;">ID # 48972</h2>
-            <ul class="sidebar-nav" style="padding-top:125%">
-                <li>
-                    <a href="#/createmotion">Create Motion</a>
-                </li>
-                <li>
-                    <a href="#/motionsview">Motions</a>
-                </li>
-                <li>
-                    <a href="#/motionhistory">Motion History</a>
-                </li>
-                <li>
-                    <a href="#/">Past/Current Users</a>
-                </li>
-                <li>
-                    <a href="#/adminpage">Manage Users</a>
+    <div class="sidebar-nav" id="sidebar-wrapper">
+        <h1 style="padding-left:15px;color: #999999;">Pearland City of Commerce</h1>
+        <h2 style="padding-left:15px;color: #999999;">ID # 48972</h2>
+        <ul class="sidebar-nav" style="padding-top:125%">
+            <li>
+                <a href="#/createmotion">Create Motion</a>
             </li>
             <li>
-                <a href="#">Motion History Details</a>
-                </li>
-                <li>
-                    <a href="#">Inbox</a>
-                </li>
-                <li>
-                    <a href="#">Settings</a>
-                </li>
-            </ul>
-        </div>
+                <a href="#/motionsview">Motions</a>
+            </li>
+            <li>
+                <a href="#/motionhistory">Motion History</a>
+            </li>
+            <li>
+                <a href="#/userhistory">Past/Current Users</a>
+            </li>
+            <li>
+                <a href="#/adminpage">Manage Users</a>
+            </li>
+            <li>
+                <a href="#">Inbox</a>
+            </li>
+            <li>
+                <a href="#">Settings</a>
+            </li>
+        </ul>
     </div>
     <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
@@ -45,9 +40,9 @@
                             <div class="col-md-12" ng-show="vm.showMotions">
 
                                 <table class="table table-striped table-bordered table-hover table-condensed container-fluid" style="font-family: 'Times New Roman'">
-                                    <div>
-                                        <h1 style="font-family: 'Times New Roman'">Motion History</h1>
-                                    </div>
+                                    
+                                        <h1 style="font-family:'Times New Roman';margin-bottom:20px" align="center">Motion History</h1>
+                                  
                                     <thead>
                                         <tr>
                                             <th></th>
@@ -73,7 +68,7 @@
 
                                         <tr ng-repeat="motion in vm.motions">
                                             <td></td>
-                                            <td><a href="#/uservotes1" style="color:black">{{motion.title}}</a></td>
+                                            <td><a href="#/motion120" style="color:black">{{motion.title}}</a></td>
                                             <td>{{motion.dateBeginning}}</td>
                                             <td>{{motion.dateResult}}</td>
                                             <td>{{motion.passed}}</td>
