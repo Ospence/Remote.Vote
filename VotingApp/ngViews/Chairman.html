@@ -33,8 +33,25 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+                    
                     <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
                     <div class="container-fluid" style="padding-top: 30px;">
+                        <input type="button" class="btn btn-danger" ng-click="vm.shouldAdd()" value="Add a Motion?" />
+                        <div ng-show="vm.should">
+                            <h1 align="center">Create a Motion</h1>
+                            <div class="row">
+                                <form id="addMotion" ng-submit="vm.add()">
+                                    <div class="row">
+                                        <input style="width:500px;margin-bottom:20px" class="form-control" ng-model="vm.newMotion.title" style="" />
+                                    </div>
+                                    <div class="row">
+                                        <textarea style="width:500px" id="areatext" class="form-control" ng-model="vm.newMotion.description"></textarea>
+                                    </div>
+                                    <br />
+                                    <input type="submit" value="Add Motion" style="margin:10px;background-color: #981b1f" class="btn btn-danger" /></a>
+                                </form>
+                            </div>
+                        </div>
                         <div class="row">
                             <div ng-show="vm.showTable()" class="col-md-12">
                                 <table style="table-layout:fixed;" class="table table-striped table-bordered table-hover table-condensed container-fluid">
@@ -108,10 +125,10 @@
                             </div>
                             <div ng-hide="vm.showTable()" class="col-md-12">
                                 <input type="button" value="Go Back" class="btn btn-primary btn-block btn-lg" ng-click="vm.funcBack()" />
-                                <table class="table table-striped table-bordered table-hover table-condensed">
+                                <table style="table-layout:fixed;" class="table table-striped table-bordered table-hover table-condensed container-fluid">
                                     <thead>
                                         <tr>
-                                            <th></th>
+                                            <th style="width:25px;"></th>
                                             <th>
                                                 Motion
                                             </th>
@@ -121,7 +138,7 @@
                                             <th>
                                                 Raised on
                                             </th>
-                                            <th>
+                                            <th style="width:78px">
                                                 Approved
                                             </th>
                                             <th>
@@ -151,8 +168,8 @@
                                                 {{vm.currentMotion.dateBeginning}}
                                             </td>
                                             <td>
-                                                <span ng-show="vm.currentMotion.allowSecond" class="glyphicon glyphicon-ok"></span>
-                                                <span ng-show="!vm.currentMotion.allowSecond" class="glyphicon glyphicon-remove"></span>
+                                                <span ng-show="motion.allowSecond" class="glyphicon glyphicon-ok" style="font-size:30px;text-align:center;"></span>
+                                                <span ng-show="!motion.allowSecond" class="glyphicon glyphicon-remove" style="font-size:30px;text-align:center;"></span>
                                             </td>
                                             <td>
                                                 <span ng-show="!vm.currentMotion.allowSecond">Awaiting Approval</span>
@@ -232,19 +249,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row" ng-show="vm.showComment">
+                                        <div class="row" ng-hide="!vm.showComment">
                                             <div class="col-md-12">
-                                                <div>
-                                                    <form ng-submit="vm.pushComment(comment)">
+                                                <div style="height: 150px;border:solid medium #ddd;background-color:#f9f9f9">
+                                                    <p style="margin-top:5px;margin-bottom:5px;text-align:center;"><strong> Add to the Discussion </strong></p>
+                                                    <form ng-submit="vm.addComment(comment)">
                                                         <div class="col-md-10">
                                                             <div style="height:100px;padding:0px;margin:0px;width:100%">
-                                                                <input type="text" ng-model="comment" style="width:100%;height:100%;padding:0px;margin:0px" />
+                                                                <textarea type="text" ng-model="comment" style="width:100%;height:100%;padding:5px;margin:0px" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div style="width:100%;height:100px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px">
-                                                                <button class="btn btn-primary btn-lg" ng-click="vm.pushComments()" style="width:100%;height:100px;padding:0px;margin:0px">
-                                                                    <span class="glyphicon glyphicon-envelope" style="font-size:30px"></span>
+                                                                <button class="btn btn-primary btn-lg" ng-click="vm.addComment()" style="width:100%;height:100px;padding:0px;margin:0px">
+                                                                    <div style="vertical-align:middle;text-align:center;">
+                                                                        <span class="glyphicon glyphicon-envelope" style="margin-right:-8px;font-size:30px"></span>
+                                                                        <span class="glyphicon glyphicon-chevron-right" style="margin-right:-18px;font-size:30px"></span>
+                                                                        <span class="glyphicon glyphicon-chevron-right" style="font-size:30px"></span>
+                                                                    </div>
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -254,18 +276,22 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div ng-repeat="comment in vm.comments">
-                                                    <div style="background-color:#f9f9f9">
-                                                        <div class="col-md-3">
-                                                            <div class="row">
-                                                                <span>{{comment.date | date:'MM/dd/yyyy @ h:mma'}}</span>
+                                                <div id="scroll" style="height:200px;border:solid medium #ddd;background-color:#f9f9f9;margin-top:-5px" ng-repeat="comment in vm.comments">
+                                                    <div class="col-md-3">
+                                                        <div>
+                                                            <div class="row" style="height:100px">
+                                                                <span>{{comment.date | date:'MM/dd/yyyy at h:mma'}}</span>
                                                             </div>
-                                                            <div class="row">
+                                                            <div class="row"  style="height:100px">
                                                                 <p>{{comment.name}}</p>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-9">
-
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="row">
+                                                            <div style="height:200px;border-bottom:solid thin #ddd;border-left:solid medium #ddd">
+                                                                {{comment.comment}}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

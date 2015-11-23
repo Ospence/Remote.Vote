@@ -9,6 +9,7 @@
 
 
             var vm = this;
+            vm.should = false;
             vm.comments = [];
             vm.showComment = false
             vm.currentMotion = "none";
@@ -30,6 +31,12 @@
                 }
             };
             
+            vm.scrollDown = function () {
+                var h = screen.availHeight;
+                var w = screen.availWidth;
+                scrollTo(w,h);
+            };
+
             vm.pushComment = function (comment) {
                 vm.comments.push({
                     name: "Jennifer Jordan",
@@ -37,6 +44,18 @@
                     comment: comment
                 });
             };
+
+            vm.shouldAdd = function ()
+            {
+                vm.should = !vm.should;
+                return vm.should;
+            }
+
+            vm.addComment = function (comment)
+            {
+                vm.pushComment(comment);
+                vm.scrollDown();
+            }
 
             vm.users = [
                 { id: 2, firstName: "John", lastName: "Lacy", beginningDate: "April 15, 2013", retiredDate: "Active", motionsRaised: "12", motionsSeconded: "20", votesPlaced: "67" },
