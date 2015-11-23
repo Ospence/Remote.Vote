@@ -10,8 +10,13 @@
 
             var vm = this;
             vm.should = false;
-            vm.comments = [];
-            vm.showComment = false
+            vm.comments = [
+            {name:"Adam Spencer", date:"11/11/2015 PMt 12:42PM", comment: "I like this motion a lot!"},
+            {name:"Nick Scurfield", date:"11/11/2015 PMt 1:21PM", comment: "I like this motion a lot, too! I don't like that part about the stuff, though."},
+            ];
+            vm.endDate = new Date();
+            vm.showComment = false;
+            vm.hideCancel = true;
             vm.currentMotion = "none";
             vm.showTable = function () {
                 if (vm.currentMotion == "none") {
@@ -21,6 +26,9 @@
                     return false;
                 }
             };
+
+            vm.newMotionRow = false;
+
             vm.showComments = function () {
                 vm.showComment = !vm.showComment;
                 if(vm.showComment) {
@@ -30,11 +38,19 @@
                     return false;
                 }
             };
+
+            vm.getDate = function () {
+                return new Date();
+            };
             
             vm.scrollDown = function () {
                 var h = screen.availHeight;
                 var w = screen.availWidth;
                 scrollTo(w,h);
+            };
+
+            vm.addMotionToArray = function () {
+                vm.activeMotions.push({ id: 1, title: vm.newMotionTitle, raisedBy: "Jennifer Jordan", dateBeginning: vm.getDate, allowSecond: false, seconded: false, periodEnd: "12/1/2015", yea: 0, nay: 0, allowVote: false, yeaList: [], nayList: [], description: motionService.description });
             };
 
             vm.pushComment = function (comment) {
@@ -48,6 +64,7 @@
             vm.shouldAdd = function ()
             {
                 vm.should = !vm.should;
+                vm.hideCancel = !vm.hideCancel;
                 return vm.should;
             }
 
