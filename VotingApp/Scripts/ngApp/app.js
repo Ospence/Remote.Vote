@@ -15,11 +15,11 @@
             //    controllerAs: 'vm'
             // })
 
-            .when('/', {
-                templateUrl: '/ngViews/TestView.html',
-                controller: 'userController',
-                controllerAs: 'vm'
-            })
+            //.when('/', {
+            //    templateUrl: '/ngViews/TestView.html',
+            //    controller: 'userController',
+            //    controllerAs: 'vm'
+            //})
             .when('/adminpage', {
                 templateUrl: '/ngViews/AdminView.html',
                 controller: 'cAdminController',
@@ -31,7 +31,7 @@
                 controller: 'motionController',
                 controllerAs: 'vm'
             })
-            .when('/login', {
+            .when('/', {
                 templateUrl: '/ngViews/loginTest.html',
                 controller: 'loginController',
                 controllerAs: 'vm'
@@ -111,7 +111,7 @@
                 controllerAs: 'vm'
             })
 
-            .when('/id1motionsraised', {
+            .when('/motions120', {
                 templateUrl: '/ngViews/userMotionHistory.html',
                 controller: 'historyController',
                 controllerAs: 'vm'
@@ -122,7 +122,7 @@
                 controller: 'historyController',
                 controllerAs: 'vm'
             })
-            .when('/id1motionsvoted', {
+            .when('/votesPlaced', {
                 templateUrl: '/ngViews/votesPlaced.html',
                 controller: 'historyController',
                 controllerAs: 'vm'

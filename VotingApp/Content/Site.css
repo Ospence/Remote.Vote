@@ -490,4 +490,30 @@ table tr td:first-child::before {
   top:40%;
 }*/
 
+table {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+
+thead th {
+  background-color: #981b1f;
+  color: white;
+  text-align:center;
+}
+
+tbody td {
+  background-color: #ffe5e5;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
 
