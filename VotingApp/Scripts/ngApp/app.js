@@ -65,6 +65,18 @@
                 controllerAs: 'vm'
             })
 
+            .when('/getstarted', {
+                templateUrl: '/ngViews/GetStarted.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+
+            .when('/meettheteam', {
+                templateUrl: '/ngViews/MeetTheTeam.html',
+                controller: 'userController',
+                controllerAs: 'vm'
+            })
+
             .when('/motionsview', {
                 templateUrl: '/ngViews/Chairman.html',
                 controller: 'motionController',

@@ -303,6 +303,8 @@ a {
     background-size: cover;
 }
 
+/*TABLE NUMBERING*/
+
 table tr td:first-child::before {
     content: counter(rowNumber);
     min-width: 1em;
@@ -444,6 +446,26 @@ table tr td:first-child::before {
 }
 #areatext {
    resize: vertical;   
+}
+
+/*GETSTARTED CSS*/
+
+#getstartedformatting{
+    
+    margin-left:100px;
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
+    font-weight: 500;   
+}
+
+#getstartedbackgaround{
+    padding: 100px;
+    background-image: url('../Images/HomePageHeader.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#getstartedlistformatting{
+    font-size: x-large;
 }
 
 /* CSS used here will be applied after bootstrap.css */
