@@ -15,11 +15,11 @@
             //    controllerAs: 'vm'
             // })
 
-            .when('/', {
-                templateUrl: '/ngViews/TestView.html',
-                controller: 'userController',
-                controllerAs: 'vm'
-            })
+            //.when('/', {
+            //    templateUrl: '/ngViews/TestView.html',
+            //    controller: 'userController',
+            //    controllerAs: 'vm'
+            //})
             .when('/adminpage', {
                 templateUrl: '/ngViews/AdminView.html',
                 controller: 'cAdminController',
@@ -31,7 +31,7 @@
                 controller: 'motionController',
                 controllerAs: 'vm'
             })
-            .when('/login', {
+            .when('/', {
                 templateUrl: '/ngViews/loginTest.html',
                 controller: 'loginController',
                 controllerAs: 'vm'
