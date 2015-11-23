@@ -12,7 +12,7 @@
 
         self.list = function (callback) {
             //return UserAPI.query();
-            var users = [
+            return users = [
                 { id: 1, firstName: "Sarah", lastName: "Smith", beginningDate: "March 1, 2014", retiredDate: "June 15, 2015", motionsRaised: "9", motionsSeconded: "5", votesPlaced: "4" },
                 { id: 1, firstName: "John", lastName: "Lacy", beginningDate: "April 15, 2013", retiredDate: "Active", motionsRaised: "12", motionsSeconded: "20", votesPlaced: "67" },
                 { id: 1, firstName: "Adam", lastName: "Spencer", beginningDate: "August 9, 1995", retiredDate: "Active", motionsRaised: "18", motionsSeconded: "54", votesPlaced: "132" },
@@ -30,8 +30,8 @@
                    
         ];
                     callback(users);
-                }
-            };
+                } 
+            
 
 
             self.add = function (user, callback) {
