@@ -24,7 +24,7 @@
           self.listCurrentRoles = function (userId, callback) {
               $http.get('/api/Account/GetRoleByOwner', userId)
               .then(function (result) {
-                      callback(result.data);
+                      callback(result);
                   });
           };
 
