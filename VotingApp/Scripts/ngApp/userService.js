@@ -25,7 +25,7 @@
                 { id: 1, firstName: "Catherine", lastName: "Ruff", beginningDate: "May 5, 2010", retiredDate: "January 12, 2015", motionsRaised: "5", motionsSeconded: "34", votesPlaced: "56" },
         ];
                     callback(users);
-                }
+                } 
             
 
 

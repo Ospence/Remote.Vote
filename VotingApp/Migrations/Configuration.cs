@@ -75,8 +75,8 @@ namespace VotingApp.Migrations
             {
                 user3 = new ApplicationUser
                 {
-                    FirstName = "Adam",
-                    LastName = "Spencer",
+                    FirstName = "Sarah ",
+                    LastName = "Smith",
                     PhoneNumber = "333-333-3333",
                     UserName = "Rest@Rest.com",
                     Email = "Rest@Rest.com"
