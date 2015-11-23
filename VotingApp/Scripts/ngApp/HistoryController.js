@@ -36,7 +36,7 @@
             vm.getMotionList();
 
             vm.getUserList = function () {
-                userService.list(function (data) {
+                userService.userlist(function (data) {
                     vm.users = data;
                 });
             };
