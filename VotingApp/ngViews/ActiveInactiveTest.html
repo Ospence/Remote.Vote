@@ -2,12 +2,9 @@
 <div id="wrapper">
     <!-- Sidebar -->
     <div class="sidebar-nav" id="sidebar-wrapper">
-        <h1 style="padding-left:15px;color: #999999;">Pearland City of Commerce</h1>
+        <h1 style="padding-left:15px;color: #999999;">Pearland City Chamber of Commerce</h1>
         <h2 style="padding-left:15px;color: #999999;">ID # 48972</h2>
         <ul class="sidebar-nav" style="padding-top:125%">
-            <li>
-                <a href="#/createmotion">Create Motion</a>
-            </li>
             <li>
                 <a href="#/motionsview">Motions</a>
             </li>
@@ -68,7 +65,7 @@
 
                                         <tr ng-repeat="motion in vm.motions">
                                             <td></td>
-                                            <td><a href="#/motion120" style="color:black">{{motion.title}}</a></td>
+                                            <td><a href="#/motion120" style="color:#337ab7">{{motion.title}}</a></td>
                                             <td>{{motion.dateBeginning}}</td>
                                             <td>{{motion.dateResult}}</td>
                                             <td>{{motion.passed}}</td>

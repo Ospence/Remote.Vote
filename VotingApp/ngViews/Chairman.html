@@ -1,12 +1,9 @@
 ﻿<div id="wrapper">
     <!-- Sidebar -->
     <div class="sidebar-nav" id="sidebar-wrapper">
-        <h1 style="padding-left:15px;color: #999999;">Pearland City of Commerce</h1>
+        <h1 style="padding-left:15px;color: #999999;">Pearland City Chamber of Commerce</h1>
         <h2 style="padding-left:15px;color: #999999;">ID # 48972</h2>
         <ul class="sidebar-nav" style="padding-top:125%">
-            <li>
-                <a href="#/createmotion">Create Motion</a>
-            </li>
             <li>
                 <a href="#/motionsview">Motions</a>
             </li>
@@ -30,240 +27,340 @@
     <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
     <div id="page-content-wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top:19px;">
             <div class="row">
-                <div class="col-lg-12">
-                    <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
-                    <div class="container-fluid" style="padding-top: 30px;">
-                        <div class="row">
-                            <div ng-show="vm.showTable()" class="col-md-12">
-                                <table style="table-layout:fixed;" class="table table-striped table-bordered table-hover table-condensed container-fluid">
-                                    <thead style="text-align:center">
-                                        <tr>
-                                            <th style="width:25px;"></th>
-                                            <th>
-                                                Motion
-                                            </th>
-                                            <th>
-                                                Raised By
-                                            </th>
-                                            <th>
-                                                Raised on
-                                            </th>
-                                            <th style="width:78px">
-                                                Approved
-                                            </th>
-                                            <th>
-                                                Seconded by
-                                            </th>
-                                            <th>
-                                                Vote Tally
-                                            </th>
-                                            <th>
-                                                Period
-                                            </th>
-                                            <th>
-                                                Period End
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody ng-repeat="motion in vm.activeMotions as motion track by motion.id" id="chairList">
-                                        <tr ng-model="motion">
-                                            <td></td>
-                                            <td>
-                                                <span><input type="button" class="btn btn-alert btn-block btn-link" value="{{motion.title}}" ng-click="vm.func(motion)" /></span>
-                                            </td>
-                                            <td>
-                                                {{motion.raisedBy}}
-                                            </td>
-                                            <td>
-                                                {{motion.dateBeginning}}
-                                            </td>
-                                            <td>
-                                                <span ng-show="motion.allowSecond" class="glyphicon glyphicon-ok" style="font-size:30px;text-align:center;"></span>
-                                                <span ng-show="!motion.allowSecond" class="glyphicon glyphicon-remove" style="font-size:30px;text-align:center;"></span>
-                                            </td>
-                                            <td>
-                                                <span ng-show="!motion.allowSecond">Awaiting Approval</span>
-                                                <span ng-show="motion.allowSecond">
-                                                    <span ng-show="motion.seconded">{{motion.secondedBy}}</span>
-                                                    <span ng-show="!motion.seconded"><input type="button" class="btn btn-primary btn-xs btn-block" value="Second Motion" ng-click="vm.changeSecond(motion)" style="height:40px" /></span>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                Yea:{{motion.yea}} - <input ng-show="motion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteYes(motion)" /><br />
-                                                Nay:{{motion.nay}} - <input ng-show="motion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteNo(motion)" />
-                                            </td>
-                                            <td>
-                                                <span ng-hide="motion.allowSecond">Approval</span>
-                                                <span ng-show="!motion.seconded && motion.allowSecond">Seconding</span>
-                                                <span ng-show="motion.seconded">Voting</span>
-                                            </td>
-                                            <td>
-                                                {{motion.periodEnd}}
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div ng-hide="vm.showTable()" class="col-md-12">
-                                <input type="button" value="Go Back" class="btn btn-primary btn-block btn-lg" ng-click="vm.funcBack()" />
-                                <table class="table table-striped table-bordered table-hover table-condensed">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>
-                                                Motion
-                                            </th>
-                                            <th>
-                                                Raised By
-                                            </th>
-                                            <th>
-                                                Raised on
-                                            </th>
-                                            <th>
-                                                Approved
-                                            </th>
-                                            <th>
-                                                Seconded by
-                                            </th>
-                                            <th>
-                                                Vote Tally
-                                            </th>
-                                            <th>
-                                                Period
-                                            </th>
-                                            <th>
-                                                Period End
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-model="vm.currentMotion">
-                                            <td></td>
-                                            <td>
-                                                {{vm.currentMotion.title}}
-                                            </td>
-                                            <td>
-                                                {{vm.currentMotion.raisedBy}}
-                                            </td>
-                                            <td>
-                                                {{vm.currentMotion.dateBeginning}}
-                                            </td>
-                                            <td>
-                                                <span ng-show="vm.currentMotion.allowSecond" class="glyphicon glyphicon-ok"></span>
-                                                <span ng-show="!vm.currentMotion.allowSecond" class="glyphicon glyphicon-remove"></span>
-                                            </td>
-                                            <td>
-                                                <span ng-show="!vm.currentMotion.allowSecond">Awaiting Approval</span>
-                                                <span ng-show="vm.currentMotion.allowSecond">
-                                                    <span ng-show="vm.currentMotion.seconded">{{vm.currentMotion.secondedBy}}</span>
-                                                    <span ng-show="!vm.currentMotion.seconded"><input type="button" class="btn btn-primary btn-xs btn-block" value="Second Motion" ng-click="vm.changeSecond(motion)" /></span>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                Yea:{{vm.currentMotion.yea}} - <input ng-show="vm.currentMotion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteYes(vm.currentMotion)" /><br />
-                                                Nay:{{vm.currentMotion.nay}} - <input ng-show="vm.currentMotion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteNo(vm.currentMotion)" />
-                                            </td>
-                                            <td>
-                                                <span ng-hide="vm.currentMotion.allowSecond">Approval</span>
-                                                <span ng-show="!vm.currentMotion.seconded && vm.currentMotion.allowSecond">Seconding</span>
-                                                <span ng-show="vm.currentMotion.seconded">Voting</span>
-                                            </td>
-                                            <td>
-                                                {{vm.currentMotion.periodEnd}}
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div style="margin-top:-20px;border:solid thin #ddd;border-top:none;height:490px;background-color:#f9f9f9">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div style="height: 48px;border-bottom:solid medium #ddd">
-                                                        <div class="col-md-2">
-                                                            <div>
-                                                                <p style="margin-top:14px;margin-left:6px;"><strong>Votes Placed:</strong></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-10">
-                                                            <div class="row">
-                                                                <div style="height:24px;border-bottom:solid thin #ddd;border-left:solid medium #ddd">
-                                                                    <span style="margin-left:3px;"><strong>Yea| </strong></span><span style="margin-left:3px;" ng-repeat="voter in vm.currentMotion.yeaList">{{voter}}<strong> | </strong> </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div style="height:24px;border-left:solid medium #ddd">
-                                                                    <span style="margin-left:3px;"><strong>Nay| </strong></span><span style="margin-left:3px;" ng-repeat="voter in vm.currentMotion.nayList">{{voter}}<strong> | </strong> </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div>
-                                                        <div class="col-md-2">
-                                                            <div class="row" style="height:385px">
-                                                                <p style="padding-top:14px;padding-left:12px;"><strong>Details:</strong></p>
-                                                            </div>
-                                                            <div class="row" style="height:25px">
-                                                                <button class="btn btn-primary btn-lg btn-block" ng-click="vm.showComments()">
-                                                                    <span class="glyphicon glyphicon-chevron-down" style="font-size:15px"></span>
-                                                                    <span class="glyphicon glyphicon-comment" style="font-size:30px"></span>
-                                                                    <span class="glyphicon glyphicon-chevron-down" style="font-size:15px"></span>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-10" style="height: 442px;">
-                                                            <div class="row">
-                                                                <div style="height:442px;border-left:solid medium #ddd;border-bottom:solid thin #ddd;border-right:solid thin #ddd">
-                                                                    <div style="word-wrap:normal;padding:4px">
-<pre style="border:none;background-color:#f9f9f9;font-size:13px">
-{{vm.currentMotion.description}}
-</pre>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row" ng-show="vm.showComment">
+                <div class="col-md-12">
+                    
+                    <div class="row">
+                        <div ng-show="vm.showTable()" class="col-md-12">
+                            <table style="table-layout:fixed;" class="table table-striped table-bordered table-hover table-condensed container-fluid">
+                                <thead style="text-align:center">
+                                    <tr>
+                                        <th style="width:25px;"></th>
+                                        <th>
+                                            Motion
+                                        </th>
+                                        <th>
+                                            Raised By
+                                        </th>
+                                        <th>
+                                            Raised on
+                                        </th>
+                                        <th style="width:78px">
+                                            Approved
+                                        </th>
+                                        <th>
+                                            Seconded by
+                                        </th>
+                                        <th>
+                                            Vote Tally
+                                        </th>
+                                        <th>
+                                            Period
+                                        </th>
+                                        <th>
+                                            Period End
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="chairList">
+                                    <tr ng-repeat="motion in vm.activeMotions as motion track by motion.id" ng-model="motion">
+                                        <td></td>
+                                        <td>
+                                                <span><input type="button" class="btn btn-block btn-link" value="{{motion.title}}" ng-click="vm.func(motion)" /></span>
+                                        </td>
+                                        <td>
+                                            {{motion.raisedBy}}
+                                        </td>
+                                        <td>
+                                            {{motion.dateBeginning}}
+                                        </td>
+                                        <td>
+                                            <span ng-show="motion.allowSecond" class="glyphicon glyphicon-ok" style="font-size:30px;text-align:center;"></span>
+                                            <span ng-show="!motion.allowSecond" class="glyphicon glyphicon-remove" style="font-size:30px;text-align:center;"></span>
+                                        </td>
+                                        <td>
+                                            <span ng-show="!motion.allowSecond">Awaiting Approval</span>
+                                            <span ng-show="motion.allowSecond">
+                                                <span ng-show="motion.seconded">{{motion.secondedBy}}</span>
+                                                <span ng-show="!motion.seconded"><input type="button" class="btn btn-primary btn-xs btn-block" value="Second Motion" ng-click="vm.changeSecond(motion)" style="height:40px" /></span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Yea:{{motion.yea}} - <input ng-show="motion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteYes(motion)" /><br />
+                                            Nay:{{motion.nay}} - <input ng-show="motion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteNo(motion)" />
+                                        </td>
+                                        <td>
+                                            <span ng-hide="motion.allowSecond">Approval</span>
+                                            <span ng-show="!motion.seconded && motion.allowSecond">Seconding</span>
+                                            <span ng-show="motion.seconded">Voting</span>
+                                        </td>
+                                        <td>
+                                            {{motion.periodEnd}}
+                                        </td>
+                                    </tr>
+                                    <tr ng-hide="!vm.newMotionRow">
+                                        <td></td>
+                                        <td>
+                                            <span><input type="button" class="btn btn-alert btn-block btn-link" value="TX SB 199" ng-click="vm.func(motion)" /></span>
+                                        </td>
+                                        <td>
+                                            Jennifer Jordan
+                                        </td>
+                                        <td>
+                                            {{vm.getDate() | date:"MM/dd/yyyy"}}
+                                        </td>
+                                        <td>
+                                            <span ng-show="motion.allowSecond" class="glyphicon glyphicon-ok" style="font-size:30px;text-align:center;"></span>
+                                            <span ng-show="!motion.allowSecond" class="glyphicon glyphicon-remove" style="font-size:30px;text-align:center;"></span>
+                                        </td>
+                                        <td>
+                                            <span ng-show="!motion.allowSecond">Awaiting Approval</span>
+                                            <span ng-show="motion.allowSecond">
+                                                <span ng-show="motion.seconded">{{motion.secondedBy}}</span>
+                                                <span ng-show="!motion.seconded"><input type="button" class="btn btn-primary btn-xs btn-block" value="Second Motion" ng-click="vm.changeSecond(motion)" style="height:40px" /></span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Yea:0 - <input ng-show="motion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteYes(motion)" /><br />
+                                            Nay:0 - <input ng-show="motion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteNo(motion)" />
+                                        </td>
+                                        <td>
+                                            <span ng-hide="!vm.should">Creation</span>
+                                            <span ng-hide="vm.should" ng-show="!motion.allowSecond">Approval</span>
+                                            <span ng-show="!motion.seconded && motion.allowSecond">Seconding</span>
+                                            <span ng-show="motion.seconded">Voting</span>
+                                        </td>
+                                        <td>
+                                            12/1/2015
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr ng-hide="!vm.should">
+                                        <td></td>
+                                        <td>
+                                            <input ng-show="vm.newMotionRow" type="text" style="width:78%" ng-model="vm.newMotionTitle"/>
+                                            <input ng-hide="vm.newMotionRow" type="text" style="width:78%" />
+                                        </td>
+                                        <td>
+                                            Jennifer Jordan
+                                        </td>
+                                        <td>
+                                            {{vm.getDate() | date:"MM/dd/yyyy"}}
+                                        </td>
+                                        <td>
+                                            <span ng-show="motion.allowSecond" class="glyphicon glyphicon-ok" style="font-size:30px;text-align:center;"></span>
+                                            <span ng-show="!motion.allowSecond" class="glyphicon glyphicon-remove" style="font-size:30px;text-align:center;"></span>
+                                        </td>
+                                        <td>
+                                            <span ng-show="!motion.allowSecond">Awaiting Approval</span>
+                                            <span ng-show="motion.allowSecond">
+                                                <span ng-show="motion.seconded">{{motion.secondedBy}}</span>
+                                                <span ng-show="!motion.seconded"><input type="button" class="btn btn-primary btn-xs btn-block" value="Second Motion" ng-click="vm.changeSecond(motion)" style="height:40px" /></span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Yea:0 - <input ng-show="motion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteYes(motion)" /><br />
+                                            Nay:0 - <input ng-show="motion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteNo(motion)" />
+                                        </td>
+                                        <td>
+                                            <span ng-hide="!vm.should">Creation</span>
+                                            <span ng-hide="vm.should" ng-show="!motion.allowSecond">Approval</span>
+                                            <span ng-show="!motion.seconded && motion.allowSecond">Seconding</span>
+                                            <span ng-show="motion.seconded">Voting</span>
+                                        </td>
+                                        <td>
+                                            12/1/2015
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="vm.should && !vm.newMotionRow">
+                                        <td style="height:500px" colspan="9">
+                                            <textarea style="height:90%;width:90%"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="9">
+                                            <input ng-show="!vm.should" type="button" class="btn btn-danger" ng-click="vm.shouldAdd()" value="Add a Motion" />
+                                            <input ng-show="vm.should" type="button" class="btn btn-danger" ng-click="vm.shouldAdd()" value="Cancel" />
+                                            <input ng-show="vm.should" type="button" class="btn btn-danger" ng-click="vm.newMotionRow = !vm.newMotionRow" value="Add" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div ng-hide="vm.showTable()" class="col-md-12">
+                            <input type="button" value="Go Back" class="btn btn-primary btn-block btn-lg" ng-click="vm.funcBack()" />
+                            <table style="table-layout:fixed;" class="table table-striped table-bordered table-hover table-condensed container-fluid">
+                                <thead>
+                                    <tr>
+                                        <th style="width:25px;"></th>
+                                        <th>
+                                            Motion
+                                        </th>
+                                        <th>
+                                            Raised By
+                                        </th>
+                                        <th>
+                                            Raised on
+                                        </th>
+                                        <th style="width:78px">
+                                            Approved
+                                        </th>
+                                        <th>
+                                            Seconded by
+                                        </th>
+                                        <th>
+                                            Vote Tally
+                                        </th>
+                                        <th>
+                                            Period
+                                        </th>
+                                        <th>
+                                            Period End
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-model="vm.currentMotion">
+                                        <td></td>
+                                        <td>
+                                            {{vm.currentMotion.title}}
+                                            <span ng-hide="!vm.newMotionRow">TX SB 199</span>
+                                        </td>
+                                        <td>
+                                            {{vm.currentMotion.raisedBy}}
+                                            <span ng-hide="!vm.newMotionRow">Jennifer Jordan</span>
+                                        </td>
+                                        <td>
+                                            {{vm.currentMotion.dateBeginning}}
+                                            <span ng-hide="!vm.newMotionRow">11/23/2015</span>
+                                        </td>
+                                        <td>
+                                            <span ng-show="motion.allowSecond" class="glyphicon glyphicon-ok" style="font-size:30px;text-align:center;"></span>
+                                            <span ng-show="!motion.allowSecond" class="glyphicon glyphicon-remove" style="font-size:30px;text-align:center;"></span>
+                                        </td>
+                                        <td>
+                                            <span ng-show="!vm.currentMotion.allowSecond">Awaiting Approval</span>
+                                            <span ng-show="vm.currentMotion.allowSecond">
+                                                <span ng-show="vm.currentMotion.seconded">{{vm.currentMotion.secondedBy}}</span>
+                                                <span ng-show="!vm.currentMotion.seconded"><input type="button" class="btn btn-primary btn-xs btn-block" value="Second Motion" ng-click="vm.changeSecond(motion)" /></span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Yea:{{vm.currentMotion.yea}} - <input ng-show="vm.currentMotion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteYes(vm.currentMotion)" /><br />
+                                            Nay:{{vm.currentMotion.nay}} - <input ng-show="vm.currentMotion.allowVote" type="button" value="vote" class="btn btn-primary btn-xs" ng-click="vm.voteNo(vm.currentMotion)" />
+                                        </td>
+                                        <td>
+                                            <span ng-hide="vm.currentMotion.allowSecond">Approval</span>
+                                            <span ng-show="!vm.currentMotion.seconded && vm.currentMotion.allowSecond">Seconding</span>
+                                            <span ng-show="vm.currentMotion.seconded">Voting</span>
+                                        </td>
+                                        <td>
+                                            {{vm.currentMotion.periodEnd}}
+                                            <span ng-hide="!vm.newMotionRow">12/1/2015</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div style="margin-top:-20px;border:solid thin #ddd;border-top:none;height:490px;background-color:#f9f9f9">
+                                        <div class="row">
                                             <div class="col-md-12">
-                                                <form ng-submit="vm.pushComment(comment)">
-                                                    <div class="col-md-10">
-                                                        <div style="height:100px;padding:0px;margin:0px;width:100%">
-                                                            <input type="text" ng-model="comment" style="width:100%;height:100%;padding:0px;margin:0px" />
-                                                        </div>
-                                                    </div>
+                                                <div style="height: 48px;border-bottom:solid medium #ddd">
                                                     <div class="col-md-2">
-                                                        <div style="width:100%;height:100px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px">
-                                                            <button class="btn btn-primary btn-lg" ng-click="vm.pushComments()" style="width:100%;height:100px;padding:0px;margin:0px">
-                                                                <span class="glyphicon glyphicon-envelope" style="font-size:30px"></span>
-                                                            </button>
+                                                        <div>
+                                                            <p style="margin-top:14px;margin-left:6px;"><strong>Votes Placed:</strong></p>
                                                         </div>
                                                     </div>
-                                                </form>
-
+                                                    <div class="col-md-10">
+                                                        <div class="row">
+                                                            <div style="height:24px;border-bottom:solid thin #ddd;border-left:solid medium #ddd">
+                                                                <span style="margin-left:3px;"><strong>Yea| </strong></span><span style="margin-left:3px;" ng-repeat="voter in vm.currentMotion.yeaList">{{voter}}<strong> | </strong> </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div style="height:24px;border-left:solid medium #ddd">
+                                                                <span style="margin-left:3px;"><strong>Nay| </strong></span><span style="margin-left:3px;" ng-repeat="voter in vm.currentMotion.nayList">{{voter}}<strong> | </strong> </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div ng-repeat="comment in vm.comments">
-                                                    <div class="col-md-3">
-                                                        <div class="row">
-                                                            <span>{{comment.date | date:'MM/dd/yyyy @ h:mma'}}</span>
+                                                <div style="background-color:#f9f9f9">
+                                                    <div class="col-md-2">
+                                                        <div class="row" style="height:385px">
+                                                            <p style="padding-top:14px;padding-left:12px;"><strong>Details:</strong></p>
                                                         </div>
+                                                        <div class="row" style="height:25px">
+                                                            <button class="btn btn-primary btn-lg btn-block" ng-click="vm.showComments()">
+                                                                <span class="glyphicon glyphicon-chevron-down" style="font-size:15px"></span>
+                                                                <span class="glyphicon glyphicon-comment" style="font-size:30px"></span>
+                                                                <span class="glyphicon glyphicon-chevron-down" style="font-size:15px"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10" style="height: 442px;">
                                                         <div class="row">
+                                                            <div style="height:442px;border-left:solid medium #ddd;border-bottom:solid thin #ddd;border-right:solid thin #ddd">
+                                                                <div style="word-wrap:normal;padding:4px">
+<pre style="border:none;background-color:#f9f9f9;font-size:13px">
+{{vm.currentMotion.description}}
+</pre>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" ng-hide="!vm.showComment">
+                                        <div class="col-md-12">
+                                            <div style="height: 150px;border:solid medium #ddd;background-color:#f9f9f9">
+                                                <p style="margin-top:5px;margin-bottom:5px;text-align:center;"><strong> Add to the Discussion </strong></p>
+                                                <form ng-submit="vm.addComment(comment)">
+                                                    <div class="col-md-10">
+                                                        <div style="height:100px;padding:0px;margin:0px;width:100%">
+                                                            <textarea type="text" ng-model="comment" style="width:100%;height:100%;padding:5px;margin:0px" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div style="width:100%;height:100px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px">
+                                                            <button class="btn btn-primary btn-lg" style="width:100%;height:100px;padding:0px;margin:0px" type="submit">
+                                                                <div style="vertical-align:middle;text-align:center;">
+                                                                    <span class="glyphicon glyphicon-envelope" style="margin-right:-8px;font-size:30px"></span>
+                                                                    <span class="glyphicon glyphicon-chevron-right" style="margin-right:-18px;font-size:30px"></span>
+                                                                    <span class="glyphicon glyphicon-chevron-right" style="font-size:30px"></span>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ng-hide="!vm.showComment" class="row">
+                                        <div class="col-md-12">
+                                            <div id="scroll" style="height:200px;border:solid medium #ddd;background-color:#f9f9f9;margin-top:-5px" ng-repeat="comment in vm.comments">
+                                                <div class="col-md-3">
+                                                    <div>
+                                                        <div class="row" style="height:100px">
+                                                            <span>{{comment.date | date:'MM/dd/yyyy at h:mma'}}</span>
+                                                        </div>
+                                                        <div class="row" style="height:100px">
                                                             <p>{{comment.name}}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-9">
-
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="row">
+                                                        <div style="height:200px;border-bottom:solid thin #ddd;border-left:solid medium #ddd">
+                                                            {{comment.comment}}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -279,7 +376,8 @@
     </div>
 
 
-    <!-- /#page-content-wrapper -->
+
+<!-- /#page-content-wrapper -->
 </div>
 <!-- /#wrapper -->
 <!-- Menu Toggle Script -->
