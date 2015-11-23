@@ -54,9 +54,9 @@
         //};
 
 
-       cAdminService.listCurrentRoles( function (userId, result) {
-            vm.listCurrentRoles = result;
-        });
+       //cAdminService.listCurrentRoles( function (userId, result) {
+       //     vm.listCurrentRoles = result;
+       // });
 
 
         
