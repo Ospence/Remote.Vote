@@ -15,7 +15,10 @@
           };
 
           self.list = function (callback) {
-              $http.get('/api/Account/ListRoles').success(callback);
+              $http.get('/api/Account/ListRoles')
+                  .success(function(data){
+                      callback(data.data)
+                  });
           };
 
           self.listCurrentRoles = function (userId, callback) {
