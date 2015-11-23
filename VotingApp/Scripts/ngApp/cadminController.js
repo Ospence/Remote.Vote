@@ -58,7 +58,9 @@
        //     vm.listCurrentRoles = result;
        // });
 
-
+        vm.alertUpdate = function() {
+        alert("Updated");
+}
         
 
         vm.delete = function (role) {
