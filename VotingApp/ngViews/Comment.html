@@ -19,12 +19,12 @@
             <li>
                 <a href="#/adminpage">Manage Users</a>
             </li>
-            <li>
+            <!--<li>
                 <a href="#">Inbox</a>
             </li>
             <li>
                 <a href="#">Settings</a>
-            </li>
+            </li>-->
         </ul>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -36,17 +36,19 @@
                     <h1 id="commentpageheader">Current Motion</h1>
                     <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
                     <p>Make sure to keep all page content within the.</p>
-                    <form ng-model="vm.comments" >
+                    <div >
                         <div id="addComment" ng-submit="vm.add()">
                             <div ng-repeat="comment in vm.comments" ng-click="vm.comment">{{comment.content}}</div>
                         </div>
                         <!--<div ng-show="!comment.edit" ng-click="comment.edit = true"></div>-->
                         <textarea type="input" class="col-lg-9" name="comment" ng-model="vm.comment"></textarea><br /><br /><br />
 
-                        
-                    </form>
+                        <input type="text" placeholder="Add to the conversation" class="btn btn-info form-control input-large" />
 
-                    <input type="submit" value="submit" class="btn btn-info" />
+                        
+                    </div>
+                    <span class="input-group-addon" ng-click="vm.add()">Post</span>
+                    
                     <br /><br />
 
 

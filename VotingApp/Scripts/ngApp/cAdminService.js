@@ -17,7 +17,7 @@
           self.list = function (callback) {
               $http.get('/api/Account/ListRoles')
                   .success(function(data){
-                      callback(data.data)
+                      callback(data)
                   });
           };
 

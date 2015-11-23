@@ -54,11 +54,13 @@
         //};
 
 
-       cAdminService.listCurrentRoles( function (userId, result) {
-            vm.listCurrentRoles = result;
-        });
+       //cAdminService.listCurrentRoles( function (userId, result) {
+       //     vm.listCurrentRoles = result;
+       // });
 
-
+        vm.alertUpdate = function() {
+        alert("Updated");
+}
         
 
         vm.delete = function (role) {
