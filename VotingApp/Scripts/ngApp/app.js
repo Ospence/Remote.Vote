@@ -99,7 +99,7 @@
                 controllerAs: 'vm'
             })
 
-            .when('/id1motionsraised', {
+            .when('/motions120', {
                 templateUrl: '/ngViews/userMotionHistory.html',
                 controller: 'historyController',
                 controllerAs: 'vm'
@@ -110,7 +110,7 @@
                 controller: 'historyController',
                 controllerAs: 'vm'
             })
-            .when('/id1motionsvoted', {
+            .when('/votesPlaced', {
                 templateUrl: '/ngViews/votesPlaced.html',
                 controller: 'historyController',
                 controllerAs: 'vm'

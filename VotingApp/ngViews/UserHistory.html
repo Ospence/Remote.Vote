@@ -78,12 +78,14 @@
                                             <td>{{user.lastName}}</td>
                                             <td>{{user.beginningDate}}</td>
                                             <td>{{user.retiredDate}}</td>
-                                            <td><a href="#/id1motionsraised" style="color:black">{{user.motionsRaised}}</a></td>
-                                            <td><a href="#/id1motionsseconded" style="color:black">{{user.motionsSeconded}}</a></td>
-                                            <td><a href="#/id1motionsvoted" style="color:black">{{user.votesPlaced}}</a></td>
+                                            <!--<span>
+                                                <input type="button" class="btn btn-alert btn-block btn-link" value="{{user.motionsRaised}}" ng-click="vm.func(motion)" /></span>-->
+                                                <td><a href="#/motion120" style="color:#337ab7">{{user.motionsRaised}}</a></td>
+                                                <td><a href="#/id1motionsseconded" style="color:#337ab7">{{user.motionsSeconded}}</a></td>
+                                                <td><a href="#/votesPlaced" style="color:#337ab7">{{user.votesPlaced}}</a></td>
 
-                                            
-                                        </tr>
+
+</tr>
                                     </tbody>
                                 </table>
                             </div>
